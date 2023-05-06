@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Community Repositories on Mudler blog</title>
+    <link>https://mudler.pm/tags/community-repositories/</link>
+    <description>Recent content in Community Repositories on Mudler blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 18 Apr 2016 06:02:00 -0700</lastBuildDate><atom:link href="https://mudler.pm/tags/community-repositories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Whut?! Sabayon Community Repositories is here!</title>
+      <link>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</link>
+      <pubDate>Mon, 18 Apr 2016 06:02:00 -0700</pubDate>
+      
+      <guid>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</guid>
+      <description>Maaaaaaaaaaaaany dependencies for enman… Still, he&amp;hellip; Tedel - Apr 1, 2016
+Maaaaaaaaaaaaany dependencies for enman…
+Still, here we go! :D</description>
+    </item>
+    
+    <item>
+      <title>Whut?! Sabayon Community Repositories is here!</title>
+      <link>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</link>
+      <pubDate>Mon, 18 Apr 2016 06:02:00 -0700</pubDate>
+      
+      <guid>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</guid>
+      <description>Hello users,
+Time passed when i first wrote the article &amp;ldquo;[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services&amp;rdquo; that was going to be divided into parts. But things changed amazingly fast and there is better news, I wrote up a suite of tools that makes the whole operation much easier, thanks also to +Ben Roberts (optiz0r) who contributed in the development and he is also kindly sponsoring the buildserver.</description>
+    </item>
+    
+  </channel>
+</rss>

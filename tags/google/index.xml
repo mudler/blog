@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>google on Mudler blog</title>
+    <link>https://mudler.pm/tags/google/</link>
+    <description>Recent content in google on Mudler blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 29 Mar 2014 02:15:00 -0700</lastBuildDate><atom:link href="https://mudler.pm/tags/google/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google at Home updates</title>
+      <link>https://mudler.pm/2014/03/google-at-home-updates.html</link>
+      <pubDate>Sat, 29 Mar 2014 02:15:00 -0700</pubDate>
+      
+      <guid>https://mudler.pm/2014/03/google-at-home-updates.html</guid>
+      <description>_
+This post is an update of the current status of the Google@Home project. Google@Home tries to bring domotic control in your home using Google Services for Speech Synthesis and Text-to-Speech. It is also planned a web interface to control the embedded nodes in the current environment.
+_
+For now it&amp;rsquo;s still required to manually set-up the YAML file to configure which nodes belongs to the network, but if you set up some RaspberryPi on the network and a master node that has installed MongoDB the dispatchment of the commands and of the voice (so you can command everything by issuing commands on one node) works for now.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>torvalds on Mudler blog</title>
+    <link>https://mudler.pm/tags/torvalds/</link>
+    <description>Recent content in torvalds on Mudler blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 07 Oct 2015 14:28:00 -0700</lastBuildDate><atom:link href="https://mudler.pm/tags/torvalds/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sabayon: testers, testers, testers</title>
+      <link>https://mudler.pm/2015/10/sabayon-testers-testers-testers.html</link>
+      <pubDate>Wed, 07 Oct 2015 14:28:00 -0700</pubDate>
+      
+      <guid>https://mudler.pm/2015/10/sabayon-testers-testers-testers.html</guid>
+      <description>I will give it a go installing new motherboard tod&amp;hellip; Unknown - Oct 4, 2015
+I will give it a go installing new motherboard today will start testing after thate
+Thanks for your efforts , please remember to file a bug for whatever problem you will face!
+I have jut installed a new motherboard,it is a msi z97a the only problem so far is I cant install sabayon in uefi mode I am runing 15.</description>
+    </item>
+    
+    <item>
+      <title>Sabayon: testers, testers, testers</title>
+      <link>https://mudler.pm/2015/10/sabayon-testers-testers-testers.html</link>
+      <pubDate>Wed, 07 Oct 2015 14:28:00 -0700</pubDate>
+      
+      <guid>https://mudler.pm/2015/10/sabayon-testers-testers-testers.html</guid>
+      <description>Sabayon, official call for testers (and well, developers are welcome too)
+Testers, come to us Probably most of you already have seen Ballmer in show-mode
+Also if controversial, it was a quite funny commercial / raindance move, balls included. But i can say that he is wrong, testers are as important as developers.
+Consider helping Sabayon in a different way: testing it.
+I am here, begging YOU for some help. The more the merrier!</description>
+    </item>
+    
+  </channel>
+</rss>

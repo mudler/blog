@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tech preview on Mudler blog</title>
+    <link>https://mudler.pm/tags/tech-preview/</link>
+    <description>Recent content in tech preview on Mudler blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 11 Jan 2016 05:02:00 -0800</lastBuildDate><atom:link href="https://mudler.pm/tags/tech-preview/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tech Preview: Sabayon on RaspberryPi2 </title>
+      <link>https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html</link>
+      <pubDate>Mon, 11 Jan 2016 05:02:00 -0800</pubDate>
+      
+      <guid>https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html</guid>
+      <description>hi, this is a really good new are there chances o&amp;hellip; Unknown - Feb 6, 2016
+hi, this is a really good new
+are there chances of having sabayon on Raspberry PI (not PI2)?</description>
+    </item>
+    
+    <item>
+      <title>Tech Preview: Sabayon on RaspberryPi2 </title>
+      <link>https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html</link>
+      <pubDate>Mon, 11 Jan 2016 05:02:00 -0800</pubDate>
+      
+      <guid>https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html</guid>
+      <description>As anticipated on Sabayon Linux site releases notes, that day was going to be close.
+ARM meet Sabayon, Sabayon meet ARM.
+The approach to the ARM(hfp) support will be different from the previous attempt, we are not going to support kernels for each different board we intend to build images, instead we will release cutted images with vendor-kernel to avoid incompatibilities and unexpected features. This is what almost every distribution does for tons of reasons, among them i want just to underline that in those years we have seen a lot of new ARM boards out of there and we can&amp;rsquo;t just support all of them, mantain a kernel branch for each one would results low QA (since our dev-team is small) and probably in hard decision to be made when support will be dropped from vendors (think also on how short is a board lifespan, and how projects dies quickly).</description>
+    </item>
+    
+    <item>
+      <title>Tech Preview: Sabayon Plasma 5 LiveCD</title>
+      <link>https://mudler.pm/2015/09/tech-preview-sabayon-plasma-5-livecd.html</link>
+      <pubDate>Wed, 02 Sep 2015 05:46:00 -0700</pubDate>
+      
+      <guid>https://mudler.pm/2015/09/tech-preview-sabayon-plasma-5-livecd.html</guid>
+      <description>Thanks, Unfortunately running in VirtualBox 4.3.28&amp;hellip; Unknown - Sep 3, 2015
+Thanks, Unfortunately running in VirtualBox 4.3.28, NetworkManager is crashing and can&amp;rsquo;t access desktop. :(
+Thanks for your feedback, i run the image on VirtualBox 4.3.28 as well without problems, can you try to change the Network Adaptor type under the image settings, Network-&amp;gt; Advanced -&amp;gt; Card type
+Thanks, your tip solve the startup. Dolphin link from main menu is broken.</description>
+    </item>
+    
+    <item>
+      <title>Tech Preview: Sabayon Plasma 5 LiveCD</title>
+      <link>https://mudler.pm/2015/09/tech-preview-sabayon-plasma-5-livecd.html</link>
+      <pubDate>Wed, 02 Sep 2015 05:46:00 -0700</pubDate>
+      
+      <guid>https://mudler.pm/2015/09/tech-preview-sabayon-plasma-5-livecd.html</guid>
+      <description>!! WARNING - HERE BE DRAGONS !!
+Sabayon Plasma 5 LiveCD Tech preview is available for download
+This release is just for testing only, it is just a preview of Plasma5 on Sabayon for those of you that wants just to snoop on what&amp;rsquo;s going on without touching your system.
+If you want to install Plasma 5 with the community repository, follow those instructions.
+Known issues: Dolphin Shortcut on favorites is not working Desktop isn&amp;rsquo;t in folderview so you can&amp;rsquo;t quickly access to the install icon, but the installer is present (search for &amp;ldquo;Calamares&amp;rdquo; or &amp;ldquo;Installer&amp;rdquo; in the Plasma menu) No Sabayon artwork is present, plasma is vanilla Please, if you encounter other issues let us know, Thank you!</description>
+    </item>
+    
+  </channel>
+</rss>

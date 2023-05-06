@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RaspberryPi2 on Mudler blog</title>
+    <link>https://mudler.pm/tags/raspberrypi2/</link>
+    <description>Recent content in RaspberryPi2 on Mudler blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 11 Jan 2016 05:02:00 -0800</lastBuildDate><atom:link href="https://mudler.pm/tags/raspberrypi2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tech Preview: Sabayon on RaspberryPi2 </title>
+      <link>https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html</link>
+      <pubDate>Mon, 11 Jan 2016 05:02:00 -0800</pubDate>
+      
+      <guid>https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html</guid>
+      <description>hi, this is a really good new are there chances o&amp;hellip; Unknown - Feb 6, 2016
+hi, this is a really good new
+are there chances of having sabayon on Raspberry PI (not PI2)?</description>
+    </item>
+    
+    <item>
+      <title>Tech Preview: Sabayon on RaspberryPi2 </title>
+      <link>https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html</link>
+      <pubDate>Mon, 11 Jan 2016 05:02:00 -0800</pubDate>
+      
+      <guid>https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html</guid>
+      <description>As anticipated on Sabayon Linux site releases notes, that day was going to be close.
+ARM meet Sabayon, Sabayon meet ARM.
+The approach to the ARM(hfp) support will be different from the previous attempt, we are not going to support kernels for each different board we intend to build images, instead we will release cutted images with vendor-kernel to avoid incompatibilities and unexpected features. This is what almost every distribution does for tons of reasons, among them i want just to underline that in those years we have seen a lot of new ARM boards out of there and we can&amp;rsquo;t just support all of them, mantain a kernel branch for each one would results low QA (since our dev-team is small) and probably in hard decision to be made when support will be dropped from vendors (think also on how short is a board lifespan, and how projects dies quickly).</description>
+    </item>
+    
+  </channel>
+</rss>

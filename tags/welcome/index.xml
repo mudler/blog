@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>welcome on Mudler blog</title>
+    <link>https://mudler.pm/tags/welcome/</link>
+    <description>Recent content in welcome on Mudler blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 02 Mar 2014 01:40:00 -0800</lastBuildDate><atom:link href="https://mudler.pm/tags/welcome/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome!</title>
+      <link>https://mudler.pm/2015/08/welcome.html</link>
+      <pubDate>Sun, 02 Mar 2014 01:40:00 -0800</pubDate>
+      
+      <guid>https://mudler.pm/2015/08/welcome.html</guid>
+      <description>This is my blog, it&amp;rsquo;s powered it was powered with Perl and Mojolicious. Enjoy! You will find here some interesting perl posts and updates for the projects where i am involved.
+Unfortunately i had to move to blogger, due to time issues. Enjoy!</description>
+    </item>
+    
+  </channel>
+</rss>

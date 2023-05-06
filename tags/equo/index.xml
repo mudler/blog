@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>equo on Mudler blog</title>
+    <link>https://mudler.pm/tags/equo/</link>
+    <description>Recent content in equo on Mudler blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 15 Nov 2015 07:09:00 -0800</lastBuildDate><atom:link href="https://mudler.pm/tags/equo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</title>
+      <link>https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html</link>
+      <pubDate>Sun, 15 Nov 2015 07:09:00 -0800</pubDate>
+      
+      <guid>https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html</guid>
+      <description>With spawning a compilation, the second line (with&amp;hellip; fusion809 - Nov 4, 2015
+With spawning a compilation, the second line (with the package you wish to merge) is it possible to point to a specific version of a package. For example, atm I&amp;rsquo;d like to merge app-editors/atom-1.2.0 from the Sabayon overlay, do I have to enter it as `app-editors/atom-1.2.0 &amp;ndash;overlay sabayon` or `=app-editors/atom-1.2.0 &amp;ndash;overlay sabayon`?
+In section 3 I think you gave incorrect syntax, although it may be because of formatting limitations imposed by blogger.</description>
+    </item>
+    
+    <item>
+      <title>[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</title>
+      <link>https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html</link>
+      <pubDate>Sun, 15 Nov 2015 07:09:00 -0800</pubDate>
+      
+      <guid>https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html</guid>
+      <description>As previously anticipated in the previous blog post, here i explain what&amp;rsquo;s going on with Sabayon Docker images, and how can the Official Sabayon images help you in developing/deploying your application. In this article, i&amp;rsquo;ll show how to build Sabayon/Gentoo packages using Docker.
+I&amp;rsquo;ll cover five cases and will be divided in differents articles:
+You want to build packages locally You want to remotely build packages You want to host an overlay or a Sabayon repository and want your packages to get built on each push to the git repository You want to track remote repository changes and test (useful if you can&amp;rsquo;t setup a webhook) Setup an Entropy repo with a Docker image, and how to mantain packages In future, i&amp;rsquo;ll write also a post also on how to track the packages remotely with CircleCi.</description>
+    </item>
+    
+    <item>
+      <title>Sabayon is moving to KDE Plasma 5.4</title>
+      <link>https://mudler.pm/2015/09/sabayon-is-moving-to-kde-plasma-54.html</link>
+      <pubDate>Sat, 12 Sep 2015 10:36:00 -0700</pubDate>
+      
+      <guid>https://mudler.pm/2015/09/sabayon-is-moving-to-kde-plasma-54.html</guid>
+      <description>Sabayon is officially moving to Plasma 5, please read if you are a KDE Sabayon user.
+KDM is going to be removed! migrate to SDDM now!
+Yes, finally we are moving on.
+While KDE 4 was a pretty stable DM, Plasma 5 brings awesomeness and, if you didn&amp;rsquo;t noticed, it&amp;rsquo;s the future.
+From KDM to SDDM We tried to do our best to make the transition as smooth as possible and automatic, but if your system just got broken here is why: the KDE team announced SDDM as the default KDE display manager.</description>
+    </item>
+    
+    <item>
+      <title>KDE Plasma 5.4, available on Plasma5 Sabayon community repository</title>
+      <link>https://mudler.pm/2015/08/kde-plasma-54-available-on-plasma5.html</link>
+      <pubDate>Thu, 27 Aug 2015 05:03:00 -0700</pubDate>
+      
+      <guid>https://mudler.pm/2015/08/kde-plasma-54-available-on-plasma5.html</guid>
+      <description>I&amp;rsquo;m glad to announce that Plasma 5.4 is available on Sabayon Plasma5 community repository.
+Plasma 5.4
+The KDE team announced on 25 August the release of Plasma 5.4:
+This release of Plasma brings many nice touches for our users such as much improved high DPI support, KRunner auto-completion and many new beautiful Breeze icons. It also lays the ground for the future with a tech preview of Wayland session available. We&amp;rsquo;re shipping a few new components such as an Audio Volume Plasma Widget, monitor calibration tool and the User Manager tool comes out beta.</description>
+    </item>
+    
+  </channel>
+</rss>

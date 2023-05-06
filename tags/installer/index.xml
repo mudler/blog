@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>installer on Mudler blog</title>
+    <link>https://mudler.pm/tags/installer/</link>
+    <description>Recent content in installer on Mudler blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 10 Aug 2015 04:29:00 -0700</lastBuildDate><atom:link href="https://mudler.pm/tags/installer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>on Calamares, Docker and Sabayon</title>
+      <link>https://mudler.pm/2015/08/on-calamares-docker-and-sabayon.html</link>
+      <pubDate>Mon, 10 Aug 2015 04:29:00 -0700</pubDate>
+      
+      <guid>https://mudler.pm/2015/08/on-calamares-docker-and-sabayon.html</guid>
+      <description>Since i became Sabayon developer, i started to work on customizing it and giving some love to the entropy packages.
+A lot as been done in those months, and you can see that picking up a &amp;ldquo;-dev&amp;rdquo; image from our mirrors.
+After giving to the entropy packages a fullfill of love (systemd was bumped, ati-drivers and nvidia-drivers as well to be in line with upstream, implemented iptables saving rules for systemd, &amp;hellip; ) then we decided that the time of Anaconda installer was finished.</description>
+    </item>
+    
+  </channel>
+</rss>
