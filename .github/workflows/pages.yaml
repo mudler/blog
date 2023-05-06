@@ -13,10 +13,10 @@ jobs:
     - name: Build 🔧
       run: |
            make build
+
     - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
       if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
-      uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: public
+        folder: build # The folder the action should deploy.
+        branch: gh-pages
