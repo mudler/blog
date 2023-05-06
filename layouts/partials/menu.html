@@ -1,0 +1,112 @@
+<style>
+
+  
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .search-box {
+    border: none;
+    background-color: transparent;
+    color: #333;
+    flex: 1;
+    padding: 8px 8px 8px 28px;
+    border-radius: 20px;
+    font-size: 16px;
+  }
+
+  .search-button {
+    border: none;
+    background-color: #fff;
+    color: #333;
+    padding: 8px;
+    border-radius: 20px;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.7;
+  }
+
+  .search-icon i {
+    font-size: 16px;
+  }
+
+  .search-button:hover {
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+  }
+  </style>
+
+<nav class="menu">
+    <ul class="menu__inner">
+        {{- $currentPage := . -}}
+        {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="{{ .URL }}">
+                            {{ .Name }}
+                        </a>
+                        <div class="dropdown-content">
+                            {{ range .Children }}
+                               <a title="{{ .Name }}" href="{{ .URL }}">
+                                   {{ .Name }}
+                                </a>
+                            {{ end }}
+                        </div>
+                    </li>
+                </div>
+            {{ else }}
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="{{ .URL | relLangURL }}">
+                        {{ .Name }}
+                    </a>
+                </li>
+            </div>
+            {{ end }}
+        {{ end }}
+
+    {{ if .Site.IsMultiLingual }}
+        {{- if .Site.Params.EnableGlobalLanguageMenu }}
+        <div class="submenu">
+            <li class="dropdown">
+              {{ range first 1 (where $.Translations ".Lang" "!=" ".Lang") }}
+                <a href="{{ .Permalink }}" class="flag flag-icon flag-icon-{{ index $.Site.Data.langFlags (.Lang) }} flag-icon-squared"></a>
+              {{ end }}
+                <div class="dropdown-content">
+                  {{ range after 1 (where $.Translations ".Lang" "!=" ".Lang") }}
+                    <a title="{{ .Language }}"  class="flag flag-icon flag-icon-{{ index $.Site.Data.langFlags (.Lang) }} flag-icon-squared" href="{{ .Permalink }}"></a>
+                  {{ end }}
+                </div>
+            </li>
+        </div>
+        {{- end }}
+    {{ end }}
+        <div class="submenu">
+            <form action="/search" method="GET">
+                <div class="search-container">
+                  <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                  </div>
+                  <input type="search" name="q" id="search-query" placeholder="Search..." class="search-box">
+                  <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
+        </div>
+    </ul>
+
+    
+</nav>
