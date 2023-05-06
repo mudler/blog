@@ -18,5 +18,5 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4
       if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
       with:
-        folder: build # The folder the action should deploy.
+        folder: public # The folder the action should deploy.
         branch: gh-pages
