@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 18 Apr 2016 06:02:00 -0700</lastBuildDate><atom:link href="https://mudler.pm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://mudler.pm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LocalAI updates</title>
+      <link>https://mudler.pm/posts/localai/</link>
+      <pubDate>Thu, 11 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://mudler.pm/posts/localai/</guid>
+      <description>LocalAI has been a massive hit! Thanks to everyone who has shown support by following us. Your contribution is helping to democratize AI!
+If you&amp;rsquo;re not familiar with LocalAI, it&amp;rsquo;s a self-hostable, free, and open-source alternative to the OpenAI API. It simplifies the AI development process and makes it accessible to everyone. You can check it out on Github: https://github.com/go-skynet/LocalAI.
+News We have exciting news to share in the latest release (1.</description>
+    </item>
+    
     <item>
       <title>Whut?! Sabayon Community Repositories is here!</title>
       <link>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</link>
