@@ -18,6 +18,16 @@ The GPT4All binding family models have been updated, as we are upstreaming our i
 
 In the previous release (1.8.x), LocalAI gained support for audio transcription with [whisper.cpp](https://github.com/ggerganov/whisper.cpp) and support for embeddings with [bert.cpp](https://github.com/skeskinen/bert.cpp). bert.cpp embedding extends support for any model, allowing you to implement question answering on large datasets with any model that doesn't support embedding by its own backend.
 
+## LocalAI in the wild
+
+What you can do with LocalAI now?
+
+- Question answering
+- Langchain
+- Chatbot UI
+
+and many more! Have a look at the examples https://github.com/go-skynet/LocalAI/tree/master/examples
+
 ## Thank you 
 
 I owe our success to our amazing community. I would like to thank llama.cpp, gpt4all, rwkv.cpp, ggml, whisper.cpp, and bert.cpp for providing us with excellent community software pieces.
@@ -37,6 +47,7 @@ LocalAI, and my mission is to make AI accessible for everyone - if you want to h
 
 ## Community links
 
+- LocalAI examples: https://github.com/go-skynet/LocalAI/tree/master/examples
 - Github: https://github.com/go-skynet/LocalAI
 - Follow us on Twitter: https://twitter.com/LocalAI_API
 - Upvote on Hacker news: https://news.ycombinator.com/item?id=35726934
