@@ -235,6 +235,42 @@
                 <div class="posts">
                 
                 <div class="post on-list">
+                    <h1 class="post-title"><a href="https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html">Tech Preview: Sabayon on RaspberryPi2</a></h1>
+                    <div class="post-meta">
+                    
+                        <span class="post-date">
+                        2016-01-11
+                        </span>
+                        
+                    
+                        <br>
+                    
+                        <i class="fa-solid fa-clock"></i>
+                        4 minutes
+                    
+                    </div>
+                    
+                    <div class="post-content">
+                        
+                            
+                                As anticipated on Sabayon Linux site releases notes, that day was going to be close.
+ARM meet Sabayon, Sabayon meet ARM.
+The approach to the ARM(hfp) support will be different from the previous attempt, we are not going to support kernels for each different board we intend to build images, instead we will release cutted images with vendor-kernel to avoid incompatibilities and unexpected features. This is what almost every distribution does for tons of reasons, among them i want just to underline that in those years we have seen a lot of new ARM boards out of there and we can&rsquo;t just support all of them, mantain a kernel branch for each one would results low QA (since our dev-team is small) and probably in hard decision to be made when support will be dropped from vendors (think also on how short is a board lifespan, and how projects dies quickly).
+                            
+                        
+                    </div>
+                    
+                        
+                        <div> 
+                            <a class="read-more" href="/2016/01/tech-preview-sabayon-on-raspberrypi2.html">
+                                Read more ...
+                            </a>
+                        </div>
+                        
+                    
+                </div> 
+            
+                <div class="post on-list">
                     <h1 class="post-title"><a href="https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html">[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</a></h1>
                     <div class="post-meta">
                     
@@ -256,42 +292,6 @@
                                 With spawning a compilation, the second line (with&hellip; fusion809 - Nov 4, 2015
 With spawning a compilation, the second line (with the package you wish to merge) is it possible to point to a specific version of a package. For example, atm I&rsquo;d like to merge app-editors/atom-1.2.0 from the Sabayon overlay, do I have to enter it as `app-editors/atom-1.2.0 &ndash;overlay sabayon` or `=app-editors/atom-1.2.0 &ndash;overlay sabayon`?
 In section 3 I think you gave incorrect syntax, although it may be because of formatting limitations imposed by blogger.
-                            
-                        
-                    </div>
-                    
-                        
-                        <div> 
-                            <a class="read-more" href="/2015/11/part-1-building-gentoo-and-sabayon.html">
-                                Read more ...
-                            </a>
-                        </div>
-                        
-                    
-                </div> 
-            
-                <div class="post on-list">
-                    <h1 class="post-title"><a href="https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html">[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</a></h1>
-                    <div class="post-meta">
-                    
-                        <span class="post-date">
-                        2015-11-15
-                        </span>
-                        
-                    
-                        <br>
-                    
-                        <i class="fa-solid fa-clock"></i>
-                        8 minutes
-                    
-                    </div>
-                    
-                    <div class="post-content">
-                        
-                            
-                                As previously anticipated in the previous blog post, here i explain what&rsquo;s going on with Sabayon Docker images, and how can the Official Sabayon images help you in developing/deploying your application. In this article, i&rsquo;ll show how to build Sabayon/Gentoo packages using Docker.
-I&rsquo;ll cover five cases and will be divided in differents articles:
-You want to build packages locally You want to remotely build packages You want to host an overlay or a Sabayon repository and want your packages to get built on each push to the git repository You want to track remote repository changes and test (useful if you can&rsquo;t setup a webhook) Setup an Entropy repo with a Docker image, and how to mantain packages In future, i&rsquo;ll write also a post also on how to track the packages remotely with CircleCi.
                             
                         
                     </div>

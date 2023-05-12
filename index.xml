@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 11 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://mudler.pm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://mudler.pm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Question Answering on Documents locally with LangChain, LocalAI, Chroma, and GPT4All</title>
+      <link>https://mudler.pm/posts/localai-question-answering/</link>
+      <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://mudler.pm/posts/localai-question-answering/</guid>
+      <description>Have you ever dreamed of building AI-native applications that can leverage the power of large language models (LLMs) without relying on expensive cloud services or complex infrastructure? If so, you’re not alone. Many developers are looking for ways to create and deploy AI-powered solutions that are fast, flexible, and cost-effective, or just experiment locally. In this blog post, I’m going to show you how you can use three amazing tools and a language model like gpt4all to : LangChain, LocalAI, and Chroma.</description>
+    </item>
+    
     <item>
       <title>LocalAI updates</title>
       <link>https://mudler.pm/posts/localai/</link>
