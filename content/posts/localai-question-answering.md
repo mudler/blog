@@ -87,10 +87,10 @@ Our script will do the following:
 
 - It imports the necessary modules from the langchain library and the os module.
 - It sets the base_path variable to the OpenAI API endpoint, which is used to access the OpenAI embeddings model.
-- It creates a TextLoader object that loads the text file and returns a list of documents (each document is a string).
-- It creates a CharacterTextSplitter object that splits each document into smaller chunks of 300 characters with an overlap of 70 characters.
-    - Alternatively, it can use a TokenTextSplitter object that splits each document into tokens (words or punctuation marks).
-- It creates an OpenAIEmbeddings object that uses the `text-embedding-ada-002` model to generate embeddings (numeric representations) for each chunk of text.
+- It creates a `TextLoader` object that loads the text file and returns a list of documents (each document is a string).
+- It creates a `CharacterTextSplitter` object that splits each document into smaller chunks of 300 characters with an overlap of 70 characters.
+    - Alternatively, it can use a `TokenTextSplitter` object that splits each document into tokens (words or punctuation marks) or `RecursiveCharacterTextSplitter`.
+- It creates an OpenAIEmbeddings object that uses the `text-embedding-ada-002` model to generate embeddings (numeric representations) for each chunk of text. Since we set `OPENAI_API_BASE` it will use LocalAI instead.
 - It creates a Chroma object that stores the embeddings in a vector database. It also specifies a persist_directory where the embeddings are saved on disk.
 - It calls the persist method to save the embeddings.
 
@@ -148,35 +148,22 @@ To query the storage, we’ll use a python script which uses LangChain and Local
 Our script will do the following:
 
 - It imports the necessary modules from LangChain and os.
-- It loads and processes a text file called state_of_the_union.txt using the TextLoader and the CharacterTextSplitter classes. These classes help split the text into smaller chunks that can be fed to a language model.
-- It embeds and stores the texts using the OpenAIEmbeddings class, which uses the OpenAI API to generate embeddings for each text chunk. - However,  since we set `OPENAI_API_BASE` it will use LocalAI instead. It also uses the Chroma class, which is a vector store that can persist the embeddings on disk for later use.
-- It creates a question answering system using the VectorDBQA class, which can query the vector store using natural language questions. It also uses the OpenAI class, which is a wrapper for the OpenAI API that can specify parameters such as temperature and model name. In this case, it uses the `gpt-3.5-turbo` model, which is configured to redirect requests to `gpt4all`.
+- It calculate embeds the question using the OpenAIEmbeddings class, which uses the OpenAI API to generate embeddings for each text chunk. - However, since we set `OPENAI_API_BASE` it will use **LocalAI** instead. It also uses the Chroma class, which is a vector store that can persist the embeddings on disk for later use.
+- It creates a question answering system using the VectorDBQA class, which can query the vector store using natural language questions. It also uses the OpenAI class, which is a wrapper for the OpenAI API that can specify parameters such as temperature and model name. In this case, it uses the `gpt-3.5-turbo` model, and LocalAI is configured to redirect requests to the `gpt4all` model instead.
 - Finally, it runs a sample query on the question answering system, asking “What the president said about taxes ?” and prints the answer.
 
 ```python
-
 import os
 from langchain.vectorstores import Chroma
 from langchain.embeddings import OpenAIEmbeddings
-from langchain.text_splitter import RecursiveCharacterTextSplitter,CharacterTextSplitter
 from langchain.llms import OpenAI
 from langchain.chains import VectorDBQA
-from langchain.document_loaders import TextLoader
 
 base_path = os.environ.get('OPENAI_API_BASE', 'http://localhost:8080/v1')
 
 # Load and process the text
-loader = TextLoader('state_of_the_union.txt')
-documents = loader.load()
-
-text_splitter = CharacterTextSplitter(chunk_size=300, chunk_overlap=70)
-texts = text_splitter.split_documents(documents)
-
-# Embed and store the texts
-# Supplying a persist_directory will store the embeddings on disk
-persist_directory = 'db'
-
 embedding = OpenAIEmbeddings()
+persist_directory = 'db'
 
 # Now we can load the persisted database from disk, and use it as normal. 
 vectordb = Chroma(persist_directory=persist_directory, embedding_function=embedding)
