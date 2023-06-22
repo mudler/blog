@@ -17,6 +17,8 @@ Nowadays, there are several services that offer question answering to improve do
 
 In this post, I will show you how to set up your own personal Slack bot that can answer questions based on documentation websites, GitHub issues, and code. By the end of this article, you will be able to deploy this bot using Docker or Kubernetes, either for yourself or for your team at work!
 
+You can also try the bot live in our channel (#kairos) by joining [the Kairos Slack channel](https://join.slack.com/t/spectrocloudcommunity/shared_invite/zt-1k7wsz840-ugSsPKzZCP5gkasJ0kNpqw) and opening a thread with `@LocalAI Bot (dev)` (for example, `@LocalAI Bot (dev) does Kairos use TPM?`).
+
 ## The plan
 
 Here's how it works: our code will create a vector database that contains vector representations of different sections of the documentation, code snippets, and GitHub issues. To accomplish this, we will use Langchain and ChromaDB to create the vector database. Langchain is a powerful library that allows interaction with LLMs (Language Model Models), and ChromaDB is a local database that can store documents in the form of embeddings. Embeddings are vectors that represent strings. Embedding databases enable semantic searching within a dataset.
