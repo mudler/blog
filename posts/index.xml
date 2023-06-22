@@ -298,7 +298,9 @@ spec:
 <ul>
 <li><code>OPENAI_API_BASE</code> is set to the default if installing the <code>local-ai</code> chart into the default namespace listening on 8080. Specify a different LocalAI url here.</li>
 </ul>
-<h2 id="stay-updated">Stay updated</h2>
+<h2 id="about-the-author">About the Author</h2>
+<p>I&rsquo;m the creator of LocalAI and I&rsquo;ve been contributing to Free Open Source software for almost 15 years, I&rsquo;ve been working at SUSE and now I&rsquo;m working at SpectroCloud.</p>
+<h3 id="stay-updated">Stay updated</h3>
 <p>If you want to stay-up-to-date on my latest posts or what I am to follow me on Twitter at <a href="https://twitter.com/mudler_it/">@mudler_it</a> and on <a href="https://github.com/mudler">Github</a>.</p>
 ]]></content>
         </item>
