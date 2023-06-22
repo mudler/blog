@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="There has been a lot of buzz around AI, Langchain, and the possibilities they offer nowadays. In this blog post, I will delve into the process of creating a small assistant for yourself or your team on Slack. This assistant will be able to provide answers related to your documentation.
+The problem I work at Spectro Cloud, and we have an exciting open source project called Kairos (check it out at https://kairos." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://mudler.pm/posts/smart-slackbot-for-teams/" />
+
+
+    <title>
+        
+            Question Answering on Documents locally with LangChain, LocalAI, Chroma, and GPT4All :: Mudler blog  — Place where I write about stuff
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.3d89495748aff88bbfbb2a665d8e1260b3aa63445cd77cc810fb6477aba343dd.css">
+
+
+
+
+    <script src="https://kit.fontawesome.com/bdd86d0a63.js" crossorigin="anonymous"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Question Answering on Documents locally with LangChain, LocalAI, Chroma, and GPT4All">
+<meta itemprop="description" content="There has been a lot of buzz around AI, Langchain, and the possibilities they offer nowadays. In this blog post, I will delve into the process of creating a small assistant for yourself or your team on Slack. This assistant will be able to provide answers related to your documentation.
+The problem I work at Spectro Cloud, and we have an exciting open source project called Kairos (check it out at https://kairos."><meta itemprop="datePublished" content="2023-06-22T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-06-22T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1998"><meta itemprop="image" content="https://mudler.pm"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://mudler.pm"/>
+
+<meta name="twitter:title" content="Question Answering on Documents locally with LangChain, LocalAI, Chroma, and GPT4All"/>
+<meta name="twitter:description" content="There has been a lot of buzz around AI, Langchain, and the possibilities they offer nowadays. In this blog post, I will delve into the process of creating a small assistant for yourself or your team on Slack. This assistant will be able to provide answers related to your documentation.
+The problem I work at Spectro Cloud, and we have an exciting open source project called Kairos (check it out at https://kairos."/>
+
+
+
+    <meta property="og:title" content="Question Answering on Documents locally with LangChain, LocalAI, Chroma, and GPT4All" />
+<meta property="og:description" content="There has been a lot of buzz around AI, Langchain, and the possibilities they offer nowadays. In this blog post, I will delve into the process of creating a small assistant for yourself or your team on Slack. This assistant will be able to provide answers related to your documentation.
+The problem I work at Spectro Cloud, and we have an exciting open source project called Kairos (check it out at https://kairos." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mudler.pm/posts/smart-slackbot-for-teams/" /><meta property="og:image" content="https://mudler.pm"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-06-22T00:00:00+00:00" /><meta property="og:site_name" content="Mudler blog" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2023-06-22 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+<link href="https://mudler.pmfeed.json" rel="alternate"
+    type="application/json" title="Mudler blog" />
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">mudler blog</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <style>
+
+  
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .search-box {
+    border: none;
+    background-color: transparent;
+    color: #333;
+    flex: 1;
+    padding: 8px 8px 8px 28px;
+    border-radius: 20px;
+    font-size: 16px;
+  }
+
+  .search-button {
+    border: none;
+    background-color: #fff;
+    color: #333;
+    padding: 8px;
+    border-radius: 20px;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.7;
+  }
+
+  .search-icon i {
+    font-size: 16px;
+  }
+
+  .search-button:hover {
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+  }
+  </style>
+
+<nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/about">
+                        About
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+
+    
+        <div class="submenu">
+            <form action="/search" method="GET">
+                <div class="search-container">
+                  <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                  </div>
+                  <input type="search" name="q" id="search-query" placeholder="Search..." class="search-box">
+                  <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
+        </div>
+    </ul>
+
+    
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <i class="fa-solid fa-clock"></i>
+        10 minutes
+        <i class="fa-solid fa-clipboard"></i>
+        1998 Words
+        
+      </p>
+      <p>
+        <i class="fa-solid fa-calendar-days"></i>
+        
+          2023-06-22 00:00
+        
+
+         
+          
+        
+      </p>
+      <p>
+      
+      
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://mudler.pm/posts/smart-slackbot-for-teams/">Question Answering on Documents locally with LangChain, LocalAI, Chroma, and GPT4All</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <p>There has been a lot of buzz around AI, Langchain, and the possibilities they offer nowadays. In this blog post, I will delve into the process of creating a small assistant for yourself or your team on Slack. This assistant will be able to provide answers related to your documentation.</p>
+<p><img src="https://github.com/spectrocloud-labs/Slack-QA-bot/assets/2420543/6047e1ff-22d5-4b03-9d73-fcb7fb19a2c1" alt="Kairos-TPM-Slackbot"></p>
+<h2 id="the-problem">The problem</h2>
+<p>I work at <a href="https://www.spectrocloud.com/">Spectro Cloud</a>, and we have an exciting open source project called <a href="https://kairos.io">Kairos</a> (check it out at <a href="https://kairos.io">https://kairos.io</a> if you want to learn more about it!). Kairos is a Meta-Linux, immutable distribution designed for running Kubernetes at the Edge. One of the challenges we face, aside from creating good documentation, is making it easily accessible and consumable for our community. Documentation evolves rapidly, and it&rsquo;s easy to lose track.
+Documentation is a critical part of any project. It&rsquo;s the first thing people see when they visit your website, and it&rsquo;s the first thing they look at when they want to learn more about your project, and when a project generates a large amount of documentation, it becomes difficult not only to navigate through it but also to find exactly what you&rsquo;re looking for.</p>
+<p>Nowadays, there are several services that offer question answering to improve documentation. However, if you&rsquo;re like me and want to understand how things work behind the scenes, and perhaps build your own solution, then keep reading.</p>
+<p>In this post, I will show you how to set up your own personal Slack bot that can answer questions based on documentation websites, GitHub issues, and code. By the end of this article, you will be able to deploy this bot using Docker or Kubernetes, either for yourself or for your team at work!</p>
+<h2 id="the-plan">The plan</h2>
+<p>Here&rsquo;s how it works: our code will create a vector database that contains vector representations of different sections of the documentation, code snippets, and GitHub issues. To accomplish this, we will use Langchain and ChromaDB to create the vector database. Langchain is a powerful library that allows interaction with LLMs (Language Model Models), and ChromaDB is a local database that can store documents in the form of embeddings. Embeddings are vectors that represent strings. Embedding databases enable semantic searching within a dataset.</p>
+<p>For LLM inference, we will also utilize LocalAI. LocalAI allows us to run LLMs and serves as a drop-in replacement for OpenAI. Although there are other ways to interact with LLMs locally, in this case, I want a clear separation between the model execution and the application logic. This separation enables me to focus more on the core functionality of my bot. It also makes maintenance and updates easier on the go. We can replace the underlying models behind the scenes without modifying our code. Additionally, we can leverage the existing OpenAI libraries, which is quite handy. We will simulate writing code that works with OpenAI, but we will actually test it locally. This approach also allows us to use the same code with OpenAI directly or Azure, if needed.</p>
+<p>A summary of what we will need:</p>
+<ul>
+<li>Basic knowledge of Python and Docker to create a container image for our Slack bot.</li>
+<li>LocalAI for running LLMs locally (no GPU required, just a modern CPU).</li>
+<li>An LLM model of your choice (I personally found airoboros to be quite good for Q&amp;A).</li>
+<li>No OpenAI API keys or external services are needed. We will host the bot on our own without relying on remote AI APIs.</li>
+<li>If deploying on Kubernetes in the cloud, you will need a cluster. If running on bare metal, I&rsquo;ve tested this on Kairos (<a href="https://kairos.io">https://kairos.io</a>).</li>
+</ul>
+<h2 id="tools-we-will-use">Tools we will use</h2>
+<p><strong>LocalAI</strong>: It&rsquo;s a project created by me and it is completely community-driven. I encourage you to help and contribute if you want! LocalAI lets you run LLM from different families and it has an OpenAI compatible API endpoint which allows to be used with exiting clients. You can learn more about LocalAI here <a href="https://github.com/go-skynet/LocalAI">https://github.com/go-skynet/LocalAI</a> and in the official website <a href="https://localai.io">https://localai.io</a>.</p>
+<p><strong>Langchain</strong>: is a development framework created by Harrison Chase to build applications powered by language models. See: <a href="https://python.langchain.com/docs/get_started/introduction.html">https://python.langchain.com/docs/get_started/introduction.html</a></p>
+<p><strong>Docker</strong>: we will run the slack bot with Docker to simplify configuration. A <code>docker-compose.yml</code> file is provided as an example on how to start the slack bot and LocalAI.</p>
+<h2 id="how-the-bot-works">How the bot works</h2>
+<p>If you&rsquo;re not interested in the details, you can skip directly to the Setup section below. In this section, I will explain how the bot works.</p>
+<p>The bot is a generic Slack bot customized to provide answers using Langchain on datasets. You can view the full code of the bot here: <a href="https://github.com/spectrocloud-labs/Slack-QA-bot">https://github.com/spectrocloud-labs/Slack-QA-bot</a>. The interesting part of the bot lies in the <code>memory_ops.py</code> file (<a href="https://github.com/spectrocloud-labs/Slack-QA-bot/blob/main/app/memory_ops.py)">https://github.com/spectrocloud-labs/Slack-QA-bot/blob/main/app/memory_ops.py)</a>. Here&rsquo;s what we do in that file:</p>
+<ul>
+<li>Build a knowledge base for the bot to use for answering questions.</li>
+<li>When asked questions, the bot utilizes the knowledge base to enhance its answers.</li>
+</ul>
+<h3 id="building-a-knowledge-base">Building a knowledge base</h3>
+<p>The core of the bot lies in this Python function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">build_knowledgebase</span>(sitemap):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Load environment variables</span>
+</span></span><span style="display:flex;"><span>    repositories <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">&#34;REPOSITORIES&#34;</span>)<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;,&#34;</span>)
+</span></span><span style="display:flex;"><span>    issue_repos <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">&#34;ISSUE_REPOSITORIES&#34;</span>)<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;,&#34;</span>)
+</span></span><span style="display:flex;"><span>    embeddings <span style="color:#f92672">=</span> HuggingFaceEmbeddings(model_name<span style="color:#f92672">=</span>EMBEDDINGS_MODEL_NAME)
+</span></span><span style="display:flex;"><span>    chunk_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span>
+</span></span><span style="display:flex;"><span>    chunk_overlap <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    git_loaders <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> repo <span style="color:#f92672">in</span> repositories:
+</span></span><span style="display:flex;"><span>        git_loader <span style="color:#f92672">=</span> GitLoader(
+</span></span><span style="display:flex;"><span>            clone_url<span style="color:#f92672">=</span>os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>repo<span style="color:#e6db74">}</span><span style="color:#e6db74">_CLONE_URL&#34;</span>),
+</span></span><span style="display:flex;"><span>            repo_path<span style="color:#f92672">=</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;/tmp/</span><span style="color:#e6db74">{</span>repo<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>,
+</span></span><span style="display:flex;"><span>            branch<span style="color:#f92672">=</span>os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>repo<span style="color:#e6db74">}</span><span style="color:#e6db74">_BRANCH&#34;</span>, <span style="color:#e6db74">&#34;main&#34;</span>)
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        git_loaders<span style="color:#f92672">.</span>append(git_loader)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> repo <span style="color:#f92672">in</span> issue_repos:
+</span></span><span style="display:flex;"><span>        loader <span style="color:#f92672">=</span> GitHubIssuesLoader(
+</span></span><span style="display:flex;"><span>            repo<span style="color:#f92672">=</span>repo,
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        git_loaders<span style="color:#f92672">.</span>append(loader)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sitemap_loader <span style="color:#f92672">=</span> SitemapLoader(web_path<span style="color:#f92672">=</span>sitemap)
+</span></span><span style="display:flex;"><span>    documents <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> git_loader <span style="color:#f92672">in</span> git_loaders:
+</span></span><span style="display:flex;"><span>        documents<span style="color:#f92672">.</span>extend(git_loader<span style="color:#f92672">.</span>load())
+</span></span><span style="display:flex;"><span>    documents<span style="color:#f92672">.</span>extend(sitemap_loader<span style="color:#f92672">.</span>load())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> doc <span style="color:#f92672">in</span> documents:
+</span></span><span style="display:flex;"><span>        doc<span style="color:#f92672">.</span>metadata <span style="color:#f92672">=</span> fix_metadata(doc<span style="color:#f92672">.</span>metadata)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    text_splitter <span style="color:#f92672">=</span> RecursiveCharacterTextSplitter(chunk_size<span style="color:#f92672">=</span>chunk_size, chunk_overlap<span style="color:#f92672">=</span>chunk_overlap)
+</span></span><span style="display:flex;"><span>    texts <span style="color:#f92672">=</span> text_splitter<span style="color:#f92672">.</span>split_documents(documents)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Creating embeddings. This may take a few minutes...&#34;</span>)
+</span></span><span style="display:flex;"><span>    db <span style="color:#f92672">=</span> Chroma<span style="color:#f92672">.</span>from_documents(texts, embeddings, persist_directory<span style="color:#f92672">=</span>PERSIST_DIRECTORY, client_settings<span style="color:#f92672">=</span>CHROMA_SETTINGS)
+</span></span><span style="display:flex;"><span>    db<span style="color:#f92672">.</span>persist()
+</span></span><span style="display:flex;"><span>    db <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span></code></pre></div><p>We use the locally run <code>HuggingFaceEmbeddings</code> (<code>embeddings = HuggingFaceEmbeddings(model_name=EMBEDDINGS_MODEL_NAME)</code>) and Langchain to split the document into chunks. We then utilize Chroma to construct a vector database.</p>
+<p>The code above utilizes the Github Loaders and GithubIssue loader from Langchain to retrieve information about code and GitHub issues from various GitHub repositories. The repositories can be defined via environment variables. We also use the <code>SitemapLoader</code> to ingest a <code>sitemap.xml</code> file and scrape an entire website. This is particularly useful if you already have documentation or a website.</p>
+<h3 id="querying-the-knowledge-base">Querying the knowledge base</h3>
+<p>Another crucial part of the code is how we interact with the AI and enhance the search results.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">ask_with_memory</span>(line) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>    embeddings <span style="color:#f92672">=</span> HuggingFaceEmbeddings(model_name<span style="color:#f92672">=</span>EMBEDDINGS_MODEL_NAME)
+</span></span><span style="display:flex;"><span>    db <span style="color:#f92672">=</span> Chroma(persist_directory<span style="color:#f92672">=</span>PERSIST_DIRECTORY, embedding_function<span style="color:#f92672">=</span>embeddings, client_settings<span style="color:#f92672">=</span>CHROMA_SETTINGS)
+</span></span><span style="display:flex;"><span>    retriever <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>as_retriever()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    res <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    llm <span style="color:#f92672">=</span> ChatOpenAI(temperature<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, openai_api_base<span style="color:#f92672">=</span>BASE_PATH, model_name<span style="color:#f92672">=</span>OPENAI_MODEL)
+</span></span><span style="display:flex;"><span>    qa <span style="color:#f92672">=</span> RetrievalQA<span style="color:#f92672">.</span>from_chain_type(llm<span style="color:#f92672">=</span>llm, chain_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stuff&#34;</span>, retriever<span style="color:#f92672">=</span>retriever, return_source_documents<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Get the answer from the chain</span>
+</span></span><span style="display:flex;"><span>    res <span style="color:#f92672">=</span> qa(<span style="color:#e6db74">&#34;---------------------</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> Given the context above, answer the following question: &#34;</span> <span style="color:#f92672">+</span> line)
+</span></span><span style="display:flex;"><span>    answer, docs <span style="color:#f92672">=</span> res[<span style="color:#e6db74">&#39;result&#39;</span>], res[<span style="color:#e6db74">&#39;source_documents&#39;</span>]
+</span></span><span style="display:flex;"><span>    res <span style="color:#f92672">=</span> answer <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n\n\n</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Sources:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Print the relevant sources used for the answer</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> document <span style="color:#f92672">in</span> docs:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;source&#34;</span> <span style="color:#f92672">in</span> document<span style="color:#f92672">.</span>metadata:
+</span></span><span style="display:flex;"><span>            res <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">---------------------</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> document<span style="color:#f92672">.</span>metadata[<span style="color:#e6db74">&#34;source&#34;</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">---------------------</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            res <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">---------------------</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> No source available (sorry!) </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">---------------------</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        res <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;```</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">+</span>document<span style="color:#f92672">.</span>page_content<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">```&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> res
+</span></span></code></pre></div><p>In this section, we load the previously created embedding database and configure the Langchain <code>RetrievalQA</code> object. Once the knowledge base has been built, we simply point to the embedding database and specify the embedding engine. In this case, we use local embeddings with HuggingFace, but other options could have been used as well (for example, LocalAI also has its own embedding mechanism).</p>
+<p>We then configure the <code>llm</code> to use LocalAI. Note that we use ChatOpenAI and set <code>openai_api_base</code> to use <a href="https://github.com/go-skynet/LocalAI">LocalAI</a> instead.</p>
+<h2 id="setup">Setup</h2>
+<p>Now, let&rsquo;s proceed with setting up our bot! Here&rsquo;s what we need:</p>
+<ul>
+<li>Set up a Slack server and gain access to add new applications.</li>
+<li>Create a GitHub repository (optional) and obtain a Personal Access Token to fetch issues from a repository.</li>
+<li>Ensure your website has an accessible <code>sitemap.xml</code> file so that our bot can scrape the website content.</li>
+<li>Install the <code>docker</code> and <code>docker-compose</code> applications locally if missing.</li>
+<li>Choose a model for use with LocalAI (refer to <a href="https://github.com/go-skynet/LocalAI)">https://github.com/go-skynet/LocalAI)</a>.</li>
+</ul>
+<p>That&rsquo;s it! We don&rsquo;t need an OpenAI API key or any external services except GitHub, optionally, which we use to fetch the content we want to index.</p>
+<h3 id="clone-the-required-files">Clone the required files</h3>
+<p>We will run everything locally using Docker. At the end of this article, I will also provide a deployment file that works with Kubernetes.</p>
+<p>To get started, clone the LocalAI repository locally:</p>
+<pre tabindex="0"><code>git clone https://github.com/go-skynet/LocalAI
+cd LocalAI/examples/slack-qa-bot
+</code></pre><p>You will find a <code>docker-compose.yaml</code> file and a <code>.env.example</code> file. We need to edit the <code>.env</code> file and add the Slack tokens to allow the bot to connect.</p>
+<h3 id="configuring-slack">Configuring Slack</h3>
+<p>To install the bot, we need to create an application in the Slack workspace. Follow these steps:</p>
+<ol>
+<li>
+<p>Go to <a href="https://api.slack.com/apps/">https://api.slack.com/apps/</a> and click on &ldquo;Create new App&rdquo;.
+<img src="https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/9e474872-0d24-4601-b453-679f3601de18" alt="Screenshot 1"></p>
+</li>
+<li>
+<p>Select &ldquo;From an app Manifest&rdquo;.
+<img src="https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/962de606-a694-47ad-8fc0-cd096668e07f" alt="Screenshot 2"></p>
+</li>
+<li>
+<p>Choose the workspace where you want to add the bot.
+<img src="https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/37573a42-87b6-4351-ad19-303e5ad610ed" alt="Screenshot 3"></p>
+</li>
+<li>
+<p>Copy the content of the <a href="https://raw.githubusercontent.com/spectrocloud-labs/Slack-QA-bot/main/manifest-dev.yml">manifest-dev.yml</a> file from the repository and paste it into the app manifest.
+<img src="https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/f134d1c6-eded-4114-81a0-d5fa2f870baf" alt="Screenshot 4"></p>
+</li>
+<li>
+<p>Install the app in your workspace.
+<img src="https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/cf84d743-6ccd-41a5-9b7e-41591b6d4939" alt="Screenshot 5"></p>
+</li>
+<li>
+<p>Create an app level token with the <code>connection:write</code> scope. Save this token as <code>SLACK_APP_TOKEN</code>.
+<img src="https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/997573a6-8fb7-4357-b811-bdd01e52b158" alt="Screenshot 6">
+<img src="https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/763b1854-2b5a-4690-b5fa-a17fd720f40d" alt="Screenshot 7"></p>
+</li>
+<li>
+<p>Obtain the OAuth token by going to OAuth &amp; Permissions and copying the OAuth Token. Use this token as <code>SLACK_BOT_TOKEN</code>.</p>
+<p><img src="https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/ce8eff39-305c-482c-98c6-ed9a03994b3b" alt="Screenshot 8">
+<img src="https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/96f2abe6-9bae-47f5-b08b-c569c138cf00" alt="Screenshot 9"></p>
+</li>
+</ol>
+<h3 id="modifying-the-env-file">Modifying the .env File</h3>
+<p>Follow these steps to modify the .env file:</p>
+<ol>
+<li>
+<p>Copy the example env file using the following command:</p>
+<pre tabindex="0"><code>cp -rfv .env.example .env
+</code></pre></li>
+<li>
+<p>Open the .env file and update the values of <code>SLACK_APP_TOKEN</code> and <code>SLACK_BOT_TOKEN</code> with the tokens generated in the previous steps.</p>
+</li>
+<li>
+<p>Additionally, if needed, modify the URL of the website to be indexed and set it as the value for <code>SITEMAP</code> in the .env file.</p>
+</li>
+</ol>
+<h3 id="running-with-docker-compose">Running with Docker Compose</h3>
+<p>To run the bot using Docker Compose, follow these steps.</p>
+<p>Run the following command if you&rsquo;re using Docker and <code>docker-compose</code>:</p>
+<pre tabindex="0"><code>docker-compose up
+</code></pre><p>If you&rsquo;re running Docker with <code>docker compose</code>, use the following command:</p>
+<pre tabindex="0"><code>docker compose up
+</code></pre><p>By default, the local-ai setup will prepare and use the gpt4all-j model, which should work for most cases. However, if you want to change models, refer to the documentation or ask for assistance in the forums or Discord community.</p>
+<h3 id="trying-it-out">Trying It Out!</h3>
+<p>Once the bot starts successfully, you can ask it questions about the documentation in the designated channel. Check out this video for an example of how it works, including linking to the relevant sources in the documentation:</p>
+<p><img src="https://github.com/spectrocloud-labs/Slack-QA-bot/assets/2420543/6047e1ff-22d5-4b03-9d73-fcb7fb19a2c1" alt="Kairos-TPM-Slackbot"></p>
+<h3 id="bonus-setup-other-models">Bonus: Setup other models</h3>
+<p>The <code>.env</code> file specifies to configure gpt4all automatically, however you can use other models by copying the manually in the models folder, or use the gallery:</p>
+<pre tabindex="0"><code># See: https://github.com/go-skynet/model-gallery
+PRELOAD_MODELS=[{&#34;url&#34;: &#34;github:go-skynet/model-gallery/gpt4all-j.yaml&#34;, &#34;name&#34;: &#34;gpt-3.5-turbo&#34;}]
+</code></pre><p>The <code>PRELOAD_MODELS</code> environment variable in the <code>.env</code> file specifies the configuration for the <code>gpt-3.5-turbo</code> model. See also: <a href="https://github.com/go-skynet/model-gallery">https://github.com/go-skynet/model-gallery</a> in order to run other models from the gallery.</p>
+<p>To run manually models, see the <code>chatbot-ui-manual</code> example in LocalAI, and comment the <code>PRELOAD_MODELS</code> environment variable.</p>
+<h3 id="bonus-kubernetes-setup">Bonus: Kubernetes setup</h3>
+<p>This is a manifest which can be used as a starting point:</p>
+<pre tabindex="0"><code>apiVersion: v1
+kind: Namespace
+metadata:
+  name: slack-bot
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: knowledgebase
+  namespace: slack-bot
+  labels:
+    app: localai
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: localai
+  namespace: slack-bot
+  labels:
+    app: localai
+spec:
+  selector:
+    matchLabels:
+      app: localai
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: localai
+      name: localai
+    spec:
+      containers:
+        - name: localai-slack
+          env:
+          - name: OPENAI_API_KEY
+            value: &#34;x&#34;
+          - name: SLACK_APP_TOKEN
+            value: &#34;xapp-1-&#34;
+          - name: SLACK_BOT_TOKEN
+            value: &#34;xoxb-&#34;
+          - name: OPENAI_MODEL
+            value: &#34;gpt-3.5-turbo&#34;
+          - name: OPENAI_TIMEOUT_SECONDS
+            value: &#34;400&#34;
+          - name: OPENAI_SYSTEM_TEXT
+            value: &#34;&#34;
+          - name: MEMORY_DIR
+            value: &#34;/memory&#34;
+          - name: TRANSLATE_MARKDOWN
+            value: &#34;true&#34;
+          - name: OPENAI_API_BASE
+            value: &#34;http://local-ai.default.svc.cluster.local:8080&#34;
+          - name: REPOSITORIES
+            value: &#34;KAIROS,AGENT,SDK,OSBUILDER,PACKAGES,IMMUCORE&#34;
+          - name: KAIROS_CLONE_URL
+            value: &#34;https://github.com/kairos-io/kairos&#34;
+          - name: KAIROS_BRANCH
+            value: &#34;master&#34;
+          - name: AGENT_CLONE_URL
+            value: &#34;https://github.com/kairos-io/kairos-agent&#34;
+          - name: AGENT_BRANCH
+            value: &#34;main&#34;
+          - name: SDK_CLONE_URL
+            value: &#34;https://github.com/kairos-io/kairos-sdk&#34;
+          - name: SDK_BRANCH
+            value: &#34;main&#34;
+          - name: OSBUILDER_CLONE_URL
+            value: &#34;https://github.com/kairos-io/osbuilder&#34;
+          - name: OSBUILDER_BRANCH
+            value: &#34;master&#34;
+          - name: PACKAGES_CLONE_URL
+            value: &#34;https://github.com/kairos-io/packages&#34;
+          - name: PACKAGES_BRANCH
+            value: &#34;main&#34;
+          - name: IMMUCORE_CLONE_URL
+            value: &#34;https://github.com/kairos-io/immucore&#34;
+          - name: IMMUCORE_BRANCH
+            value: &#34;master&#34;
+          - name: GITHUB_PERSONAL_ACCESS_TOKEN
+            value: &#34;&#34;
+          - name: ISSUE_REPOSITORIES
+            value: &#34;kairos-io/kairos&#34;
+          image: quay.io/spectrocloud-labs/slack-qa-local-bot:qa
+          imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: &#34;/memory&#34;
+              name: knowledgebase
+      volumes:
+        - name: knowledgebase
+          persistentVolumeClaim:
+            claimName: knowledgebase
+</code></pre><p>Note:</p>
+<ul>
+<li><code>OPENAI_API_BASE</code> is set to the default if installing the <code>local-ai</code> chart into the default namespace listening on 8080. Specify a different LocalAI url here.</li>
+</ul>
+<h2 id="stay-updated">Stay updated</h2>
+<p>If you want to stay-up-to-date on my latest posts or what I am to follow me on Twitter at <a href="https://twitter.com/mudler_it/">@mudler</a> and on <a href="https://github.com/mudler">Github</a>.</p>
+
+      </div>
+    </article>
+      <hr />
+    <div class="post-info">
+      
+    <div class="pagination">
+        
+        <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+        </div>
+        
+
+        <div class="pagination__buttons">
+            
+
+            
+            <span class="button next">
+                <a href="https://mudler.pm/posts/localai-question-answering/">
+                    <span class="button__text">Question Answering on Documents locally with LangChain, LocalAI, Chroma, and GPT4All</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+    </div>
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fmudler.pm%2fposts%2fsmart-slackbot-for-teams%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2fmudler.pm%2fposts%2fsmart-slackbot-for-teams%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Question%20Answering%20on%20Documents%20locally%20with%20LangChain%2c%20LocalAI%2c%20Chroma%2c%20and%20GPT4All&amp;caption=Question%20Answering%20on%20Documents%20locally%20with%20LangChain%2c%20LocalAI%2c%20Chroma%2c%20and%20GPT4All&amp;canonicalUrl=https%3a%2f%2fmudler.pm%2fposts%2fsmart-slackbot-for-teams%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=Question%20Answering%20on%20Documents%20locally%20with%20LangChain%2c%20LocalAI%2c%20Chroma%2c%20and%20GPT4All&amp;body=https%3a%2f%2fmudler.pm%2fposts%2fsmart-slackbot-for-teams%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2fmudler.pm%2fposts%2fsmart-slackbot-for-teams%2f&amp;media=https%3a%2f%2fmudler.pm%2fposts%2fsmart-slackbot-for-teams%2f;description=Question%20Answering%20on%20Documents%20locally%20with%20LangChain%2c%20LocalAI%2c%20Chroma%2c%20and%20GPT4All" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fmudler.pm%2fposts%2fsmart-slackbot-for-teams%2f&amp;title=Question%20Answering%20on%20Documents%20locally%20with%20LangChain%2c%20LocalAI%2c%20Chroma%2c%20and%20GPT4All&amp;summary=Question%20Answering%20on%20Documents%20locally%20with%20LangChain%2c%20LocalAI%2c%20Chroma%2c%20and%20GPT4All&amp;source=https%3a%2f%2fmudler.pm%2fposts%2fsmart-slackbot-for-teams%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2fmudler.pm%2fposts%2fsmart-slackbot-for-teams%2f&amp;resubmit=true&amp;title=Question%20Answering%20on%20Documents%20locally%20with%20LangChain%2c%20LocalAI%2c%20Chroma%2c%20and%20GPT4All" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2fmudler.pm%2fposts%2fsmart-slackbot-for-teams%2f;title=Question%20Answering%20on%20Documents%20locally%20with%20LangChain%2c%20LocalAI%2c%20Chroma%2c%20and%20GPT4All" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Question%20Answering%20on%20Documents%20locally%20with%20LangChain%2c%20LocalAI%2c%20Chroma%2c%20and%20GPT4All%20https%3a%2f%2fmudler.pm%2fposts%2fsmart-slackbot-for-teams%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmudler.pm%2fposts%2fsmart-slackbot-for-teams%2f&amp;t=Question%20Answering%20on%20Documents%20locally%20with%20LangChain%2c%20LocalAI%2c%20Chroma%2c%20and%20GPT4All" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Question%20Answering%20on%20Documents%20locally%20with%20LangChain%2c%20LocalAI%2c%20Chroma%2c%20and%20GPT4All&amp;url=https%3a%2f%2fmudler.pm%2fposts%2fsmart-slackbot-for-teams%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </div>
+  </div>
+</a>
+
+      </div>
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+        <div class="footer__inner">
+            <ul class="icons">
+                    
+        <li><a href="https://twitter.com/mudler_it" class="icon fa-brands fa-twitter" target="_blank" rel="noopener" title="Twitter"></a></li>
+    
+        <li><a href="mailto:mudler@mocaccino.org" class="icon fa-solid fa-envelope" target="_blank" rel="noopener" title="Email"></a></li>
+    
+        <li><a href="https://github.com/mudler" class="icon fa-brands fa-github" target="_blank" rel="noopener" title="Github"></a></li>
+    
+        <li><a href="https://www.linkedin.com/in/ettore-di-giacinto-211a4166/" class="icon fa-brands fa-linkedin" target="_blank" rel="noopener" title="Linkedin"></a></li>
+    
+                
+                <li><a href="https://mudler.pm/posts/index.xml" target="_blank" title="rss" class="icon fa-solid fa-rss"></a></li>
+                
+            </ul>
+        </div>
+    
+    
+        <div class="footer__inner">
+            <span>&copy;2023</span>&nbsp;
+            <span><a href="https://mudler.pm"></a></span>&nbsp;
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+        </div>
+    
+        <div class="footer__inner">
+          
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
+
+
+
+    </body>
+</html>

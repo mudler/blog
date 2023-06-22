@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 12 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://mudler.pm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://mudler.pm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Question Answering on Documents locally with LangChain, LocalAI, Chroma, and GPT4All</title>
+      <link>https://mudler.pm/posts/smart-slackbot-for-teams/</link>
+      <pubDate>Thu, 22 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://mudler.pm/posts/smart-slackbot-for-teams/</guid>
+      <description>There has been a lot of buzz around AI, Langchain, and the possibilities they offer nowadays. In this blog post, I will delve into the process of creating a small assistant for yourself or your team on Slack. This assistant will be able to provide answers related to your documentation.
+The problem I work at Spectro Cloud, and we have an exciting open source project called Kairos (check it out at https://kairos.</description>
+    </item>
+    
     <item>
       <title>Question Answering on Documents locally with LangChain, LocalAI, Chroma, and GPT4All</title>
       <link>https://mudler.pm/posts/localai-question-answering/</link>
