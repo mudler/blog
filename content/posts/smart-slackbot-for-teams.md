@@ -10,10 +10,12 @@ There has been a lot of buzz around AI, Langchain, and the possibilities they of
 
 ## The problem
 
-I work at [Spectro Cloud](https://www.spectrocloud.com/), and we have an exciting open source project called [Kairos](https://kairos.io) (check it out at https://kairos.io if you want to learn more about it!). Kairos is a Meta-Linux, immutable distribution designed for running Kubernetes at the Edge. One of the challenges we face, aside from creating good documentation, is making it easily accessible and consumable for our community. Documentation evolves rapidly, and it's easy to lose track.
-Documentation is a critical part of any project. It's the first thing people see when they visit your website, and it's the first thing they look at when they want to learn more about your project, and when a project generates a large amount of documentation, it becomes difficult not only to navigate through it but also to find exactly what you're looking for.
+I work at [Spectro Cloud](https://www.spectrocloud.com/), and we have an exciting open source project called [Kairos](https://kairos.io) (check it out at https://kairos.io if you want to learn more about it!). Kairos is a Meta-Linux, immutable distribution designed for running Kubernetes at the Edge. 
 
-Nowadays, there are several services that offer question answering to improve documentation. However, if you're like me and want to understand how things work behind the scenes, and perhaps build your own solution, then keep reading.
+One of the challenges we face, aside from creating good documentation, is making it easily accessible and consumable for our community. Documentation evolves rapidly, and it's easy to lose track.
+Documentation is a critical part of any project - it's the first thing people see when they visit your website and when a project generates a large amount of documentation, it becomes difficult not only to navigate through it but also to find exactly what you're looking for.
+
+Nowadays, there are several services that offer question answering to improve documentation and enhance this experience. However, if you're like me and want to understand how things work behind the scenes, and perhaps build your own solution, then keep reading.
 
 In this post, I will show you how to set up your own personal Slack bot that can answer questions based on documentation websites, GitHub issues, and code. By the end of this article, you will be able to deploy this bot using Docker or Kubernetes, either for yourself or for your team at work!
 
