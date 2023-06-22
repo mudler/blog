@@ -340,6 +340,10 @@ Note:
 
 - `OPENAI_API_BASE` is set to the default if installing the `local-ai` chart into the default namespace listening on 8080. Specify a different LocalAI url here.
 
-## Stay updated
+## About the Author
+
+I'm the creator of LocalAI and I've been contributing to Free Open Source software for almost 15 years, I've been working at SUSE and now I'm working at SpectroCloud.
+
+### Stay updated
 
 If you want to stay-up-to-date on my latest posts or what I am to follow me on Twitter at [@mudler_it](https://twitter.com/mudler_it/) and on [Github](https://github.com/mudler).
