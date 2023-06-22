@@ -340,4 +340,4 @@ Note:
 
 ## Stay updated
 
-If you want to stay-up-to-date on my latest posts or what I am to follow me on Twitter at [@mudler](https://twitter.com/mudler_it/) and on [Github](https://github.com/mudler).
+If you want to stay-up-to-date on my latest posts or what I am to follow me on Twitter at [@mudler_it](https://twitter.com/mudler_it/) and on [Github](https://github.com/mudler).
