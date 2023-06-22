@@ -17,7 +17,7 @@ Nowadays, there are several services that offer question answering to improve do
 
 In this post, I will show you how to set up your own personal Slack bot that can answer questions based on documentation websites, GitHub issues, and code. By the end of this article, you will be able to deploy this bot using Docker or Kubernetes, either for yourself or for your team at work!
 
-You can also try the bot live in our channel (#kairos) by joining [the Kairos Slack channel](https://join.slack.com/t/spectrocloudcommunity/shared_invite/zt-1k7wsz840-ugSsPKzZCP5gkasJ0kNpqw) and opening a thread with `@LocalAI Bot (dev)` (for example, `@LocalAI Bot (dev) does Kairos use TPM?`).
+You can also try the bot live in our channel (#kairos) by joining [the Kairos Slack channel](https://join.slack.com/t/spectrocloudcommunity/shared_invite/zt-1k7wsz840-ugSsPKzZCP5gkasJ0kNpqw) and opening a thread with `@LocalAI Bot (dev)` (for example, `@LocalAI Bot (dev) does Kairos use TPM?`. Keep in mind that we self-host this on a small instance, so answers can be _slow_, but typically in range of 1-2 minutes.).
 
 ## The plan
 
