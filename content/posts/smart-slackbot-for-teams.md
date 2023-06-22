@@ -1,53 +1,58 @@
 ---
 title: 'Question Answering on Documents locally with LangChain, LocalAI, Chroma, and GPT4All'
-date: 2023-05-12
+date: 2023-06-22
 draft: false
 ---
 
-There has been a lot of fuzz around AI, langchain, and what you can do with AI nowadays. In this blog post, I'm going to deep dive on how to create a little assistant for you or your team over Slack that can answer to your documentation.
+There has been a lot of buzz around AI, Langchain, and the possibilities they offer nowadays. In this blog post, I will delve into the process of creating a small assistant for yourself or your team on Slack. This assistant will be able to provide answers related to your documentation.
 
 ![Kairos-TPM-Slackbot](https://github.com/spectrocloud-labs/Slack-QA-bot/assets/2420543/6047e1ff-22d5-4b03-9d73-fcb7fb19a2c1)
 
 ## The problem
 
-I work at [Spectro Cloud](https://www.spectrocloud.com/), and we have a very cool open source project called [Kairos](https://kairos.io) (check it out at https://kairos.io if you want to learn about it more!) which is a Meta-Linux, immutable distribution focused on running Kubernetes at the Edge. One among of the challenge we have, beside writing good documentation, is making that easy to access and consume for our community, also, documentation moves fast, and its easy to get lost.
+I work at [Spectro Cloud](https://www.spectrocloud.com/), and we have an exciting open source project called [Kairos](https://kairos.io) (check it out at https://kairos.io if you want to learn more about it!). Kairos is a Meta-Linux, immutable distribution designed for running Kubernetes at the Edge. One of the challenges we face, aside from creating good documentation, is making it easily accessible and consumable for our community. Documentation evolves rapidly, and it's easy to lose track.
+Documentation is a critical part of any project. It's the first thing people see when they visit your website, and it's the first thing they look at when they want to learn more about your project, and when a project generates a large amount of documentation, it becomes difficult not only to navigate through it but also to find exactly what you're looking for.
 
-When a project generates lot of documentation, it is not only hard to navigate it, but also to find exactly what you are looking for. 
+Nowadays, there are several services that offer question answering to improve documentation. However, if you're like me and want to understand how things work behind the scenes, and perhaps build your own solution, then keep reading.
 
-There are quite of few services that nowadays are offering question answering to enhance documentation. But if you are like me that want to understand how something work behind the scene, and try to build your own, keep reading.
-
-In this post I'm going to show you how to setup your own, personal Slack bot that can answer questions on a documentation website, github issues, and code. At the end of this article you will be able to deploy this bot with docker or Kubernetes, for yourself or for your team at work!
+In this post, I will show you how to set up your own personal Slack bot that can answer questions based on documentation websites, GitHub issues, and code. By the end of this article, you will be able to deploy this bot using Docker or Kubernetes, either for yourself or for your team at work!
 
 ## The plan
 
-This is how it works: our code will create a vector database containing a vector representation of chunks of the documentation, code, and github issues. For this purpose we will use Langchain and ChromaDB to create a vector database. Langchain is a powerful library that allows to interact with LLMs, and ChromaDB is a local database that can be used to store documents in forms of embeddings.
-Embeddings, are vectors representing a string. Embedding databases are used to search _semantically_ against a dataset.
+Here's how it works: our code will create a vector database that contains vector representations of different sections of the documentation, code snippets, and GitHub issues. To accomplish this, we will use Langchain and ChromaDB to create the vector database. Langchain is a powerful library that allows interaction with LLMs (Language Model Models), and ChromaDB is a local database that can store documents in the form of embeddings. Embeddings are vectors that represent strings. Embedding databases enable semantic searching within a dataset.
 
-For the LLM inference we are going to use also LocalAI. LocalAI allows to run LLMs and acts as a drop-in replacement for OpenAI. We could of course use other ways to interact with LLM locally, but in this case I do want to have a separate split between what runs the model and the application logic, so I can focus more on the core of my bot. I think it keeps things much easier to maintain and update on the go (we can always replace new models behind the scenes, without touching our code!) and we can leverage the OpenAI libraries already, quite handy. We will fake to write code to work with OpenAI, but we will try that out locally. that also gives us the possibility to even use the same code with OpenAI directly, or Azure.
+For LLM inference, we will also utilize LocalAI. LocalAI allows us to run LLMs and serves as a drop-in replacement for OpenAI. Although there are other ways to interact with LLMs locally, in this case, I want a clear separation between the model execution and the application logic. This separation enables me to focus more on the core functionality of my bot. It also makes maintenance and updates easier on the go. We can replace the underlying models behind the scenes without modifying our code. Additionally, we can leverage the existing OpenAI libraries, which is quite handy. We will simulate writing code that works with OpenAI, but we will actually test it locally. This approach also allows us to use the same code with OpenAI directly or Azure, if needed.
 
-A recap of what we will need:
+A summary of what we will need:
 
-- A bit of python and Docker to create a container image with our slack bot
-- LocalAI to run LLMs locally (no GPU required, just a modern CPU)
-- Some LLM model of choice ( I personally found airoboros quite good for Q&A )
-- No OpenAI api keys needed, or any external service! we are going to host the bot on our own, without any need to interact remote API for the AI stuff.
-- If deploying on Kubernetes in the cloud you need a cluster, of you are running on a baremetal, I've tried this on Kairos (https://kairos.io)
+- Basic knowledge of Python and Docker to create a container image for our Slack bot.
+- LocalAI for running LLMs locally (no GPU required, just a modern CPU).
+- An LLM model of your choice (I personally found airoboros to be quite good for Q&A).
+- No OpenAI API keys or external services are needed. We will host the bot on our own without relying on remote AI APIs.
+- If deploying on Kubernetes in the cloud, you will need a cluster. If running on bare metal, I've tested this on Kairos (https://kairos.io).
+
+## Tools we will use
+
+**LocalAI**: It's a project created by me and it is completely community-driven. I encourage you to help and contribute if you want! LocalAI lets you run LLM from different families and it has an OpenAI compatible API endpoint which allows to be used with exiting clients. You can learn more about LocalAI here https://github.com/go-skynet/LocalAI and in the official website https://localai.io.
+
+**Langchain**: is a development framework created by Harrison Chase to build applications powered by language models. See: https://python.langchain.com/docs/get_started/introduction.html
+
+**Docker**: we will run the slack bot with Docker to simplify configuration. A `docker-compose.yml` file is provided as an example on how to start the slack bot and LocalAI.
 
 ## How the bot works
 
-You can directly jump to the Setup section below if you are not interested in the details, here I'm going to explain how the bot works.
+If you're not interested in the details, you can skip directly to the Setup section below. In this section, I will explain how the bot works.
 
-The bot is a generic Slack bot adapted to answer on datasets using langchain. You can view the full code of the bot here: https://github.com/spectrocloud-labs/Slack-QA-bot, the interesting part of the bot is the `memory_ops.py` file (https://github.com/spectrocloud-labs/Slack-QA-bot/blob/main/app/memory_ops.py), what we do in there is:
+The bot is a generic Slack bot customized to provide answers using Langchain on datasets. You can view the full code of the bot here: https://github.com/spectrocloud-labs/Slack-QA-bot. The interesting part of the bot lies in the `memory_ops.py` file (https://github.com/spectrocloud-labs/Slack-QA-bot/blob/main/app/memory_ops.py). Here's what we do in that file:
 
-- Build a knowledgebase for the bot to ask questions later on
-- When being asked questions, use the knowledgebase to enhance the answer
+- Build a knowledge base for the bot to use for answering questions.
+- When asked questions, the bot utilizes the knowledge base to enhance its answers.
 
-### Build a knowledge base
+### Building a knowledge base
 
-The gist of the bot is in this python function:
+The core of the bot lies in this Python function:
 
 ```python
-
 def build_knowledgebase(sitemap):
     # Load environment variables
     repositories = os.getenv("REPOSITORIES").split(",")
@@ -82,22 +87,21 @@ def build_knowledgebase(sitemap):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
     texts = text_splitter.split_documents(documents)
 
-    print(f"Creating embeddings. May take some minutes...")
+    print(f"Creating embeddings. This may take a few minutes...")
     db = Chroma.from_documents(texts, embeddings, persist_directory=PERSIST_DIRECTORY, client_settings=CHROMA_SETTINGS)
     db.persist()
     db = None
 ```
 
-We use the `HuggingFaceEmbeddings` which are run locally (`embeddings = HuggingFaceEmbeddings(model_name=EMBEDDINGS_MODEL_NAME)`), and we use Langchain to split the document into chunks and Chroma to construct a vector database. 
+We use the locally run `HuggingFaceEmbeddings` (`embeddings = HuggingFaceEmbeddings(model_name=EMBEDDINGS_MODEL_NAME)`) and Langchain to split the document into chunks. We then utilize Chroma to construct a vector database.
 
-The code above uses the Github Loaders and GithubIssue loader from Langchain to retrieve informations about code and Github issues of various Github repositories that can be defined via environment. We also use the `SitemapLoader` so to ingest a `sitemap.xml` file and scrape an entire website. This is particularly useful if you already have a documentation or a website.
+The code above utilizes the Github Loaders and GithubIssue loader from Langchain to retrieve information about code and GitHub issues from various GitHub repositories. The repositories can be defined via environment variables. We also use the `SitemapLoader` to ingest a `sitemap.xml` file and scrape an entire website. This is particularly useful if you already have documentation or a website.
 
-### Query the knowledge base
+### Querying the knowledge base
 
-The other important piece of the code is how we then ask the AI, and how we enhance the result of our search.
+Another crucial part of the code is how we interact with the AI and enhance the search results.
 
 ```python
-
 def ask_with_memory(line) -> str:
     embeddings = HuggingFaceEmbeddings(model_name=EMBEDDINGS_MODEL_NAME)
     db = Chroma(persist_directory=PERSIST_DIRECTORY, embedding_function=embeddings, client_settings=CHROMA_SETTINGS)
@@ -108,7 +112,7 @@ def ask_with_memory(line) -> str:
     qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=retriever, return_source_documents=True)
 
     # Get the answer from the chain
-    res = qa("---------------------\n Given the context above, answer to the following question: " + line)
+    res = qa("---------------------\n Given the context above, answer the following question: " + line)
     answer, docs = res['result'], res['source_documents']
     res = answer + "\n\n\n" + "Sources:\n"
     # Print the relevant sources used for the answer
@@ -121,101 +125,97 @@ def ask_with_memory(line) -> str:
     return res
 ```
 
-Here we load again the previously created Embedding database and configure the langchain `RetrievalQA` object. Once we have built the knowledgebase, it's enough to point to the embedding database and specify the embedding engine. In this case we use local embeddings with huggingface, but others could have been used as well (for instance, LocalAI also has its own embedding mechanism that could have been used too).
+In this section, we load the previously created embedding database and configure the Langchain `RetrievalQA` object. Once the knowledge base has been built, we simply point to the embedding database and specify the embedding engine. In this case, we use local embeddings with HuggingFace, but other options could have been used as well (for example, LocalAI also has its own embedding mechanism).
 
-We then configure the `llm` to use LocalAI. Note we use ChatOpenAI and we set `openai_api_base` so we can use [LocalAI](https://github.com/go-skynet/LocalAI) instead.
+We then configure the `llm` to use LocalAI. Note that we use ChatOpenAI and set `openai_api_base` to use [LocalAI](https://github.com/go-skynet/LocalAI) instead.
 
 ## Setup
 
-We are ready to setup our bot! let's see what we need:
+Now, let's proceed with setting up our bot! Here's what we need:
 
-- Set up a Slack server and gain access to add new applications
-- Create a GitHub repository (optional) and obtain the Personal Access Token to fetch issues from a repository
-- Ensure your website has an accessible `sitemap.xml` file so that our bot can scrape the website content
-- Host the `docker` and `docker-compose` applications
-- Choose a model for use with LocalAI (refer to https://github.com/go-skynet/LocalAI)
+- Set up a Slack server and gain access to add new applications.
+- Create a GitHub repository (optional) and obtain a Personal Access Token to fetch issues from a repository.
+- Ensure your website has an accessible `sitemap.xml` file so that our bot can scrape the website content.
+- Install the `docker` and `docker-compose` applications locally if missing.
+- Choose a model for use with LocalAI (refer to https://github.com/go-skynet/LocalAI).
 
-and that's it, we don't need any OpenAI API key, or any external service except Github, but that we use to get the content that we want to index.
+That's it! We don't need an OpenAI API key or any external services except GitHub, optionally, which we use to fetch the content we want to index.
 
 ### Clone the required files
 
-We will run everything locally with Docker, but at the end of the article I'm sharing also a deployment file that works in Kubernetes.
+We will run everything locally using Docker. At the end of this article, I will also provide a deployment file that works with Kubernetes.
 
-I have pushed the example in LocalAI, so clone the repository locally:
+To get started, clone the LocalAI repository locally:
 
 ```
 git clone https://github.com/go-skynet/LocalAI
 cd LocalAI/examples/slack-qa-bot
 ```
 
-You will find a `docker-compose.yaml` and a `.env.example` file. We will need to edit the `.env` files with the `Slack` tokens in order for the bot to connect.
+You will find a `docker-compose.yaml` file and a `.env.example` file. We need to edit the `.env` file and add the Slack tokens to allow the bot to connect.
 
-### Configure Slack
+### Configuring Slack
 
-We need to create an application in the Slack workspace we want to install the bot. To create the app we will use the [manifest-dev.yml](https://raw.githubusercontent.com/spectrocloud-labs/Slack-QA-bot/main/manifest-dev.yml) file in the repository. and use it when creating a new application:
+To install the bot, we need to create an application in the Slack workspace. Follow these steps:
 
-- Go to https://api.slack.com/apps/ and click on "Create new App"
-![Screenshot from 2023-06-22 15-02-52](https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/9e474872-0d24-4601-b453-679f3601de18)
+1. Go to https://api.slack.com/apps/ and click on "Create new App".
+   ![Screenshot 1](https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/9e474872-0d24-4601-b453-679f3601de18)
 
-- Select "From an app Manifest"
-![Screenshot from 2023-06-22 15-03-03](https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/962de606-a694-47ad-8fc0-cd096668e07f)
+2. Select "From an app Manifest".
+   ![Screenshot 2](https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/962de606-a694-47ad-8fc0-cd096668e07f)
 
-- Pick a workspace for the bot:
+3. Choose the workspace where you want to add the bot.
+   ![Screenshot 3](https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/37573a42-87b6-4351-ad19-303e5ad610ed)
 
-![Screenshot from 2023-06-22 15-03-25](https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/37573a42-87b6-4351-ad19-303e5ad610ed)
+4. Copy the content of the [manifest-dev.yml](https://raw.githubusercontent.com/spectrocloud-labs/Slack-QA-bot/main/manifest-dev.yml) file from the repository and paste it into the app manifest.
+   ![Screenshot 4](https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/f134d1c6-eded-4114-81a0-d5fa2f870baf)
 
-- Enter the app manifest by copying the content of: https://raw.githubusercontent.com/spectrocloud-labs/Slack-QA-bot/main/manifest-dev.yml
-![Screenshot from 2023-06-22 15-04-11](https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/f134d1c6-eded-4114-81a0-d5fa2f870baf)
+5. Install the app in your workspace.
+   ![Screenshot 5](https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/cf84d743-6ccd-41a5-9b7e-41591b6d4939)
 
-- Install the app in your workspace:
-![Screenshot from 2023-06-22 15-04-55](https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/cf84d743-6ccd-41a5-9b7e-41591b6d4939)
+6. Create an app level token with the `connection:write` scope. Save this token as `SLACK_APP_TOKEN`.
+   ![Screenshot 6](https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/997573a6-8fb7-4357-b811-bdd01e52b158)
+   ![Screenshot 7](https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/763b1854-2b5a-4690-b5fa-a17fd720f40d)
 
-- Create an app level token with connection:write scope. The will save this token and we will use it as `SLACK_APP_TOKEN`
+7. Obtain the OAuth token by going to OAuth & Permissions and copying the OAuth Token. Use this token as `SLACK_BOT_TOKEN`.
 
-![Screenshot from 2023-06-22 15-07-51](https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/997573a6-8fb7-4357-b811-bdd01e52b158)
+   ![Screenshot 8](https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/ce8eff39-305c-482c-98c6-ed9a03994b3b)
+   ![Screenshot 9](https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/96f2abe6-9bae-47f5-b08b-c569c138cf00)
 
-![Screenshot from 2023-06-22 15-08-04](https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/763b1854-2b5a-4690-b5fa-a17fd720f40d)
+### Modifying the .env File
 
-- Now let's get the OAuth token, go into the OAuth & Permissions and copy the OAuth Token. We will use that as `SLACK_BOT_TOKEN`.
+Follow these steps to modify the .env file:
 
-![Screenshot from 2023-06-22 15-10-23](https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/ce8eff39-305c-482c-98c6-ed9a03994b3b)
+1. Copy the example env file using the following command:
+   ```
+   cp -rfv .env.example .env
+   ```
 
+2. Open the .env file and update the values of `SLACK_APP_TOKEN` and `SLACK_BOT_TOKEN` with the tokens generated in the previous steps.
 
-![Screenshot from 2023-06-22 15-10-32](https://github.com/seratch/ChatGPT-in-Slack/assets/2420543/96f2abe6-9bae-47f5-b08b-c569c138cf00)
+3. Additionally, if needed, modify the URL of the website to be indexed and set it as the value for `SITEMAP` in the .env file.
 
-### Modify the .env file
+### Running with Docker Compose
 
-Copy the example env file:
+To run the bot using Docker Compose, follow these steps.
 
-```
-cp -rfv .env.example .env
-```
+Run the following command if you're using Docker and `docker-compose`:
+   ```
+   docker-compose up
+   ```
 
-and change the `SLACK_APP_TOKEN` and `SLACK_BOT_TOKEN` that we generated in the steps before.
+   If you're running Docker with `docker compose`, use the following command:
+   ```
+   docker compose up
+   ```
 
-Change also the URL of the website to index in `SITEMAP`.
+By default, the local-ai setup will prepare and use the gpt4all-j model, which should work for most cases. However, if you want to change models, refer to the documentation or ask for assistance in the forums or Discord community.
 
+### Trying It Out!
 
-### Run with docker-compose
-
-By default, local-ai will prepare and use the gpt4all-j model. That works in most cases, but you might change models by following docs (or ask in the forums/discord!)
-
-```
-docker-compose up
-```
-
-or if you are running docker with `docker compose`:
-
-```
-docker compose up
-```
-
-### Try it out!
-
-The bot should start, but eventually you can ask it questions about the documentation in the channel, like in this video, linking to the sources in the docs:
+Once the bot starts successfully, you can ask it questions about the documentation in the designated channel. Check out this video for an example of how it works, including linking to the relevant sources in the documentation:
 
 ![Kairos-TPM-Slackbot](https://github.com/spectrocloud-labs/Slack-QA-bot/assets/2420543/6047e1ff-22d5-4b03-9d73-fcb7fb19a2c1)
-
 
 ### Bonus: Setup other models
 
@@ -335,3 +335,7 @@ spec:
 Note:
 
 - `OPENAI_API_BASE` is set to the default if installing the `local-ai` chart into the default namespace listening on 8080. Specify a different LocalAI url here.
+
+## Stay updated
+
+If you want to stay-up-to-date on my latest posts or what I am to follow me on Twitter at [@mudler](https://twitter.com/mudler_it/) and on [Github](https://github.com/mudler).
