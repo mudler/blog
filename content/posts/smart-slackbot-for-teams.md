@@ -1,5 +1,5 @@
 ---
-title: 'Create a Question answering bot on your data, locally with LangChain, LocalAI, Chroma, and GPT4All'
+title: 'Create a Question answering bot for Slack on your data, that you can run locally'
 date: 2023-06-22
 draft: false
 ---
