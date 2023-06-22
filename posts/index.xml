@@ -10,7 +10,7 @@
         <atom:link href="https://mudler.pm/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>Question Answering on Documents locally with LangChain, LocalAI, Chroma, and GPT4All</title>
+            <title>Create a Question answering bot on your data, locally with LangChain, LocalAI, Chroma, and GPT4All</title>
             <link>https://mudler.pm/posts/smart-slackbot-for-teams/</link>
             <pubDate>Thu, 22 Jun 2023 00:00:00 +0000</pubDate>
             
