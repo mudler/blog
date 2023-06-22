@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="With spawning a compilation, the second line (with&amp;hellip; fusion809 - Nov 4, 2015
-With spawning a compilation, the second line (with the package you wish to merge) is it possible to point to a specific version of a package. For example, atm I&amp;rsquo;d like to merge app-editors/atom-1.2.0 from the Sabayon overlay, do I have to enter it as `app-editors/atom-1.2.0 &amp;ndash;overlay sabayon` or `=app-editors/atom-1.2.0 &amp;ndash;overlay sabayon`?
-In section 3 I think you gave incorrect syntax, although it may be because of formatting limitations imposed by blogger." />
+<meta name="description" content="As previously anticipated in the previous blog post, here i explain what&amp;rsquo;s going on with Sabayon Docker images, and how can the Official Sabayon images help you in developing/deploying your application. In this article, i&amp;rsquo;ll show how to build Sabayon/Gentoo packages using Docker.
+I&amp;rsquo;ll cover five cases and will be divided in differents articles:
+You want to build packages locally You want to remotely build packages You want to host an overlay or a Sabayon repository and want your packages to get built on each push to the git repository You want to track remote repository changes and test (useful if you can&amp;rsquo;t setup a webhook) Setup an Entropy repo with a Docker image, and how to mantain packages In future, i&amp;rsquo;ll write also a post also on how to track the packages remotely with CircleCi." />
 <meta name="keywords" content=", sabayon, docker, equo, gentoo" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -44,26 +44,26 @@ In section 3 I think you gave incorrect syntax, although it may be because of fo
 
 
 <meta itemprop="name" content="[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services">
-<meta itemprop="description" content="With spawning a compilation, the second line (with&hellip; fusion809 - Nov 4, 2015
-With spawning a compilation, the second line (with the package you wish to merge) is it possible to point to a specific version of a package. For example, atm I&rsquo;d like to merge app-editors/atom-1.2.0 from the Sabayon overlay, do I have to enter it as `app-editors/atom-1.2.0 &ndash;overlay sabayon` or `=app-editors/atom-1.2.0 &ndash;overlay sabayon`?
-In section 3 I think you gave incorrect syntax, although it may be because of formatting limitations imposed by blogger."><meta itemprop="datePublished" content="2015-11-15T07:09:00-08:00" />
+<meta itemprop="description" content="As previously anticipated in the previous blog post, here i explain what&rsquo;s going on with Sabayon Docker images, and how can the Official Sabayon images help you in developing/deploying your application. In this article, i&rsquo;ll show how to build Sabayon/Gentoo packages using Docker.
+I&rsquo;ll cover five cases and will be divided in differents articles:
+You want to build packages locally You want to remotely build packages You want to host an overlay or a Sabayon repository and want your packages to get built on each push to the git repository You want to track remote repository changes and test (useful if you can&rsquo;t setup a webhook) Setup an Entropy repo with a Docker image, and how to mantain packages In future, i&rsquo;ll write also a post also on how to track the packages remotely with CircleCi."><meta itemprop="datePublished" content="2015-11-15T07:09:00-08:00" />
 <meta itemprop="dateModified" content="2015-11-15T07:09:00-08:00" />
-<meta itemprop="wordCount" content="235"><meta itemprop="image" content="https://mudler.pm"/>
+<meta itemprop="wordCount" content="1539"><meta itemprop="image" content="https://mudler.pm"/>
 <meta itemprop="keywords" content="sabayon,docker,equo,gentoo," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://mudler.pm"/>
 
 <meta name="twitter:title" content="[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services"/>
-<meta name="twitter:description" content="With spawning a compilation, the second line (with&hellip; fusion809 - Nov 4, 2015
-With spawning a compilation, the second line (with the package you wish to merge) is it possible to point to a specific version of a package. For example, atm I&rsquo;d like to merge app-editors/atom-1.2.0 from the Sabayon overlay, do I have to enter it as `app-editors/atom-1.2.0 &ndash;overlay sabayon` or `=app-editors/atom-1.2.0 &ndash;overlay sabayon`?
-In section 3 I think you gave incorrect syntax, although it may be because of formatting limitations imposed by blogger."/>
+<meta name="twitter:description" content="As previously anticipated in the previous blog post, here i explain what&rsquo;s going on with Sabayon Docker images, and how can the Official Sabayon images help you in developing/deploying your application. In this article, i&rsquo;ll show how to build Sabayon/Gentoo packages using Docker.
+I&rsquo;ll cover five cases and will be divided in differents articles:
+You want to build packages locally You want to remotely build packages You want to host an overlay or a Sabayon repository and want your packages to get built on each push to the git repository You want to track remote repository changes and test (useful if you can&rsquo;t setup a webhook) Setup an Entropy repo with a Docker image, and how to mantain packages In future, i&rsquo;ll write also a post also on how to track the packages remotely with CircleCi."/>
 
 
 
     <meta property="og:title" content="[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services" />
-<meta property="og:description" content="With spawning a compilation, the second line (with&hellip; fusion809 - Nov 4, 2015
-With spawning a compilation, the second line (with the package you wish to merge) is it possible to point to a specific version of a package. For example, atm I&rsquo;d like to merge app-editors/atom-1.2.0 from the Sabayon overlay, do I have to enter it as `app-editors/atom-1.2.0 &ndash;overlay sabayon` or `=app-editors/atom-1.2.0 &ndash;overlay sabayon`?
-In section 3 I think you gave incorrect syntax, although it may be because of formatting limitations imposed by blogger." />
+<meta property="og:description" content="As previously anticipated in the previous blog post, here i explain what&rsquo;s going on with Sabayon Docker images, and how can the Official Sabayon images help you in developing/deploying your application. In this article, i&rsquo;ll show how to build Sabayon/Gentoo packages using Docker.
+I&rsquo;ll cover five cases and will be divided in differents articles:
+You want to build packages locally You want to remotely build packages You want to host an overlay or a Sabayon repository and want your packages to get built on each push to the git repository You want to track remote repository changes and test (useful if you can&rsquo;t setup a webhook) Setup an Entropy repo with a Docker image, and how to mantain packages In future, i&rsquo;ll write also a post also on how to track the packages remotely with CircleCi." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html" /><meta property="og:image" content="https://mudler.pm"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2015-11-15T07:09:00-08:00" />
@@ -230,9 +230,9 @@ In section 3 I think you gave incorrect syntax, although it may be because of fo
     <div class="post-info">
       <p>
         <i class="fa-solid fa-clock"></i>
-        2 minutes
+        8 minutes
         <i class="fa-solid fa-clipboard"></i>
-        235 Words
+        1539 Words
         
       </p>
       <p>
@@ -273,30 +273,162 @@ In section 3 I think you gave incorrect syntax, although it may be because of fo
       
 
       <div class="post-content">
-        <h4 id="with-spawning-a-compilation-the-second-line-with">With spawning a compilation, the second line (with&hellip;</h4>
-<p><a href="https://www.blogger.com/profile/14316408440182908236" title="noreply@blogger.com">fusion809</a> - <!-- raw HTML omitted -->Nov 4, 2015<!-- raw HTML omitted --></p>
-<p>With spawning a compilation, the second line (with the package you wish to merge) is it possible to point to a specific version of a package. For example, atm I&rsquo;d like to merge app-editors/atom-1.2.0 from the Sabayon overlay, do I have to enter it as `app-editors/atom-1.2.0 &ndash;overlay sabayon` or `=app-editors/atom-1.2.0 &ndash;overlay sabayon`?</p>
-<!-- raw HTML omitted -->
-<p>In section 3 I think you gave incorrect syntax, although it may be because of formatting limitations imposed by blogger. I think the two lines:</p>
-<p>sudo docker run -ti &ndash;rm -v &ldquo;$PWD&rdquo;/artifacts:/usr/portage/packages sabayon/builder-amd64<br>
-app-text/tree</p>
-<p>should instead be provided over a single line, like:</p>
-<p>sudo docker run -ti &ndash;rm -v &ldquo;$PWD&rdquo;/artifacts:/usr/portage/packages sabayon/builder-amd64 app-text/tree</p>
-<p>I say so because whenever I run it as two lines I get the error message:</p>
-<p>-&gt; You should feed me with something</p>
-<p>Examples:</p>
-<p>/builder app-text/tree<br>
-/builder plasma-meta &ndash;layman kde</p>
-<p>**************************</p>
-<p>You can supply multiple overlays as well: /builder plasma-meta &ndash;layman kde plab</p>
-<p>Died at /builder line 18.</p>
-<!-- raw HTML omitted -->
-<p>Yes, i&rsquo;m sorry blogger returns the line anyway</p>
-<!-- raw HTML omitted -->
-<p>like while using emerge, you have to use the equal sign to specify an exact version</p>
-<!-- raw HTML omitted -->
-<p>Have ya considered using the code-formatting HTML code provided by codeformatter.blogspot.com? In the case of your first command mentioned in the &ldquo;3) Spawning&hellip;&rdquo; section the HTML code would be: <a href="http://paste2.org/NJ9st0ke">http://paste2.org/NJ9st0ke</a> (using a pastebin as inserting the code here directly gave a &ldquo;HTML cannot be accepted&rdquo; error).</p>
-<!-- raw HTML omitted -->
+        <p><a href="http://1.bp.blogspot.com/-s-2KEJ0FoF8/VkiGi_oCjBI/AAAAAAAAMfg/JkAeUmowseI/s1600/cloud-47581_1280.png"><img src="http://1.bp.blogspot.com/-s-2KEJ0FoF8/VkiGi_oCjBI/AAAAAAAAMfg/JkAeUmowseI/s640/cloud-47581_1280.png" alt=""></a></p>
+<p>As previously anticipated in the previous blog post, here i explain what&rsquo;s going on with Sabayon Docker images, and how can the Official Sabayon images help you in developing/deploying your application. In this article, i&rsquo;ll show how to build Sabayon/Gentoo packages using Docker.</p>
+<p>I&rsquo;ll cover five cases and will be divided in differents articles:</p>
+<ol>
+<li>You want to build packages locally</li>
+<li>You want to remotely build packages</li>
+<li>You want to host an overlay or a Sabayon repository and want your packages to get built on each push to the git repository</li>
+<li>You want to track remote repository changes and test (useful if you can&rsquo;t setup a webhook)</li>
+<li>Setup an Entropy repo with a Docker image, and how to mantain packages</li>
+</ol>
+<p>In future, i&rsquo;ll write also a post also on how to track the packages remotely with CircleCi.</p>
+<h2 id="introduction">Introduction</h2>
+<p>It has been a while that i&rsquo;m putting my head on how i could leverage Cloud provider&rsquo;s free services to build packages and improve the QA of the building process at all. Continous Integration applied to Linux Distribution Developing process can lead to quite awesome perspectives. [I will digress on this on a future article]</p>
+<p>For those who are unfamiliar with Docker..<strong>What the heck is Docker?</strong> From their site:</p>
+<blockquote>
+<p><em>Docker allows you to package an application with all of its dependencies into a standardized unit for software development.Docker containers wrap up a piece of software in a complete filesystem that contains everything it needs to run: code, runtime, system tools, system libraries – anything you can install on a server. This guarantees that it will always run the same, regardless of the environment it is running in.</em></p>
+</blockquote>
+<p>We can look at Docker like a box which can be filled to be used like an entire OS, but at the same time share the kernel with the host (sorry to be much semplicistic, we are not discussing about the Docker technlogy here).</p>
+<h2 id="differents-images-differents-purposes">Differents images, differents purposes</h2>
+<h4 id="the-sabayon-images-provides-the-software-stack-present-on-the-entropy-repositories-thus-allowing-easily-to-use-emerge-gentoo-package-manager-equo-sabayon-package-manager-and-eit-sabayon-repository-manager-in-an-every-linux-distribution-so-also-aliens-can-use-it">The Sabayon images provides the software stack present on the Entropy repositories, thus allowing easily to use emerge (Gentoo package manager), equo (Sabayon package manager) and Eit (Sabayon repository manager) in an every linux distribution (So, also aliens can use it).</h4>
+<p>At Sabayon, we currently are providing various flavors of Docker images, the most useful for developers/users/hobbist are: </p>
+<ul>
+<li><strong><a href="https://hub.docker.com/r/sabayon/base-amd64/">sabayon/base-amd64</a></strong>: A light image that ships the minimum Sabayon package set</li>
+<li><strong><a href="https://hub.docker.com/r/sabayon/spinbase-amd64/">sabayon/spinbase-amd64</a></strong>: It is based on base-amd64, and includes kernel, software that is required to create the SpinBase.iso images that finally hits our mirrors</li>
+<li><strong><a href="https://hub.docker.com/r/sabayon/builder-amd64/">sabayon/builder-amd64</a></strong>: This image have all the packages required to compile packages with emerge, includes an helper script to do most common tasks automatically</li>
+<li><strong><a href="https://hub.docker.com/r/sabayon/molecules-amd64/">sabayon/molecules-amd64</a></strong>: This image features the Sabayon Molecule tool with the molecules git repository inside, it is just an aim to easily let people burn their custom spins.</li>
+</ul>
+<p>The other images that you can see in our public profile are used to convert a Gentoo image to Sabayon, everything translated in Docker steps.</p>
+<p>While the <strong>sabayon/base-amd64</strong> image can be used to deploy your services, and be the base of your applications container, the <strong>sabayon/builder-amd64</strong> is a ready-to-use image to build package, it&rsquo;s all already setup for you.</p>
+<p>As already said, i&rsquo;m going to cover four cases here, then you are free to pick up the solution that suits you well.</p>
+<p>In this part i&rsquo;m going to talk on how to build packages locally, without having to setup your environment.</p>
+<h2 id="building-the-packages-locally-with-docker">Building the packages locally with Docker</h2>
+<p>I&rsquo;ll start from the easier task. <em>Building packages with your machine.</em></p>
+<p>Let&rsquo;s say that there is an ebuild available in an overlay, which you are interested in and is not available in Entropy. Consider of course, that not all ebuilds will compile, some are not mantained and not work as expected.</p>
+<p>We are going to use the sabayon/builder-amd64 image to build portage packages.</p>
+<ol>
+<li>Setup</li>
+</ol>
+<hr>
+<p>Here we need docker to be installed in your machine, i&rsquo;m assuming that you are running Sabayon here, but this is merely optional,  docker can be used also on Debian, Gentoo, Fedora or whatever you want.</p>
+<blockquote>
+<blockquote>
+<p>_sudo equo i docker _</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><em>sudo systemctl start docker</em></p>
+</blockquote>
+</blockquote>
+<p>There we go, this is the unique software that we actually want.<br>
+If you want the Docker service to be launched on boot:</p>
+<blockquote>
+<p>_        sudo systemctl enable docker_</p>
+</blockquote>
+<hr>
+<ol start="2">
+<li>Pull(download) the image</li>
+</ol>
+<hr>
+<p>Now let&rsquo;s download the <strong>sabayon/builder-amd64</strong> image:</p>
+<blockquote>
+<blockquote>
+<p><em>sudo docker pull sabayon/builder-amd64</em></p>
+</blockquote>
+</blockquote>
+<p><em>Note: If you don&rsquo;t want to use sudo on each docker command, put your user into the &ldquo;docker&rdquo; group.</em></p>
+<h2 id="_3-spawn-a-compilation_"><em>3) Spawn a compilation</em></h2>
+<p>Let&rsquo;s say that now we want to compile app-text/tree. <br>
+Now we can launch a new container from the sabayon/builder-amd64 image, giving it as argument the package we want to compile:</p>
+<blockquote>
+<blockquote>
+<p><em>sudo docker run -ti &ndash;rm -v &ldquo;$PWD&rdquo;/artifacts:/usr/portage/packages sabayon/builder-amd64 app-text/tree</em></p>
+</blockquote>
+</blockquote>
+<p>Now the builder machine will try to compile your package downloading first all the (available) dependencies it can find from Entropy and setting your container to face the compilation phase properly.</p>
+<p>When docker run will exit, you will find then your package under the &ldquo;artifacts&rdquo; directory under the directory where you launched the command. </p>
+<p>If your package was in another overlay, the builder machine supports to fetch automatically overlays, you just have to tell what are the overlays you need:</p>
+<blockquote>
+<blockquote>
+<p><em>sudo docker run -ti &ndash;rm -v &ldquo;$PWD&rdquo;/artifacts:/usr/portage/packages sabayon/builder-amd64 app-text/tree &ndash;overlay <strong>NAME</strong></em></p>
+</blockquote>
+</blockquote>
+<p>where:</p>
+<ul>
+<li>**--rm **tells docker to destroy the container as soon as it exits</li>
+<li><strong>-v</strong> determines the mount of a directory between the host and the container. On the left side of the doublepoints &ldquo;:&rdquo; there is the host directory, on the right the container one. The host folder will be mounted on the directory specified on the container so we can share data.</li>
+<li><strong>--overlay NAME:</strong> you can specify an overlay where your package is available, for example, we might want to compile the new gnome available in the gnome overlay. This command can be chained to list more than one overlay to fetch _(&ndash;_<em>overlay1 &ndash;overlay2, ecc.. )</em></li>
+</ul>
+<p>You might also want to save your changes to the image, meaning to mantain your building machine state. This can be accomplished with docker, <a href="https://docs.docker.com/v1.8/articles/basics/#committing-saving-a-container-state">using &ldquo;docker commit&rdquo;.</a> How to use this image is up to your imagination.</p>
+<ol start="4">
+<li>MOAR Options (Here be dragons)</li>
+</ol>
+<hr>
+<p>Docker allows to share directories with the host system, gracefully mounting them on   start up. We can specify to Docker in it&rsquo;s definition file that we want some volumes to not be shipped with the image itself, but instead being mounted on the host system everytime we run it. As for example, we can tell to Docker to use the directory foo as our /usr/portage directory, allowing us to cache Portage files, including distfiles and packages.</p>
+<blockquote>
+<p><em>docker run -t -i sabayon/base-amd64 -v &ldquo;$PWD&rdquo;/foo:/usr/portage <!-- raw HTML omitted --></em></p>
+</blockquote>
+<ul>
+<li><strong>-t</strong> tells to docker to allocate a pseudo-tty for us, allowing to run an interactive shell </li>
+<li><strong>-i</strong> keep the STDIN attached also if not active</li>
+<li><strong>-v</strong> sets the volume, so &ldquo;$PWD&rdquo;/foo will contain the /usr/portage content of the container and vice-versa (its mounted)</li>
+<li>**<!-- raw HTML omitted --> **the last argument is the command that we want to launch inside the container, we could of course launch other commands here, this is just an example</li>
+</ul>
+<p>If you don&rsquo;t have already pulled the docker image (docker pull sabayon/base-amd64) this will be done automatically, leaving you to use just one command.</p>
+<h2 id="example---advanced">Example - Advanced</h2>
+<p><strong>The -v flag can furthermore exploited and chained to obtain more fine-grained tweaks</strong></p>
+<p>_Going to cover a minor example regarding sabayon/builder-amd64 image here. _<br>
+<em>You can of course customize it further, and replace all the configuration that&rsquo;s already been setup on the Docker Image.</em><br>
+<em>Let&rsquo;s create 5 files in a directory, corresponding to the customization you might need from your building process.</em></p>
+<ul>
+<li><em>custom.unmask: will contain your unmasks</em></li>
+<li><em>custom.mask: will contain your masks</em></li>
+<li><em>custom.use: will contain your use flags</em></li>
+<li><em>custom.env: will contain your env specifications</em></li>
+<li><em>custom.keywords: will contain your keywords</em></li>
+</ul>
+<p>Exporting those files to your container is a matter of adding an argument to your docker run command.</p>
+<h4 id="heading"></h4>
+<h4 id="example-exporting-your-customunmask">Example. Exporting your custom.unmask:</h4>
+<blockquote>
+<p><em>-v /my/path/custom.unmask:/opt/sabayon-build/conf/intel/portage/package.unmask/custom.unmask</em></p>
+</blockquote>
+<h4 id="example-exporting-your-custommask">Example. Exporting your custom.mask:</h4>
+<blockquote>
+<p>_-v /my/path/custom.mask:/opt/sabayon-build/conf/intel/portage/package.mask/custom.mask _</p>
+</blockquote>
+<h4 id="example-exporting-your-customuse">Example. Exporting your custom.use:</h4>
+<blockquote>
+<p>_-v /my/path/custom.use:/opt/sabayon-build/conf/intel/portage/package.use/custom.use _</p>
+</blockquote>
+<h4 id="example-exporting-your-customenv">Example. Exporting your custom.env:</h4>
+<blockquote>
+<p><em>-v /my/path/custom.env:/opt/sabayon-build/conf/intel/portage/package.env/custom.env</em></p>
+</blockquote>
+<h4 id="example-exporting-your-customkeywords">Example. Exporting your custom.keywords:</h4>
+<blockquote>
+<p><em>-v /my/path/custom.keywords:/opt/sabayon-build/conf/intel/portage/package.keywords/custom.keywords</em></p>
+</blockquote>
+<p>In this way you tell to docker to mount your custom.* file inside /opt/sabayon-build/conf/intel/portage/package.*/custom.* inside the container. </p>
+<p>Keep in mind that the container have the portage directory located at /opt/sabayon-build/conf/intel/portage/ ; the /etc/portage folder is then symlinked to it.</p>
+<p>Attention! Remember also to use absolute paths or docker will fail to mount your files in the container.</p>
+<p>The image then will call a script that provides to do most of the things automatically for you, but there are some environment variables that you can use to tweak it&rsquo;s default behavior:</p>
+<ul>
+<li><strong>BUILDER_PROFILE</strong>: Sets the profile for compilation, you can select it using the number or the name</li>
+<li><strong>BUILDER_JOBS</strong>: How much jobs emerge will have assigned (-j option)</li>
+<li><strong>USE_EQUO</strong>: 1/0 Enable/Disable equo for installing the package dependencies (if you plan to use a pure gentoo repository, set it to 0, but the compilation process would be much longer)</li>
+<li><strong>PRESERVED_REBUILD</strong>: 1/0 to Enable/Disable preserved rebuild compilation</li>
+<li><strong>EMERGE_DEFAULTS_ARGS</strong>: a list of commands that you might want to specify </li>
+<li><strong>FEATURES</strong>: you can override default FEATURES (like in Portage&rsquo;s <strong>make.conf</strong>)</li>
+</ul>
+<p>To pass an environment variable to the docker container we set them like this:</p>
+<blockquote>
+<p>-e &ldquo;<strong>OPTION1</strong>=<em>VALUE1</em>&rdquo; -e &ldquo;<strong>OPTION2</strong>=<em>VALUE2</em>&rdquo;</p>
+</blockquote>
+<p>That&rsquo;s it for now!</p>
 
       </div>
     </article>
@@ -314,17 +446,17 @@ app-text/tree</p>
         <div class="pagination__buttons">
             
             <span class="button previous">
-                <a href="https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html">
+                <a href="https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html">
                     <span class="button__icon">←</span>
-                    <span class="button__text">Tech Preview: Sabayon on RaspberryPi2 </span>
+                    <span class="button__text">[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</span>
                 </a>
             </span>
             
 
             
             <span class="button next">
-                <a href="https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html">
-                    <span class="button__text">[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</span>
+                <a href="https://mudler.pm/2015/10/sabayon-testers-testers-testers.html">
+                    <span class="button__text">Sabayon: testers, testers, testers</span>
                     <span class="button__icon">→</span>
                 </a>
             </span>

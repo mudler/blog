@@ -9,7 +9,7 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Thu, 22 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://mudler.pm/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Create a Question answering bot on your data, locally with LangChain, LocalAI, Chroma, and GPT4All</title>
+      <title>Create a Question answering bot for Slack on your data, that you can run locally</title>
       <link>https://mudler.pm/posts/smart-slackbot-for-teams/</link>
       <pubDate>Thu, 22 Jun 2023 00:00:00 +0000</pubDate>
       
