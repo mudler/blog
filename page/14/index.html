@@ -235,6 +235,41 @@
                 <div class="posts">
                 
                 <div class="post on-list">
+                    <h1 class="post-title"><a href="https://mudler.pm/2014/05/cve-2014-0196-linux-kernel-pty-layer.html">CVE-2014-0196: Linux kernel pty layer race</a></h1>
+                    <div class="post-meta">
+                    
+                        <span class="post-date">
+                        2014-05-15
+                        </span>
+                        
+                    
+                        <br>
+                    
+                        <i class="fa-solid fa-clock"></i>
+                        One minute
+                    
+                    </div>
+                    
+                    <div class="post-content">
+                        
+                            
+                                Two days ago a temible exploit was released for local privilage escalation in the linux kernel. The bug was found on the 29th of April: memory corruption via a race in pty write handling , affected kernels are 2.6.31 -&gt; 3.14rcX
+The n_tty_write function in drivers/tty/n_tty.c in the Linux kernel through 3.14.3 does not properly manage tty driver access in the &ldquo;LECHO &amp; !OPOST&rdquo; case, which allows local users to cause a denial of service (memory corruption and system crash) or gain privileges by triggering a race condition involving read and write operations with long strings.
+                            
+                        
+                    </div>
+                    
+                        
+                        <div> 
+                            <a class="read-more" href="/2014/05/cve-2014-0196-linux-kernel-pty-layer.html">
+                                Read more ...
+                            </a>
+                        </div>
+                        
+                    
+                </div> 
+            
+                <div class="post on-list">
                     <h1 class="post-title"><a href="https://mudler.pm/2014/03/gh-updates-3.html">G@H updates! (3)</a></h1>
                     <div class="post-meta">
                     
@@ -263,43 +298,6 @@ This is a small summary of the changes ( for a complete list, check commit diffs
                         
                         <div> 
                             <a class="read-more" href="/2014/03/gh-updates-3.html">
-                                Read more ...
-                            </a>
-                        </div>
-                        
-                    
-                </div> 
-            
-                <div class="post on-list">
-                    <h1 class="post-title"><a href="https://mudler.pm/2014/04/this-post-is-update-of-current-status.html">G@H updates! (2)</a></h1>
-                    <div class="post-meta">
-                    
-                        <span class="post-date">
-                        2014-04-04
-                        </span>
-                        
-                    
-                        <br>
-                    
-                        <i class="fa-solid fa-clock"></i>
-                        One minute
-                    
-                    </div>
-                    
-                    <div class="post-content">
-                        
-                            
-                                This post is an update of the current status of the Google@Home project. Google@Home tries to bring domotic control in your home using Google Services for Speech Synthesis and Text-to-Speech. It is also planned a web interface to control the embedded nodes in the current environment.
-During this week i focused on fixing bug and few structural enhancements
-This is a small summary of the changes:
-[fix] Plugin can be removed safetly master now can load node configurations by their backends (e.
-                            
-                        
-                    </div>
-                    
-                        
-                        <div> 
-                            <a class="read-more" href="/2014/04/this-post-is-update-of-current-status.html">
                                 Read more ...
                             </a>
                         </div>
@@ -341,7 +339,7 @@ This is a small summary of the changes:
     
     
         <div class="footer__inner">
-            <span>&copy;2023</span>&nbsp;
+            <span>&copy;2024</span>&nbsp;
             <span><a href="https://mudler.pm"></a></span>&nbsp;
             <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
         </div>

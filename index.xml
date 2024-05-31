@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 22 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://mudler.pm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://mudler.pm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LocalAI and llama.cpp on Jetson Nano Devkit</title>
+      <link>https://mudler.pm/posts/local-ai-jetson-nano-devkit/</link>
+      <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://mudler.pm/posts/local-ai-jetson-nano-devkit/</guid>
+      <description>If you are a lucky(?) owner of the Jetson Nano Devkit (4GB), and you don&amp;rsquo;t know anymore on what to do with it, you can try to run LocalAI with llama.cpp on it.
+The Jetson Nano Devkit is currently not supported anymore by Nvidia, and receives little to no attention, however, it can still do something, and if you are like me that recycles the board at home, you might want to have fun with it by running AI on top of it.</description>
+    </item>
+    
     <item>
       <title>Create a Question answering bot for Slack on your data, that you can run locally</title>
       <link>https://mudler.pm/posts/smart-slackbot-for-teams/</link>
