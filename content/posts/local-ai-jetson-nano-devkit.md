@@ -243,6 +243,13 @@ Apply the patch in `LocalAI/backend/cpp/llama-cpp/llama.cpp`.
 
 ## Result
 
+Now you should have a binary, `local-ai`, and you can run phi-2 with:
+
+```bash
+./local-ai https://gist.githubusercontent.com/mudler/4fd5ab4455256aee7d7609ebdf8fe0a7/raw/54c93320f263254f768df2bf6fee3d10296fefe2/phi-2-chat.yaml
+```
+
+Example output:
 ```
 6:43PM DBG GRPC(phi-2-layla-v1-chatml-Q4_K.gguf-127.0.0.1:40757): stderr llm_load_print_meta: freq_base_train  = 10000.0
 6:43PM DBG GRPC(phi-2-layla-v1-chatml-Q4_K.gguf-127.0.0.1:40757): stderr llm_load_print_meta: freq_scale_train = 1
