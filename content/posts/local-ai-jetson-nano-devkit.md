@@ -12,6 +12,8 @@ Disclaimer: you aren't going to run big models with it, but phi-2 runs and you c
 
 I'll leave to another post for the setup I got with the Orin AGX, this covers for now only the Jetson Nano devkit as I recently did these steps to prepare a cluster to show-off on one of my upcoming talks!
 
+![Screenshot from 2024-05-31 19-16-18](https://github.com/mudler/blog/assets/2420543/f7c050b6-3b08-4652-99d1-51438a1a7300)
+
 ## Requirements
 
 First of all, you need to get the latest Jetson Nano Devkit tooling that is - by now - it is 32.7.4.
