@@ -21,6 +21,7 @@ The Jetson Nano Devkit is currently not supported anymore by Nvidia, and receive
 <p>The Jetson Nano Devkit is currently not supported anymore by Nvidia, and receives little to no attention, however, it can <em>still</em> do something, and if you are like me that recycles the board at home, you might want to have fun with it by running AI on top of it. It might be also good candidate for the workload distribution features that LocalAI has (see: <a href="https://localai.io/features/distribute/)">https://localai.io/features/distribute/)</a>, but leaving that for another post.</p>
 <p>Disclaimer: you aren&rsquo;t going to run big models with it, but phi-2 runs and you can have fun with it!</p>
 <p>I&rsquo;ll leave to another post for the setup I got with the Orin AGX, this covers for now only the Jetson Nano devkit as I recently did these steps to prepare a cluster to show-off on one of my upcoming talks!</p>
+<p><img src="https://github.com/mudler/blog/assets/2420543/f7c050b6-3b08-4652-99d1-51438a1a7300" alt="Screenshot from 2024-05-31 19-16-18"></p>
 <h2 id="requirements">Requirements</h2>
 <p>First of all, you need to get the latest Jetson Nano Devkit tooling that is - by now - it is 32.7.4.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://developer.nvidia.com/downloads/embedded/l4t/r32_release_v7.4/t210/jetson-210_linux_r32.7.4_aarch64.tbz2
