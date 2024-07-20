@@ -239,7 +239,7 @@ index 5e77471f..1ad54af8 100644
  #define ggml_vqtbl1q_u8   vqtbl1q_u8
 ```
 
-Apply the patch in `LocalAI/backend/cpp/llama-cpp/llama.cpp`.
+Apply the patch in `LocalAI/backend/cpp/llama-cpp/llama.cpp/ggml/src`.
 
 ## Result
 
