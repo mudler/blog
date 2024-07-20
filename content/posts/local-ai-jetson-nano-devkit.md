@@ -8,7 +8,7 @@ If you are a lucky(?) owner of the Jetson Nano Devkit (4GB), and you don't know 
 
 The Jetson Nano Devkit is currently not supported anymore by Nvidia, and receives little to no attention, however, it can _still_ do something, and if you are like me that recycles the board at home, you might want to have fun with it by running AI on top of it. It might be also good candidate for the workload distribution features that LocalAI has (see: https://localai.io/features/distribute/), but leaving that for another post.
 
-Disclaimer: you aren't going to run big models with it, but phi-2 runs and you can have fun with it!
+Disclaimer: you aren't going to run big models with it, but phi-3 runs and you can have fun with it!
 
 I'll leave to another post for the setup I got with the Orin AGX, this covers for now only the Jetson Nano devkit as I recently did these steps to prepare a cluster to show-off on one of my upcoming talks!
 
@@ -243,10 +243,10 @@ Apply the patch in `LocalAI/backend/cpp/llama-cpp/llama.cpp/ggml/src`.
 
 ## Result
 
-Now you should have a binary, `local-ai`, and you can run phi-2 with:
+Now you should have a binary, `local-ai`, and you can run phi-3 with:
 
 ```bash
-./local-ai https://gist.githubusercontent.com/mudler/4fd5ab4455256aee7d7609ebdf8fe0a7/raw/54c93320f263254f768df2bf6fee3d10296fefe2/phi-2-chat.yaml
+./local-ai run https://gist.githubusercontent.com/mudler/86dbff5fdf46e993b81dd366a679ea32/raw/20e6416719e86f99954b8ea7a26b1aa680db6f59/phi-3-mini-jetson.yaml
 ```
 
 Example output:
