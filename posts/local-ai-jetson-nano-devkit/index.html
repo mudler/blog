@@ -420,7 +420,7 @@ index 5e77471f..1ad54af8 100644
 +#define ggml_vld1q_s8_x4  vld1q_s8_x2
  #define ggml_vqtbl1q_s8   vqtbl1q_s8
  #define ggml_vqtbl1q_u8   vqtbl1q_u8
-</code></pre><p>Apply the patch in <code>LocalAI/backend/cpp/llama-cpp/llama.cpp</code>.</p>
+</code></pre><p>Apply the patch in <code>LocalAI/backend/cpp/llama-cpp/llama.cpp/ggml/src</code>.</p>
 <h2 id="result">Result</h2>
 <p>Now you should have a binary, <code>local-ai</code>, and you can run phi-2 with:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./local-ai https://gist.githubusercontent.com/mudler/4fd5ab4455256aee7d7609ebdf8fe0a7/raw/54c93320f263254f768df2bf6fee3d10296fefe2/phi-2-chat.yaml
