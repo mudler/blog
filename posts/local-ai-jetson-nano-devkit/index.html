@@ -46,7 +46,7 @@ The Jetson Nano Devkit is currently not supported anymore by Nvidia, and receive
 <meta itemprop="description" content="If you are a lucky(?) owner of the Jetson Nano Devkit (4GB), and you don&rsquo;t know anymore on what to do with it, you can try to run LocalAI with llama.cpp on it.
 The Jetson Nano Devkit is currently not supported anymore by Nvidia, and receives little to no attention, however, it can still do something, and if you are like me that recycles the board at home, you might want to have fun with it by running AI on top of it."><meta itemprop="datePublished" content="2024-05-30T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2024-05-30T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1508"><meta itemprop="image" content="https://mudler.pm"/>
+<meta itemprop="wordCount" content="1509"><meta itemprop="image" content="https://mudler.pm"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://mudler.pm"/>
@@ -228,7 +228,7 @@ The Jetson Nano Devkit is currently not supported anymore by Nvidia, and receive
         <i class="fa-solid fa-clock"></i>
         8 minutes
         <i class="fa-solid fa-clipboard"></i>
-        1508 Words
+        1509 Words
         
       </p>
       <p>
@@ -261,7 +261,7 @@ The Jetson Nano Devkit is currently not supported anymore by Nvidia, and receive
       <div class="post-content">
         <p>If you are a lucky(?) owner of the Jetson Nano Devkit (4GB), and you don&rsquo;t know anymore on what to do with it, you can try to run LocalAI with llama.cpp on it.</p>
 <p>The Jetson Nano Devkit is currently not supported anymore by Nvidia, and receives little to no attention, however, it can <em>still</em> do something, and if you are like me that recycles the board at home, you might want to have fun with it by running AI on top of it. It might be also good candidate for the workload distribution features that LocalAI has (see: <a href="https://localai.io/features/distribute/)">https://localai.io/features/distribute/)</a>, but leaving that for another post.</p>
-<p>Disclaimer: you aren&rsquo;t going to run big models with it, but phi-2 runs and you can have fun with it!</p>
+<p>Disclaimer: you aren&rsquo;t going to run big models with it, but phi-3 runs and you can have fun with it!</p>
 <p>I&rsquo;ll leave to another post for the setup I got with the Orin AGX, this covers for now only the Jetson Nano devkit as I recently did these steps to prepare a cluster to show-off on one of my upcoming talks!</p>
 <p><img src="https://github.com/mudler/blog/assets/2420543/f7c050b6-3b08-4652-99d1-51438a1a7300" alt="Screenshot from 2024-05-31 19-16-18"></p>
 <h2 id="requirements">Requirements</h2>
@@ -422,8 +422,8 @@ index 5e77471f..1ad54af8 100644
  #define ggml_vqtbl1q_u8   vqtbl1q_u8
 </code></pre><p>Apply the patch in <code>LocalAI/backend/cpp/llama-cpp/llama.cpp/ggml/src</code>.</p>
 <h2 id="result">Result</h2>
-<p>Now you should have a binary, <code>local-ai</code>, and you can run phi-2 with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./local-ai https://gist.githubusercontent.com/mudler/4fd5ab4455256aee7d7609ebdf8fe0a7/raw/54c93320f263254f768df2bf6fee3d10296fefe2/phi-2-chat.yaml
+<p>Now you should have a binary, <code>local-ai</code>, and you can run phi-3 with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./local-ai run https://gist.githubusercontent.com/mudler/86dbff5fdf46e993b81dd366a679ea32/raw/20e6416719e86f99954b8ea7a26b1aa680db6f59/phi-3-mini-jetson.yaml
 </span></span></code></pre></div><p>Example output:</p>
 <pre tabindex="0"><code>6:43PM DBG GRPC(phi-2-layla-v1-chatml-Q4_K.gguf-127.0.0.1:40757): stderr llm_load_print_meta: freq_base_train  = 10000.0
 6:43PM DBG GRPC(phi-2-layla-v1-chatml-Q4_K.gguf-127.0.0.1:40757): stderr llm_load_print_meta: freq_scale_train = 1
