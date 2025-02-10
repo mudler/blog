@@ -25,7 +25,7 @@ I'm an OSS consultant, and if you need help with any of my projects you can spon
 Can find me in:
 
 - [Github](https://github.com/mudler) 
-- [X](https://twitter.com/mudler_it) 
+- [X/twitter](https://twitter.com/mudler_it) 
 - [Linkedin](https://linkedin.com/in/ettore-di-giacinto-211a4166).
 - [CPAN](https://metacpan.org/author/MUDLER)
 
