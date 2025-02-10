@@ -74,10 +74,15 @@ Many. Here is just a small list of what I think is the most interesting.
 
 In many years working in the Open Source community I've contributed to many projects. Here is a small list of the most relevant:
 
-- [Sabayon Linux](https://sabayon.org)
+- [Sabayon Linux](https://github.com/Sabayon)
+  - Lead developer
+    - https://github.com/Sabayon/sabayon-distro
+    - https://github.com/Sabayon/for-gentoo
+    - https://github.com/Sabayon/community-repositories
 - [Gentoo Linux](https://gentoo.org)
-  - [genkernel-next](https://github.com/Sabayon/genkernel-next)
-  - [MATE maintainer](https://wiki.gentoo.org/wiki/MATE)
+  - I was a Gentoo developer mantaining:
+    - [genkernel-next](https://github.com/Sabayon/genkernel-next)
+    - [MATE maintainer](https://wiki.gentoo.org/wiki/MATE)
 - [openSUSE](https://opensuse.org)
 - [Cloud Foundry](https://cloudfoundry.org)
 - [openQA](https://openqa.org)
