@@ -64,6 +64,7 @@ Many. Here is just a small list of what I think is the most interesting.
 
 - [Mojo::IOLoop::ReadWriteProcess](https://github.com/openSUSE/Mojo-IOLoop-ReadWriteProcess)
 - [Algorithm::SAT::*](https://metacpan.org/dist/Algorithm-SAT-Backtracking)
+- [Algorithm::QLearning](https://github.com/mudler/Algorithm-QLearning)
 - [go-pluggable](https://github.com/mudler/go-pluggable) -  🍱 go-pluggable is a light Bus-event driven plugin library for Golang
 - [herd](https://github.com/spectrocloud-labs/herd/) - Herd is an Embeddable Runnable DAG
 - [go-findpeaks](https://github.com/mudler/go-findpeaks)
@@ -75,6 +76,8 @@ In many years working in the Open Source community I've contributed to many proj
 
 - [Sabayon Linux](https://sabayon.org)
 - [Gentoo Linux](https://gentoo.org)
+  - [genkernel-next](https://github.com/Sabayon/genkernel-next)
+  - [MATE maintainer](https://wiki.gentoo.org/wiki/MATE)
 - [openSUSE](https://opensuse.org)
 - [Cloud Foundry](https://cloudfoundry.org)
 - [openQA](https://openqa.org)
