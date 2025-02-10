@@ -57,6 +57,7 @@ Many. Here is just a small list of what I think is the most interesting.
 - [go-mirror-redirector](https://github.com/mudler/go-mirror-redirector) -  A simple mirror redirector written in Go
 - [eirini-persi-broker](https://github.com/cloudfoundry-incubator/eirini-persi-broker) - EiriniX persistence broker extension
 - [pkgapi](https://github.com/Luet-lab/pkgapi) - PkgAPI is a simple API that retrieves informations about package available inside Github repositories.
+- [Nemesis framework](https://github.com/dark-lab/Nemesis) - A perl framework for pentesters
 
 [Feel free to hop-by to my GH profile](https://github.com/mudler) to see more!
 
