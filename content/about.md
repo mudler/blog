@@ -86,6 +86,11 @@ In many years working in the Open Source community I've contributed to many proj
 - [openSUSE](https://opensuse.org)
 - [Cloud Foundry](https://cloudfoundry.org)
 - [openQA](https://openqa.org)
+  - I worked at SUSE as OpenQA developer.
+    - Highlights:
+      - I've re-written the OpenQA scheduler
+      - The Process management interface (using `cgroups`)
+      - Optimized load distribution using novel algorithms, including Logistic maps.
 - [CNCF](https://cncf.io)
 - [KubeCF](https://github.com/cloudfoundry-incubator/kubecf) and [Quarks-operator](https://github.com/cloudfoundry-incubator/quarks-operator)
 - [SCF](https://github.com/SUSE/SCF)
