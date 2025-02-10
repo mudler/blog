@@ -69,7 +69,8 @@ Many. Here is just a small list of what I think is the most interesting.
 - [go-pluggable](https://github.com/mudler/go-pluggable) -  🍱 go-pluggable is a light Bus-event driven plugin library for Golang
 - [herd](https://github.com/spectrocloud-labs/herd/) - Herd is an Embeddable Runnable DAG
 - [go-findpeaks](https://github.com/mudler/go-findpeaks)
-- [go-kdetect](https://github.com/mudler/go-kdetect) -  golang kernel driver detector 
+- [go-kdetect](https://github.com/mudler/go-kdetect) -  golang kernel driver detector
+- [go-llama.cpp](https://github.com/go-skynet/go-llama.cpp) - bindings for llama.cpp
 
 ## Projects I've contributed to
 
@@ -85,7 +86,10 @@ In many years working in the Open Source community I've contributed to many proj
     - [genkernel-next](https://github.com/Sabayon/genkernel-next)
     - [MATE maintainer](https://wiki.gentoo.org/wiki/MATE)
 - [openSUSE](https://opensuse.org)
+  - Working on OpenQA, packaging and more
+  - Donated [Mojo::IOLoop::ReadWriteProcess](https://github.com/openSUSE/Mojo-IOLoop-ReadWriteProcess)
 - [Cloud Foundry](https://cloudfoundry.org)
+  - Working on KubeCF and Quarks-operator for SUSE
 - [openQA](https://openqa.org)
   - I worked at SUSE as OpenQA developer.
     - Highlights:
@@ -95,6 +99,8 @@ In many years working in the Open Source community I've contributed to many proj
 - [CNCF](https://cncf.io)
 - [KubeCF](https://github.com/cloudfoundry-incubator/kubecf) and [Quarks-operator](https://github.com/cloudfoundry-incubator/quarks-operator)
 - [SCF](https://github.com/SUSE/SCF)
+- [llama.cpp](https://github.com/ggerganov/llama.cpp) - Created go binding and [other fixes](https://github.com/ggerganov/llama.cpp/pulls?q=is%3Apr+author%3Amudler+is%3Aclosed)
+- [gpt4all](https://github.com/nomic-ai/gpt4all) - Contributed [golang bindings](https://github.com/nomic-ai/gpt4all/pull/534)
 
 ## LLM fine-tunes
 
@@ -123,6 +129,7 @@ In many years working in the Open Source community I've contributed to many proj
 ## Articles/Papers
 
 - [Whitepaper: Secure Edge Native Architecture /w Intel](https://github.com/kairos-io/kairos/files/11250843/Secure-Edge-Native-Architecture-white-paper-20240417.3.pdf)
+- [Livin’ Kubernetes on the (Immutable) Edge with Kairos Project ](https://thenewstack.io/livin-kubernetes-on-the-immutable-edge-with-kairos-project/)
 - Others which I don't remember now. I will update this list. promised!
 
 
