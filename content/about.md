@@ -130,6 +130,7 @@ In many years working in the Open Source community I've contributed to many proj
 
 - [Whitepaper: Secure Edge Native Architecture /w Intel](https://github.com/kairos-io/kairos/files/11250843/Secure-Edge-Native-Architecture-white-paper-20240417.3.pdf)
 - [Livin’ Kubernetes on the (Immutable) Edge with Kairos Project ](https://thenewstack.io/livin-kubernetes-on-the-immutable-edge-with-kairos-project/)
+- [Trusted Boot: What to Know About Securing Devices at the Edge](https://thenewstack.io/honey-i-secured-your-boot-edge-trusted-boot-with-kairos/)
 - Others which I don't remember now. I will update this list. promised!
 
 
