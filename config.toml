@@ -93,7 +93,7 @@ paginate     = 10
 
   [[params.social]]
     name = "email"
-    url  = "mailto:mudler@mocaccino.org"
+    url  = "mailto:mudler@localai.io"
     icon = "fa-solid fa-envelope"
 
   [[params.social]]
