@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mudler.pm/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mudler.pm/posts/2024/05/30/localai-and-llama.cpp-on-jetson-nano-devkit/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
+    <loc>https://mudler.pm/posts/2026/02/28/a-call-to-open-source-maintainers-stop-babysitting-ai-how-i-built-a-100-local-autonomous-dev-team-to-maintain-localai-and-why-you-should-too/</loc>
+    <lastmod>2026-02-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mudler.pm/posts/</loc>
+    <lastmod>2026-02-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mudler.pm/posts/2024/05/30/localai-and-llama.cpp-on-jetson-nano-devkit/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mudler.pm/posts/2023/06/22/create-a-question-answering-bot-for-slack-on-your-data-that-you-can-run-locally/</loc>

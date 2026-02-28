@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mudler blog - Place where I write about stuff">
+    <title>A call to open source maintainers, stop babysitting AI: How I Built a 100% Local Autonomous Dev Team to Maintain LocalAI, and why you should too | Mudler blog</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="https://mudler.pm/css/theme-override.css">
+    
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          
+          
+          <li class="pull-left ">
+            <a href="https://mudler.pm/">~/mudler blog</a>
+          </li>
+          
+          
+          <li class="pull-left ">
+            <a href="/posts/">~/blog</a>
+          </li>
+          
+          
+          <li class="pull-left ">
+            <a href="/about/">~/about</a>
+          </li>
+          
+          
+          <li class="pull-left ">
+            <a href="/search/">~/search</a>
+          </li>
+          
+
+          
+          
+          <li class="pull-right">
+            <a href="/index.xml">~/subscribe</a>
+          </li>
+          
+
+        </ul>
+      </nav>
+    </header>
+
+
+<div class="article-meta">
+<h1><span class="title">A call to open source maintainers, stop babysitting AI: How I Built a 100% Local Autonomous Dev Team to Maintain LocalAI, and why you should too</span></h1>
+<h2 class="author">Ettore Di Giacinto</h2>
+<h2 class="date">2026/02/28</h2>
+<p class="terms">
+  
+  
+  
+  
+  
+</p>
+</div>
+
+
+
+<div class="content-wrapper">
+  <main>
+    <p><img src="/images/agents_header.png" alt="header"></p>
+<p>If you&rsquo;re building software today, you&rsquo;ve probably felt the new kind of developer burnout.</p>
+<p>Things changed drammatically in the last two months.</p>
+<p>Even Karpathy sensei could not write it better:</p>
+<div class="tweet-embed">
+  <iframe
+    src="https://platform.twitter.com/embed/Tweet.html?id=2026731645169185220&amp;theme=auto"
+    title="Tweet from @karpathy"
+    width="550"
+    style="max-width: 100%; border: 0; min-height: 200px;"
+    loading="lazy"
+  ></iframe>
+  <p class="tweet-fallback"><a href="https://x.com/karpathy/status/2026731645169185220" target="_blank" rel="noopener noreferrer">View on X (Twitter) →</a></p>
+</div>
+<p>The real pain isn&rsquo;t writing the code anymore, it&rsquo;s the brutal cognitive load of context switching between managing agent sessions. You try to scale your output with AI, and suddenly you&rsquo;re managing a dozen different agents across a sea of split terminal windows, or clicking endlessly through bloated, dedicated UIs just to figure out what broke.</p>
+<p>This is not how humans have ever managed engineering output. We don&rsquo;t lead dev teams by staring at their raw bash history.</p>
+<p>As the creator of <a href="https://github.com/mudler/LocalAI">LocalAI</a>, I felt this pain intimately. The project blew up, the issue tracker was overflowing with maintenance tickets, and I desperately needed a team to help clear the brush so I could focus on building.</p>
+<p><img src="/images/minimax_bench.png" alt="Minimax Bench"></p>
+<blockquote>
+<p>Minimax changed everything. You now can run a coding model which is on par with closed models locally.</p>
+</blockquote>
+<p>Open-source doesn&rsquo;t come with a hiring budget, so naturally, I turned to autonomous coding agents as now <strong>Minimax</strong> changed the game for the local model open source scene.</p>
+<h2 id="the-babysitting-trap">The Babysitting Trap</h2>
+<p>If you are building with AI right now, you know the cycle. You spin up an agent, give it a prompt, files appear, and for about ten minutes, you think you&rsquo;re going to retire by Friday.</p>
+<p>Then the babysitting begins. Sure, an agent might get stuck in an infinite loop or hallucinate an API endpoint, but that&rsquo;s not the real bottleneck. The real pain is the iterative hand-holding. You have to go back and forth with the agent, endlessly refining prompts to get exactly what you need. And the worst part? You have to repeat this exhaustive cycle for every single new agent you spin up. It fundamentally doesn&rsquo;t scale.</p>
+<p>This is likely my next bet for the future months. The emerging pattern looks really clear.</p>
+<p>Everyone is racing to have multiple agents coding in parallel. I get that. You can really boost and do many things in parallel now. But here is the reality check that anyone need: without proper observability and a strict harness, running parallel agents or a constant track is just a great way to DDoS yourself and exhaust your context switch capabilities.</p>
+<h2 id="encoding-human-workflows">Encoding Human Workflows</h2>
+<p>The breakthrough didn&rsquo;t come from tweaking a system prompt or adding more context. It came from realizing that the key to scaling AI is taking the proven ways we work as humans and strictly encoding them into the agent system which can be orchestrated. How do we solve writing software at scale? We are rushing into changing the way we work with assistants, but what if we take our way of working to AI agents instead?</p>
+<p>My AI didn&rsquo;t need a better coding benchmark. And no, OpenClaw can&rsquo;t fix this. I didn&rsquo;t need a personal AI assistant; I needed a dev team to take over the low-hanging fruit so I could focus on what matters most. <strong>What my AI really needed was a scrum master.</strong></p>
+<p>Using <a href="https://github.com/mudler/LocalAGI">LocalAGI</a> (my framework for building autonomous agents, I love dogfooding) and <a href="https://github.com/mudler/LocalAI">LocalAI</a> (again, dogfooding) I took a local Minimax model, entirely revoked its ability to write code, and gave it a new job: <strong>Agent Scrum Master.</strong></p>
+<h2 id="the-scrum-master-does-not-code">The Scrum master Does Not Code</h2>
+<p>The biggest mistake we make with multi-agent orchestration is giving wide scope to agents.</p>
+<blockquote>
+<p>Gotta go sleep now.. can you make sure that this gets delivered?
+<img src="/images/take-over.png" alt="Take over">
+(And it did! <a href="https://github.com/mudler/LocalAI/pull/8664">PR link</a>)</p>
+</blockquote>
+<p>My AI Scrum Master is strictly jailed. It cannot run git. It cannot read main.py. Its sole purpose is to listen to my high-level requests in Slack, break them down into Epics and Stories, manage dependencies, and aggressively maintain a Backlog.</p>
+<p>It doesn&rsquo;t code. It delegates. It watches, it reports.</p>
+<h3 id="behavior">Behavior</h3>
+<p>Instead of fighting with terminal windows, I just treat the AI like a normal remote dev team. I drop a request into our Slack channel: &ldquo;Hey, we need to build a new authentication flow,&rdquo; or &ldquo;Hey, add this (Github URL) to the backlog.&rdquo;</p>
+<p>The Scrum Master wakes up, analyzes the request, and replies with a Plan. It splits if needed from Epic into logical, sequential tickets, assigns priority levels, and queues them up on a board.</p>
+<p>Then, it checks the observability harness. It finds an idle worker agent in the background, hands it the highest-priority ticket, and goes back to sleep.</p>
+<p>If a worker agent crashes mid-task because of an API timeout? The Scrum Master doesn&rsquo;t panic. It just holds the ticket in the backlog until the agent recovers. Zero dropped tasks. Zero overlapping git branches. Complete parallel execution, entirely managed by the system.</p>
+<h2 id="the-ai-manages-me-now">The AI Manages Me Now</h2>
+<p>The craziest part of this architecture is the human-in-the-loop dynamic. Because the system is built around standard Agile states (Backlog, In Progress, In Review), the Scrum Master actively manages my time, too.</p>
+<blockquote>
+<p>Where do you need my input?
+<img src="/images/sprint-status.png" alt="Sprint status"></p>
+</blockquote>
+<p>I can literally go to sleep, and when I wake up in the morning, I&rsquo;m greeted by a perfectly structured dev team. The worker agents run entirely headlessly in the background overnight. When an agent finishes a feature, it opens a PR on GitHub and tells the Scrum Master it&rsquo;s done.</p>
+<p>The Scrum Master filters out all the chaotic terminal noise and only reports what I really need to look at. It updates the board, drops a clean summary in Slack, and flags the PRs for my review. I can step away from the keyboard, live my life, and just review their work asynchronously whenever I have time.</p>
+<p>If a worker agent gets stuck on a failing CI check and can&rsquo;t figure it out after a few tries, the Scrum Master marks the ticket as BLOCKED and escalates it to me for human intervention.</p>
+<h2 id="tackling-the-low-hanging-fruit">Tackling the Low-Hanging Fruit</h2>
+<p>I&rsquo;m not going to pretend this is AGI. We are running heavily quantized local models, and they have bad days. If you ask a quantized Minimax model to re-architect your entire graphics pipeline from scratch, it will fail miserably.</p>
+<p>But that is exactly why the Manager harness is so powerful.</p>
+<blockquote>
+<p>Can you monitor this repository for low-hanging fruit issues?
+<img src="/images/monitor.png" alt="Monitor Github issue"></p>
+</blockquote>
+<p>I specifically instructed my Scrum Master to scour my GitHub issues and triage them. Its job is to only pull down the &ldquo;low-hanging fruit&rdquo;: boilerplate updates, simple regex fixes, missing test coverages, and trailing bugs that sit in a backlog for months.</p>
+<p>For these tasks, it is incredibly effective.</p>
+<p>It acts like the ultimate Junior Developer. It clears the brush so I can focus on the deep, architectural work.</p>
+<h2 id="running-100-local">Running 100% Local</h2>
+<p>This entire system runs on local open-weight models. No API keys. No rate limits. No proprietary code leaking to third-party cloud servers. My coding squad and their Scrum Master live completely offline, orchestrated via <a href="https://localai.io">LocalAI</a> and LocalAGI.</p>
+<p><img src="/images/instance.png" alt="LocalAGI"></p>
+<p>For the hardware nerds wondering what it takes to run this: I am running this entire setup on a DGX Spark. Both the Scrum Master and the worker agents are powered by the Minimax model using the UD-Q2_K_XL quantization.</p>
+<p>Yes, it&rsquo;s heavily quantized, but that&rsquo;s the beauty of this architecture: even at Q2, the strict managerial harness keeps the agents focused and on track.</p>
+<p>Of course&hellip; if you have beefier hardware available, you can absolutely load up higher-precision quants for even better coding performance.</p>
+<p>Watching local models autonomously break down epics, delegate tasks, open PRs, and nag me on Slack to review their code is amazing to see in action.</p>
+<blockquote>
+<p>Complex task? split it up
+<img src="/images/epics.png" alt="Epics break down"></p>
+</blockquote>
+<h2 id="a-call-to-other-open-source-maintainers">A call to other Open Source maintainers</h2>
+<p>Building this autonomous dev team to help maintain LocalAI changed the game for me for three reasons:</p>
+<ol>
+<li>
+<p><strong>The Minimax Model is a Powerhouse:</strong> Even running highly quantized locally, it serves as a tireless Junior SWE. It unlocks massive value by flawlessly chewing through the backlog of low-level maintenance tickets that otherwise would sit there or drain my time.</p>
+</li>
+<li>
+<p><strong>The Agent Factory:</strong> With the right tooling and harness in place, we aren&rsquo;t just running a script. We are building an Agent Factory that is perfectly aligned with the specific needs of OSS maintainers. It effectively clones your time of you design it well.</p>
+</li>
+<li>
+<p><strong>Scaling to Multiple Teams:</strong> This design proves that agent orchestration at scale is viable right now. Because the Scrum Master interacts with worker agents entirely asynchronously, there is no limit to how wide this can go. It allows me to scale up and control parallel teams (frontend bots, backend bots, QA testers) all humming along weekends in the background.</p>
+</li>
+</ol>
+<p>For the first time since LocalAI blew up, looking at the issue tracker doesn&rsquo;t give me anxiety. It actually feels like I have real allies in the codebase.</p>
+<h2 id="reports">Reports!</h2>
+<p>We stopped treating AI like magic autocomplete and started treating it like a distributed engineering team. It&rsquo;s working so well that starting from now, the agents will autonomously curate, compile, and publish their own Weekly Sprint Reports detailing what they built and where they need human help over at <a href="https://reports.localai.io">reports.localai.io</a>.</p>
+<p>They will also summarize what has been happening in LocalAI, so it offers also a great service for these that want to follow along what&rsquo;s going on in the project.</p>
+<h2 id="a-call-to-the-community-embrace-local-ai">A Call to the Community: Embrace Local AI</h2>
+<p>I want to encourage the open-source community to fully embrace this.</p>
+<p>If you are maintaining a project, drowning in tickets, and burning out, spinning up an autonomous dev team is no longer sci-fi. It is here, and it works 100% locally. Minimax really changed the game.</p>
+<p>If you want to get your own &ldquo;small junior team&rdquo; running locally to help maintain your codebase, and you don&rsquo;t know where to start, please feel free to reach out to me. I would be incredibly happy to help you set this up. Let&rsquo;s equip every maintainer with a fleet of tireless AI allies.</p>
+<h2 id="share-your-agents-localagi-agenthub">Share Your Agents: LocalAGI AgentHub</h2>
+<p>I&rsquo;m building an <strong>AgentHub</strong> for LocalAGI, a place to collect and share agent configurations with the community. If you&rsquo;ve built a Scrum Master, a coder agent, or any other harness that works well, consider contributing your config so others can reuse and remix it. Drop a PR or reach out; the goal is to make it trivial to go from &ldquo;I want an autonomous team&rdquo; to &ldquo;here&rsquo;s a ready-to-run setup.&rdquo; Watch the <a href="https://github.com/mudler/LocalAGI">LocalAGI repo</a> for the AgentHub landing; I&rsquo;ll share the details there as it lands.</p>
+<h2 id="ripping-open-the-hood">Ripping Open the Hood</h2>
+<p>This high-level architecture is just the beginning. The real magic is in how these agents communicate without corrupting each other&rsquo;s memory.</p>
+<p>In part two of this series, I&rsquo;m going to share exactly how the sauce is made. I will show you how we use simple mechanisms for the Kanban board and walk you through the logic that makes this 100% crash-proof.</p>
+<p>If you&rsquo;re tired of babysitting your AI and want to build a real autonomous factory, wait for the next part. Part two is going to get extremely technical.</p>
+<p>Let me know in the comments if you&rsquo;ve been struggling with parallel agent orchestration. I&rsquo;d love to hear how you&rsquo;re solving it!</p>
+<p><em>(Now, if you&rsquo;ll excuse me, my Scrum Master is pinging me on Slack again. I have four PRs to review.)</em></p>
+
+    <a href="/"> >> Home</a>
+  </main>
+</div>
+    <footer>
+      
+      
+      <script>
+      (function() {
+        function center_el(tagName) {
+          var tags = document.getElementsByTagName(tagName), i, tag;
+          for (i = 0; i < tags.length; i++) {
+            tag = tags[i];
+            var parent = tag.parentElement;
+            
+            if (parent.childNodes.length === 1) {
+              
+              if (parent.nodeName === 'A') {
+                parent = parent.parentElement;
+                if (parent.childNodes.length != 1) continue;
+              }
+              if (parent.nodeName === 'P') parent.style.textAlign = 'center';
+            }
+          }
+        }
+        var tagNames = ['img', 'embed', 'object'];
+        for (var i = 0; i < tagNames.length; i++) {
+          center_el(tagNames[i]);
+        }
+      })();
+      </script>
+
+      
+      <hr/>
+      <a href="https://github.com/mudler">GitHub</a> | <a href="https://twitter.com/mudler_it">X/Twitter</a> | <a href="https://www.linkedin.com/in/ettore-di-giacinto-211a4166/">LinkedIn</a>
+      
+    </footer>
+  </body>
+</html>
+

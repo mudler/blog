@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 30 May 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mudler.pm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A call to open source maintainers, stop babysitting AI: How I Built a 100% Local Autonomous Dev Team to Maintain LocalAI, and why you should too</title>
+      <link>https://mudler.pm/posts/2026/02/28/a-call-to-open-source-maintainers-stop-babysitting-ai-how-i-built-a-100-local-autonomous-dev-team-to-maintain-localai-and-why-you-should-too/</link>
+      <pubDate>Sat, 28 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://mudler.pm/posts/2026/02/28/a-call-to-open-source-maintainers-stop-babysitting-ai-how-i-built-a-100-local-autonomous-dev-team-to-maintain-localai-and-why-you-should-too/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mudler.pm/images/agents_header.png&#34; alt=&#34;header&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;If you&amp;rsquo;re building software today, you&amp;rsquo;ve probably felt the new kind of developer burnout.&lt;/p&gt;&#xA;&lt;p&gt;Things changed drammatically in the last two months.&lt;/p&gt;&#xA;&lt;p&gt;Even Karpathy sensei could not write it better:&lt;/p&gt;&#xA;&lt;div class=&#34;tweet-embed&#34;&gt;&#xA;  &lt;iframe&#xA;    src=&#34;https://platform.twitter.com/embed/Tweet.html?id=2026731645169185220&amp;amp;theme=auto&#34;&#xA;    title=&#34;Tweet from @karpathy&#34;&#xA;    width=&#34;550&#34;&#xA;    style=&#34;max-width: 100%; border: 0; min-height: 200px;&#34;&#xA;    loading=&#34;lazy&#34;&#xA;  &gt;&lt;/iframe&gt;&#xA;  &lt;p class=&#34;tweet-fallback&#34;&gt;&lt;a href=&#34;https://x.com/karpathy/status/2026731645169185220&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;View on X (Twitter) →&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;p&gt;The real pain isn&amp;rsquo;t writing the code anymore, it&amp;rsquo;s the brutal cognitive load of context switching between managing agent sessions. You try to scale your output with AI, and suddenly you&amp;rsquo;re managing a dozen different agents across a sea of split terminal windows, or clicking endlessly through bloated, dedicated UIs just to figure out what broke.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>LocalAI and llama.cpp on Jetson Nano Devkit</title>
       <link>https://mudler.pm/posts/2024/05/30/localai-and-llama.cpp-on-jetson-nano-devkit/</link>

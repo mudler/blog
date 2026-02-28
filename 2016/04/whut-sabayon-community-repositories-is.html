@@ -74,12 +74,104 @@
 
 <div class="content-wrapper">
   <main>
-    <h4 id="maaaaaaaaaaaaany-dependencies-for-enman-still-he">Maaaaaaaaaaaaany dependencies for enman… Still, he&hellip;</h4>
-<p><a href="https://www.blogger.com/profile/05988645683809592011" title="noreply@blogger.com">Tedel</a> - <time datetime="2016-04-18T14:39:43.293-07:00">Apr 1, 2016</time></p>
-<p>Maaaaaaaaaaaaany dependencies for enman…<br>
-Still, here we go! :D</p>
-<hr />
+    <p>Hello users,</p>
+<p>Time passed when i first wrote the article &ldquo;<a href="https://blog.mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html">[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</a>&rdquo; that was going to be divided into parts. But things changed amazingly fast and there is better news, I wrote up a suite of tools that makes the whole operation much easier, thanks also to <a href="https://plus.google.com/104283756158326784792">+Ben Roberts</a> (optiz0r) who contributed in the development and he is also kindly sponsoring the buildserver.</p>
+<p>Some of you probably already heard about Sabayon Community Repositories (SCR) that we announced  in the developers mailing list some weeks ago, if not, keep reading. The SCR Build System is an improvement of the methodology explicated <a href="https://blog.mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html">before</a>, but with a lot of extras and automated features. This is how SCR is born.</p>
+<p><strong>TL;DR</strong><br>
+Information and how-to use: <a href="https://wiki.sabayon.org/index.php?title=En:Sabayon_Community_Repositories">Wiki page</a> (under construction)<br>
+Search available packages: <a href="https://sabayon.github.io/community-website/">SCR website</a><br>
+Packages requests: <a href="https://bugs.sabayon.org/enter_bug.cgi?product=Community%20Repositories">Bugzilla section</a><br>
+Contributing/setup a local development environment: <a href="https://wiki.sabayon.org/index.php?title=HOWTO:_Contributing_to_SCR">How-to contribute</a><br>
+Guidelines and Bylaws (for SCR Devs): <a href="https://github.com/Sabayon/scr-docs">scr-docs Github repository</a></p>
+<h2 id="sabayon-community-repositories">Sabayon Community Repositories</h2>
+<p>SCR is a collection of repositories available to Sabayon users, that could be enabled/removed from the system by using <strong>enman</strong> &ndash; our layman equivalent &ndash; this ensures not only that a user can easily revert his mistakes ( SCR content <strong>is not</strong> as stable as main repos, and we put a lot of warnings in the website for this reason) but also that it&rsquo;s easier and faster than ever now having bleeding edge packages that are not in the official channels.<br>
+Users can search packages in the <a href="https://sabayon.github.io/community-website/">SCR website</a>, that will display information on how to install them.</p>
+<p>More information on how to use SCR is available in the <a href="https://wiki.sabayon.org/index.php?title=En:Sabayon_Community_Repositories">wiki page</a> (under construction). Meanwhile we are currently working on the project documentation: <a href="https://github.com/Sabayon/scr-docs/blob/master/scr-guidelines.md">Guidelines</a> and <a href="https://github.com/Sabayon/scr-docs/blob/master/scr-bylaws.md">Bylaws</a> can be found on the <a href="https://github.com/Sabayon/scr-docs">scr-docs Github repository</a>.</p>
+<h2 id="usage">Usage</h2>
+<p>Open a terminal and run the following as root!</p>
+<p><strong>1)</strong> Disable weekly repositories and enable current:</p>
+<pre tabindex="0"><code>sudo mv /etc/entropy/repositories.conf.d/entropy\_sabayonlinux.org{.example,}
+</code></pre><p>equo repo disable sabayon-weekly</p>
+<pre tabindex="0"><code>equo repo enable sabayonlinux.org
+```
 
+  
+
+**2)** Update/upgrade your machine
+
+  
+
+```
+ equo up &amp;&amp; sudo equo u
+```
+
+  
+
+**3)** Install **enman**:
+
+  
+
+```
+ equo i enman 
+```
+
+  
+
+We are now ready to use SCR!  
+  
+  
+  
+**4)** Enable the community repository:  
+
+  
+```
+ enman add community 
+```  
+Update just the community repository database:  
+```
+ equo up community
+```  
+Now we can search as usual packages with &#34;equo search&#34; or, you can list the repository content with &#34;equo query&#34;:  
+```
+ equo q list available community 
+```  
+
+Special Purpose Repositories
+----------------------------
+
+These repositories contain packages to satisfy a particular purpose and that are not suitable for inclusion in the &#34;community&#34; repository. These should be enabled with care, and only if you need the specific functionality they provide.  
+  
+Example special purpose repositories:  
+
+*   &#34;**devel**&#34;: Contains live versions of core Sabayon packages, and can be used to develop future Sabayon improvements against upstream projects, such as the Calamares installer, or the Linux Kernel.
+*   &#34;**gaming-live**&#34;: Contains bleeding edge graphics drivers which may add new features or hardware support but may contain bugs or cause crashes.
+*   &#34;**kde-unstable**&#34;: Contains the very latest KDE packages, which haven&#39;t gone through the same level of QA as you would find for KDE versions made available via Entropy. 
+*   &#34;**pentesting**&#34;: Contains various pentesting packages 
+
+Development and Contributing
+----------------------------
+
+From a developer point of view, - feel free to skip that if you don&#39;t need to build your packages - the approach is more easier:  [we are using building specifications files that describes what the repository should contain](https://github.com/Sabayon/community-repositories) (and how to make that possible). The awesome side of this is that the entire infrastructure and the repository as well are replicable everytime. [In our wiki there is a page regarding on how to setup the infrastructure](https://wiki.sabayon.org/index.php?title=HOWTO:_Contributing_to_SCR) (the same we use on the Build Server) in your local machine, enabling you to locally-build repositories without having to care about setting up a chroot! just put in a configuration file the relevants bits and you are done!  
+  
+
+Package requests
+----------------
+
+If you don&#39;t mind on how all of this works, but you want a package to be added in the SCR repositories, feel free to open a bug request [in the specific section of our Bugzilla](https://bugs.sabayon.org/enter_bug.cgi?product=Community%20Repositories): be sure to specify if the ebuild is available in layman if you want it to get done faster.
+
+  
+
+Donations
+---------
+
+As you can see we are always busy to give you the Sabayon experience, but we really need your help now!  [Consider donating](https://www.sabayon.org/donate)!
+
+[![](https://s-media-cache-ak0.pinimg.com/736x/72/e7/ff/72e7ff6ac7754f87122535431284090a.jpg)](https://s-media-cache-ak0.pinimg.com/736x/72/e7/ff/72e7ff6ac7754f87122535431284090a.jpg)
+
+We don&#39;t use funds to buy alcohol, also if we&#39;d love to (remember Windows ME?). We need YOU to keep our systems operative and running!
+
+Cheers!
+</code></pre>
     <a href="/"> >> Home</a>
   </main>
 </div>
