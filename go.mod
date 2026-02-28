@@ -1,5 +1,5 @@
-module hello-4s3ti
+module github.com/mudler/blog
 
-go 1.19
+go 1.21
 
-require github.com/kaushalmodi/hugo-search-fuse-js v0.4.4 // indirect
+require github.com/goodroot/hugo-classic v0.0.0-20250206231743-18a7c62ecc52 // indirect

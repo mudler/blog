@@ -18,7 +18,8 @@ fi
 rm -rf "${publicpath}" || true
 [[ ! -d "${publicpath}" ]] && mkdir -p "${publicpath}"
 
-npm install --save-dev autoprefixer postcss-cli postcss
+# Use project-local cache to avoid permission issues (e.g. in CI)
+export HUGO_CACHEDIR="${ROOT_DIR}/.hugo_cache"
 
 HUGO_ENV="production" "${binpath}/hugo" --gc -b "${BASE_URL}" -d "${publicpath}"
 

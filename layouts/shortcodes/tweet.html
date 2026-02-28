@@ -1,0 +1,18 @@
+{{- $user := .Get "user" -}}
+{{- $id := .Get "id" -}}
+{{- if and $user $id -}}
+{{- $embedURL := printf "https://platform.twitter.com/embed/Tweet.html?id=%s&theme=auto" $id -}}
+{{- $tweetURL := printf "https://x.com/%s/status/%s" $user $id -}}
+<div class="tweet-embed">
+  <iframe
+    src="{{ $embedURL }}"
+    title="Tweet from @{{ $user }}"
+    width="550"
+    style="max-width: 100%; border: 0; min-height: 200px;"
+    loading="lazy"
+  ></iframe>
+  <p class="tweet-fallback"><a href="{{ $tweetURL }}" target="_blank" rel="noopener noreferrer">View on X (Twitter) →</a></p>
+</div>
+{{- else -}}
+{{- errorf "tweet shortcode: requires named parameters user and id. Use {{< tweet user=\"username\" id=\"123\" >}}" -}}
+{{- end -}}
