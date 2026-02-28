@@ -1,187 +1,118 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>sabayon on Mudler blog</title>
+    <title>Sabayon on Mudler blog</title>
     <link>https://mudler.pm/tags/sabayon/</link>
-    <description>Recent content in sabayon on Mudler blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <description>Recent content in Sabayon on Mudler blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 18 Apr 2016 06:02:00 -0700</lastBuildDate><atom:link href="https://mudler.pm/tags/sabayon/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Apr 2016 06:02:00 -0700</lastBuildDate>
+    <atom:link href="https://mudler.pm/tags/sabayon/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Whut?! Sabayon Community Repositories is here!</title>
       <link>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</link>
       <pubDate>Mon, 18 Apr 2016 06:02:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</guid>
-      <description>Maaaaaaaaaaaaany dependencies for enman… Still, he&amp;hellip; Tedel - Apr 1, 2016
-Maaaaaaaaaaaaany dependencies for enman…
-Still, here we go! :D</description>
+      <description>&lt;h4 id=&#34;maaaaaaaaaaaaany-dependencies-for-enman-still-he&#34;&gt;Maaaaaaaaaaaaany dependencies for enman… Still, he&amp;hellip;&lt;/h4&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.blogger.com/profile/05988645683809592011&#34; title=&#34;noreply@blogger.com&#34;&gt;Tedel&lt;/a&gt; - &lt;time datetime=&#34;2016-04-18T14:39:43.293-07:00&#34;&gt;Apr 1, 2016&lt;/time&gt;&lt;/p&gt;&#xA;&lt;p&gt;Maaaaaaaaaaaaany dependencies for enman…&lt;br&gt;&#xA;Still, here we go! :D&lt;/p&gt;&#xA;&lt;hr /&gt;</description>
     </item>
-    
     <item>
       <title>Whut?! Sabayon Community Repositories is here!</title>
       <link>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</link>
       <pubDate>Mon, 18 Apr 2016 06:02:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</guid>
-      <description>Hello users,
-Time passed when i first wrote the article &amp;ldquo;[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services&amp;rdquo; that was going to be divided into parts. But things changed amazingly fast and there is better news, I wrote up a suite of tools that makes the whole operation much easier, thanks also to +Ben Roberts (optiz0r) who contributed in the development and he is also kindly sponsoring the buildserver.</description>
+      <description>&lt;p&gt;Hello users,&lt;/p&gt;&#xA;&lt;p&gt;Time passed when i first wrote the article &amp;ldquo;&lt;a href=&#34;https://blog.mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html&#34;&gt;[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services&lt;/a&gt;&amp;rdquo; that was going to be divided into parts. But things changed amazingly fast and there is better news, I wrote up a suite of tools that makes the whole operation much easier, thanks also to &lt;a href=&#34;https://plus.google.com/104283756158326784792&#34;&gt;+Ben Roberts&lt;/a&gt; (optiz0r) who contributed in the development and he is also kindly sponsoring the buildserver.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Updates: Rpi2 joins to testing boards, Mate testing repository, Sabayon devkit</title>
       <link>https://mudler.pm/2016/02/updates-rpi2-joins-to-testing-boards.html</link>
       <pubDate>Sun, 07 Feb 2016 10:22:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/2016/02/updates-rpi2-joins-to-testing-boards.html</guid>
-      <description>Updates, TMiD (This Month in the Dev world)
-Something landed here! Thanks to +Ben Roberts for the donation!
-ARM Marsala, the board that +Ben Roberts was so kind to donate has just landed here, and i&amp;rsquo;m very happy about it, because that means that i can test against the board again myself.
-I&amp;rsquo;m glad also to announce that the ROS framework and some other goodies(among of them firefox and libreoffice) have been pushed into our ARM repo.</description>
+      <description>&lt;p&gt;Updates, TMiD (This Month in the Dev world)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://the9gag.com/images/pictuers/thumb/eat_sleep_code_repeat.jpg&#34;&gt;&lt;img src=&#34;http://the9gag.com/images/pictuers/thumb/eat_sleep_code_repeat.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Something landed here! Thanks to &lt;a href=&#34;https://plus.google.com/104283756158326784792&#34;&gt;+Ben Roberts&lt;/a&gt; for the donation!&lt;/p&gt;&#xA;&lt;h2 id=&#34;arm&#34;&gt; ARM&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://4.bp.blogspot.com/-2-6OxD55XIw/VreGFqrZAGI/AAAAAAAAOTg/QsV25IFm1dA/s1600/photo_2016-02-07_18-59-21.jpg&#34;&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-2-6OxD55XIw/VreGFqrZAGI/AAAAAAAAOTg/QsV25IFm1dA/s320/photo_2016-02-07_18-59-21.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Marsala, the board that &lt;a href=&#34;https://plus.google.com/104283756158326784792&#34;&gt;+Ben Roberts&lt;/a&gt; was so kind to donate has just landed here, and i&amp;rsquo;m very happy about it, because that means that i can test against the board again myself.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m glad also to announce that the ROS framework and some other goodies(among of them firefox and libreoffice) have been pushed into our ARM repo.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Tech Preview: Sabayon on RaspberryPi2 </title>
       <link>https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html</link>
       <pubDate>Mon, 11 Jan 2016 05:02:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html</guid>
-      <description>hi, this is a really good new are there chances o&amp;hellip; Unknown - Feb 6, 2016
-hi, this is a really good new
-are there chances of having sabayon on Raspberry PI (not PI2)?</description>
+      <description>&lt;h4 id=&#34;hi-this-is-a-really-good-new-are-there-chances-o&#34;&gt;hi, this is a really good new are there chances o&amp;hellip;&lt;/h4&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.blogger.com/profile/14210313797077979642&#34; title=&#34;noreply@blogger.com&#34;&gt;Unknown&lt;/a&gt; - &lt;time datetime=&#34;2016-02-20T00:58:52.881-08:00&#34;&gt;Feb 6, 2016&lt;/time&gt;&lt;/p&gt;&#xA;&lt;p&gt;hi, this is a really good new&lt;/p&gt;&#xA;&lt;p&gt;are there chances of having sabayon on Raspberry PI (not PI2)?&lt;/p&gt;&#xA;&lt;hr /&gt;</description>
     </item>
-    
     <item>
       <title>Tech Preview: Sabayon on RaspberryPi2 </title>
       <link>https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html</link>
       <pubDate>Mon, 11 Jan 2016 05:02:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html</guid>
-      <description>As anticipated on Sabayon Linux site releases notes, that day was going to be close.
-ARM meet Sabayon, Sabayon meet ARM.
-The approach to the ARM(hfp) support will be different from the previous attempt, we are not going to support kernels for each different board we intend to build images, instead we will release cutted images with vendor-kernel to avoid incompatibilities and unexpected features. This is what almost every distribution does for tons of reasons, among them i want just to underline that in those years we have seen a lot of new ARM boards out of there and we can&amp;rsquo;t just support all of them, mantain a kernel branch for each one would results low QA (since our dev-team is small) and probably in hard decision to be made when support will be dropped from vendors (think also on how short is a board lifespan, and how projects dies quickly).</description>
+      <description>&lt;p&gt;As anticipated on Sabayon Linux site releases notes, that day was going to be close.&lt;br&gt;&#xA;&lt;strong&gt;ARM&lt;/strong&gt; meet &lt;strong&gt;Sabayon&lt;/strong&gt;, &lt;strong&gt;Sabayon&lt;/strong&gt; meet &lt;strong&gt;ARM&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.raspberrypi.org/wp-content/uploads/2015/01/Pi2ModB1GB_-comp.jpeg&#34;&gt;&lt;img src=&#34;https://www.raspberrypi.org/wp-content/uploads/2015/01/Pi2ModB1GB_-comp.jpeg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;The approach to the ARM(hfp) support will be different from the previous attempt, we are not going to support  kernels for each different board we intend to build images, instead we will release cutted images with vendor-kernel to avoid incompatibilities and unexpected features. This is what almost every distribution does for tons of reasons, among them i want just to underline that in those years we have seen a lot of new ARM boards out of there and we can&amp;rsquo;t just support all of them, mantain a kernel branch for each one would results low QA (since our dev-team is small) and probably in hard decision to be made when support will be dropped from vendors (think also on how short is a board lifespan, and how projects dies quickly). In that way, we can still provide support also for legacy devices as well.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</title>
       <link>https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html</link>
       <pubDate>Sun, 15 Nov 2015 07:09:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html</guid>
-      <description>With spawning a compilation, the second line (with&amp;hellip; fusion809 - Nov 4, 2015
-With spawning a compilation, the second line (with the package you wish to merge) is it possible to point to a specific version of a package. For example, atm I&amp;rsquo;d like to merge app-editors/atom-1.2.0 from the Sabayon overlay, do I have to enter it as `app-editors/atom-1.2.0 &amp;ndash;overlay sabayon` or `=app-editors/atom-1.2.0 &amp;ndash;overlay sabayon`?
-In section 3 I think you gave incorrect syntax, although it may be because of formatting limitations imposed by blogger.</description>
+      <description>&lt;h4 id=&#34;with-spawning-a-compilation-the-second-line-with&#34;&gt;With spawning a compilation, the second line (with&amp;hellip;&lt;/h4&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.blogger.com/profile/14316408440182908236&#34; title=&#34;noreply@blogger.com&#34;&gt;fusion809&lt;/a&gt; - &lt;time datetime=&#34;2015-11-18T22:15:18.006-08:00&#34;&gt;Nov 4, 2015&lt;/time&gt;&lt;/p&gt;&#xA;&lt;p&gt;With spawning a compilation, the second line (with the package you wish to merge) is it possible to point to a specific version of a package. For example, atm I&amp;rsquo;d like to merge app-editors/atom-1.2.0 from the Sabayon overlay, do I have to enter it as `app-editors/atom-1.2.0 &amp;ndash;overlay sabayon` or `=app-editors/atom-1.2.0 &amp;ndash;overlay sabayon`?&lt;/p&gt;&#xA;&lt;hr /&gt;&#xA;#### In section 3 I think you gave incorrect syntax, al...&#xA;[fusion809](https://www.blogger.com/profile/14316408440182908236 &#34;noreply@blogger.com&#34;) - &lt;time datetime=&#34;2015-11-18T23:11:19.327-08:00&#34;&gt;Nov 4, 2015&lt;/time&gt;&#xA;&lt;p&gt;In section 3 I think you gave incorrect syntax, although it may be because of formatting limitations imposed by blogger. I think the two lines:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</title>
       <link>https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html</link>
       <pubDate>Sun, 15 Nov 2015 07:09:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html</guid>
-      <description>As previously anticipated in the previous blog post, here i explain what&amp;rsquo;s going on with Sabayon Docker images, and how can the Official Sabayon images help you in developing/deploying your application. In this article, i&amp;rsquo;ll show how to build Sabayon/Gentoo packages using Docker.
-I&amp;rsquo;ll cover five cases and will be divided in differents articles:
-You want to build packages locally You want to remotely build packages You want to host an overlay or a Sabayon repository and want your packages to get built on each push to the git repository You want to track remote repository changes and test (useful if you can&amp;rsquo;t setup a webhook) Setup an Entropy repo with a Docker image, and how to mantain packages In future, i&amp;rsquo;ll write also a post also on how to track the packages remotely with CircleCi.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://1.bp.blogspot.com/-s-2KEJ0FoF8/VkiGi_oCjBI/AAAAAAAAMfg/JkAeUmowseI/s1600/cloud-47581_1280.png&#34;&gt;&lt;img src=&#34;http://1.bp.blogspot.com/-s-2KEJ0FoF8/VkiGi_oCjBI/AAAAAAAAMfg/JkAeUmowseI/s640/cloud-47581_1280.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;As previously anticipated in the previous blog post, here i explain what&amp;rsquo;s going on with Sabayon Docker images, and how can the Official Sabayon images help you in developing/deploying your application. In this article, i&amp;rsquo;ll show how to build Sabayon/Gentoo packages using Docker.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ll cover five cases and will be divided in differents articles:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;You want to build packages locally&lt;/li&gt;&#xA;&lt;li&gt;You want to remotely build packages&lt;/li&gt;&#xA;&lt;li&gt;You want to host an overlay or a Sabayon repository and want your packages to get built on each push to the git repository&lt;/li&gt;&#xA;&lt;li&gt;You want to track remote repository changes and test (useful if you can&amp;rsquo;t setup a webhook)&lt;/li&gt;&#xA;&lt;li&gt;Setup an Entropy repo with a Docker image, and how to mantain packages&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;In future, i&amp;rsquo;ll write also a post also on how to track the packages remotely with CircleCi.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Sabayon: testers, testers, testers</title>
       <link>https://mudler.pm/2015/10/sabayon-testers-testers-testers.html</link>
       <pubDate>Wed, 07 Oct 2015 14:28:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/10/sabayon-testers-testers-testers.html</guid>
-      <description>I will give it a go installing new motherboard tod&amp;hellip; Unknown - Oct 4, 2015
-I will give it a go installing new motherboard today will start testing after thate
-Thanks for your efforts , please remember to file a bug for whatever problem you will face!
-I have jut installed a new motherboard,it is a msi z97a the only problem so far is I cant install sabayon in uefi mode I am runing 15.</description>
+      <description>&lt;h4 id=&#34;i-will-give-it-a-go-installing-new-motherboard-tod&#34;&gt;I will give it a go installing new motherboard tod&amp;hellip;&lt;/h4&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.blogger.com/profile/02509968321297586933&#34; title=&#34;noreply@blogger.com&#34;&gt;Unknown&lt;/a&gt; - &lt;time datetime=&#34;2015-10-07T17:29:49.660-07:00&#34;&gt;Oct 4, 2015&lt;/time&gt;&lt;/p&gt;&#xA;&lt;p&gt;I will give it a go installing new motherboard today will start testing after thate&lt;/p&gt;&#xA;&lt;hr /&gt;&#xA;#### Thanks for your efforts , please remember to file ...&#xA;[Ettore](https://www.blogger.com/profile/03411449232588367668 &#34;noreply@blogger.com&#34;) - &lt;time datetime=&#34;2015-10-08T02:33:20.827-07:00&#34;&gt;Oct 4, 2015&lt;/time&gt;&#xA;&lt;p&gt;Thanks for your efforts , please remember to file a bug for whatever problem you will face!&lt;/p&gt;&#xA;&lt;hr /&gt;&#xA;#### I have jut installed a new motherboard,it is a msi...&#xA;[Unknown](https://www.blogger.com/profile/02509968321297586933 &#34;noreply@blogger.com&#34;) - &lt;time datetime=&#34;2015-10-08T06:38:10.996-07:00&#34;&gt;Oct 4, 2015&lt;/time&gt;&#xA;&lt;p&gt;I have jut installed a new motherboard,it is a msi z97a the only problem so far is I cant install sabayon in uefi mode I am runing 15.10 on the other hard dive fedora 22 xfce installed in uefi mode no problem&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Sabayon: testers, testers, testers</title>
       <link>https://mudler.pm/2015/10/sabayon-testers-testers-testers.html</link>
       <pubDate>Wed, 07 Oct 2015 14:28:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/10/sabayon-testers-testers-testers.html</guid>
-      <description>Sabayon, official call for testers (and well, developers are welcome too)
-Testers, come to us Probably most of you already have seen Ballmer in show-mode
-Also if controversial, it was a quite funny commercial / raindance move, balls included. But i can say that he is wrong, testers are as important as developers.
-Consider helping Sabayon in a different way: testing it.
-I am here, begging YOU for some help. The more the merrier!</description>
+      <description>&lt;p&gt;Sabayon, official call for testers (and well, developers are welcome too)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://4.bp.blogspot.com/-aKxCHaqb3X4/VhTf8i951mI/AAAAAAAAMB0/1HrGxtWUY2Q/s1600/keep-calm-and-test-develop.png&#34;&gt;&lt;img src=&#34;http://4.bp.blogspot.com/-aKxCHaqb3X4/VhTf8i951mI/AAAAAAAAMB0/1HrGxtWUY2Q/s320/keep-calm-and-test-develop.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;testers-come-to-us&#34;&gt;Testers, come to us&lt;/h2&gt;&#xA;&lt;p&gt;Probably most of you already have seen Ballmer in &lt;em&gt;show-mode&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Also if controversial, it was a quite funny commercial / raindance move, balls included. But i can say that he is wrong, &lt;strong&gt;testers are as important as developers.&lt;/strong&gt;&lt;br&gt;&#xA;Consider helping Sabayon in a &lt;em&gt;different&lt;/em&gt; way: testing it.&lt;/p&gt;&#xA;&lt;p&gt;I am here, begging YOU for some help. The more the merrier! What we need are brave folks proud to be bleeding edge, ready to install all the latest updates, capable observers that carries on using their machine normally BUT taking notes on functionality, installation problems, and any other weirdness or lack thereof.&lt;br&gt;&#xA;Grab a freshly built image or enable our testing repositories, but more importantly:_ report back_ to our &lt;a href=&#34;https://bugs.sabayon.org/&#34;&gt;bugzilla&lt;/a&gt; or dropping by on our IRC channel (#sabayon on chat.freenode.net).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Sabayon 15.10 press release</title>
       <link>https://mudler.pm/2015/09/sabayon-1510-press-release.html</link>
       <pubDate>Mon, 28 Sep 2015 11:07:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/09/sabayon-1510-press-release.html</guid>
-      <description>Image: an ancient hen-foot print found on Mars (Mars Photo credit to NASA)
-Sabayon 15.10 is a modern and easy to use Linux distribution based on Gentoo, following an extreme, yet reliable, rolling release model.
-This is a monthly release generated, tested and published to mirrors by our build servers containing the latest and greatest collection of software available in the Entropy repositories.
-The ChangeLog files related to this release are available on our mirrors.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://3.bp.blogspot.com/-AbWz1Wk7__U/Vgl_vSomVNI/AAAAAAAAL4I/rdcLxP0vxOE/s1600/mars-sabayon.jpg&#34;&gt;&lt;img src=&#34;http://3.bp.blogspot.com/-AbWz1Wk7__U/Vgl_vSomVNI/AAAAAAAAL4I/rdcLxP0vxOE/s400/mars-sabayon.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Image: an ancient hen-foot print found on Mars (Mars Photo credit to NASA)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Sabayon &lt;strong&gt;15.10&lt;/strong&gt; is a modern and easy to use Linux distribution based on Gentoo, following an extreme, yet reliable, rolling release model.&lt;/p&gt;&#xA;&lt;p&gt;This is a monthly release generated, tested and published to mirrors by our build servers containing the latest and greatest collection of software available in the Entropy repositories.&lt;/p&gt;&#xA;&lt;p&gt;The ChangeLog files related to this release are available &lt;a href=&#34;http://dl.sabayon.org/iso/ChangeLogs/&#34;&gt;on our mirrors.&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Sabayon is moving to KDE Plasma 5.4</title>
       <link>https://mudler.pm/2015/09/sabayon-is-moving-to-kde-plasma-54.html</link>
       <pubDate>Sat, 12 Sep 2015 10:36:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/09/sabayon-is-moving-to-kde-plasma-54.html</guid>
-      <description>Sabayon is officially moving to Plasma 5, please read if you are a KDE Sabayon user.
-KDM is going to be removed! migrate to SDDM now!
-Yes, finally we are moving on.
-While KDE 4 was a pretty stable DM, Plasma 5 brings awesomeness and, if you didn&amp;rsquo;t noticed, it&amp;rsquo;s the future.
-From KDM to SDDM We tried to do our best to make the transition as smooth as possible and automatic, but if your system just got broken here is why: the KDE team announced SDDM as the default KDE display manager.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://3.bp.blogspot.com/-jRJmCVvyYJ4/Vebu_7a86OI/AAAAAAAALnE/d8DCNFt13_w/s1600/plasma_sab.png&#34;&gt;&lt;img src=&#34;http://3.bp.blogspot.com/-jRJmCVvyYJ4/Vebu_7a86OI/AAAAAAAALnE/d8DCNFt13_w/s320/plasma_sab.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Sabayon is officially moving to Plasma 5, &lt;strong&gt;please read if you are a KDE Sabayon user.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;KDM is going to be removed! migrate to SDDM now!&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Yes, finally we are moving on.&lt;/p&gt;&#xA;&lt;p&gt;While KDE 4 was a pretty stable DM, Plasma 5 brings awesomeness and, if you didn&amp;rsquo;t noticed, it&amp;rsquo;s the future.&lt;/p&gt;&#xA;&lt;h2 id=&#34;from-kdm-to-sddm&#34;&gt;From KDM to SDDM&lt;/h2&gt;&#xA;&lt;p&gt;We tried to do our best to make the transition as smooth as possible and automatic, but if your system just got broken here is why: the KDE team announced SDDM as the default KDE display manager.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Tech Preview: Sabayon Plasma 5 LiveCD</title>
       <link>https://mudler.pm/2015/09/tech-preview-sabayon-plasma-5-livecd.html</link>
       <pubDate>Wed, 02 Sep 2015 05:46:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/09/tech-preview-sabayon-plasma-5-livecd.html</guid>
-      <description>Thanks, Unfortunately running in VirtualBox 4.3.28&amp;hellip; Unknown - Sep 3, 2015
-Thanks, Unfortunately running in VirtualBox 4.3.28, NetworkManager is crashing and can&amp;rsquo;t access desktop. :(
-Thanks for your feedback, i run the image on VirtualBox 4.3.28 as well without problems, can you try to change the Network Adaptor type under the image settings, Network-&amp;gt; Advanced -&amp;gt; Card type
-Thanks, your tip solve the startup. Dolphin link from main menu is broken.</description>
+      <description>&lt;h4 id=&#34;thanks-unfortunately-running-in-virtualbox-4328&#34;&gt;Thanks, Unfortunately running in VirtualBox 4.3.28&amp;hellip;&lt;/h4&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.blogger.com/profile/13048373511639941641&#34; title=&#34;noreply@blogger.com&#34;&gt;Unknown&lt;/a&gt; - &lt;time datetime=&#34;2015-09-02T08:36:36.416-07:00&#34;&gt;Sep 3, 2015&lt;/time&gt;&lt;/p&gt;&#xA;&lt;p&gt;Thanks, Unfortunately running in VirtualBox 4.3.28, NetworkManager is crashing and can&amp;rsquo;t access desktop. :(&lt;/p&gt;&#xA;&lt;hr /&gt;&#xA;#### Thanks for your feedback, i run the image on Virtu...&#xA;[Ettore](https://www.blogger.com/profile/03411449232588367668 &#34;noreply@blogger.com&#34;) - &lt;time datetime=&#34;2015-09-03T10:27:44.048-07:00&#34;&gt;Sep 4, 2015&lt;/time&gt;&#xA;&lt;p&gt;Thanks for your feedback, i run the image on VirtualBox 4.3.28 as well without problems, can you try to change the Network Adaptor type under the image settings, Network-&amp;gt; Advanced -&amp;gt; Card type&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Tech Preview: Sabayon Plasma 5 LiveCD</title>
       <link>https://mudler.pm/2015/09/tech-preview-sabayon-plasma-5-livecd.html</link>
       <pubDate>Wed, 02 Sep 2015 05:46:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/09/tech-preview-sabayon-plasma-5-livecd.html</guid>
-      <description>!! WARNING - HERE BE DRAGONS !!
-Sabayon Plasma 5 LiveCD Tech preview is available for download
-This release is just for testing only, it is just a preview of Plasma5 on Sabayon for those of you that wants just to snoop on what&amp;rsquo;s going on without touching your system.
-If you want to install Plasma 5 with the community repository, follow those instructions.
-Known issues: Dolphin Shortcut on favorites is not working Desktop isn&amp;rsquo;t in folderview so you can&amp;rsquo;t quickly access to the install icon, but the installer is present (search for &amp;ldquo;Calamares&amp;rdquo; or &amp;ldquo;Installer&amp;rdquo; in the Plasma menu) No Sabayon artwork is present, plasma is vanilla Please, if you encounter other issues let us know, Thank you!</description>
+      <description>&lt;p&gt;&lt;strong&gt;!!&lt;/strong&gt; &lt;strong&gt;WARNING&lt;/strong&gt; &lt;strong&gt;- HERE BE DRAGONS&lt;/strong&gt; &lt;strong&gt;!!&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://1.bp.blogspot.com/-jRJmCVvyYJ4/Vebu_7a86OI/AAAAAAAALnA/tCSegvEXQDc/s1600/plasma_sab.png&#34;&gt;&lt;img src=&#34;http://1.bp.blogspot.com/-jRJmCVvyYJ4/Vebu_7a86OI/AAAAAAAALnA/tCSegvEXQDc/s320/plasma_sab.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;strong&gt;Sabayon&lt;/strong&gt; &lt;strong&gt;Plasma 5&lt;/strong&gt; &lt;strong&gt;LiveCD&lt;/strong&gt;  &lt;strong&gt;Tech&lt;/strong&gt;  &lt;strong&gt;preview&lt;/strong&gt; &lt;strong&gt;is available for&lt;/strong&gt; &lt;strong&gt;&lt;a href=&#34;https://mirror.spike-pentesting.org/mirrors/spike/mirror/images/&#34;&gt;download&lt;/a&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;This release is just for testing only, it is just a preview of Plasma5 on Sabayon for those of you that &lt;/p&gt;&#xA;&lt;p&gt;wants just to snoop on what&amp;rsquo;s going on without touching your system.&lt;/p&gt;&#xA;&lt;p&gt;If you want to install Plasma 5 with the community repository, &lt;a href=&#34;http://blog.mudler.pm/p/sabayon-plasma5-community-repository_27.html&#34;&gt;follow those instructions.&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;known-issues&#34;&gt;Known issues:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dolphin Shortcut on favorites is not working&lt;/li&gt;&#xA;&lt;li&gt;Desktop isn&amp;rsquo;t in folderview so you can&amp;rsquo;t quickly access to the install icon, but the installer is present (search for &amp;ldquo;Calamares&amp;rdquo; or &amp;ldquo;Installer&amp;rdquo; in the Plasma menu)&lt;/li&gt;&#xA;&lt;li&gt;No Sabayon artwork is present, plasma is vanilla&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Please, if you encounter other issues let us know, Thank you!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>KDE Plasma 5.4, available on Plasma5 Sabayon community repository</title>
       <link>https://mudler.pm/2015/08/kde-plasma-54-available-on-plasma5.html</link>
       <pubDate>Thu, 27 Aug 2015 05:03:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/08/kde-plasma-54-available-on-plasma5.html</guid>
-      <description>I&amp;rsquo;m glad to announce that Plasma 5.4 is available on Sabayon Plasma5 community repository.
-Plasma 5.4
-The KDE team announced on 25 August the release of Plasma 5.4:
-This release of Plasma brings many nice touches for our users such as much improved high DPI support, KRunner auto-completion and many new beautiful Breeze icons. It also lays the ground for the future with a tech preview of Wayland session available. We&amp;rsquo;re shipping a few new components such as an Audio Volume Plasma Widget, monitor calibration tool and the User Manager tool comes out beta.</description>
+      <description>&lt;p&gt;I&amp;rsquo;m glad to announce that Plasma 5.4 &lt;strong&gt;is available&lt;/strong&gt; on Sabayon Plasma5 community repository.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.kde.org/announcements/plasma-5.4/plasma-screen-desktop-2-shadow.png&#34;&gt;&lt;img src=&#34;https://www.kde.org/announcements/plasma-5.4/plasma-screen-desktop-2-shadow.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Plasma 5.4&lt;/p&gt;&#xA;&lt;p&gt;The KDE team announced on 25 August the release of Plasma 5.4:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This release of Plasma brings many nice touches for our users such as much improved high DPI support, KRunner auto-completion and many new beautiful Breeze icons. It also lays the ground for the future with a tech preview of Wayland session available. We&amp;rsquo;re shipping a few new components such as an Audio Volume Plasma Widget, monitor calibration tool and the User Manager tool comes out beta. &lt;a href=&#34;https://www.kde.org/announcements/plasma-5.4.0.php?site_locale=en&#34;&gt;Look at the official press release here&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>on Calamares, Docker and Sabayon</title>
       <link>https://mudler.pm/2015/08/on-calamares-docker-and-sabayon.html</link>
       <pubDate>Mon, 10 Aug 2015 04:29:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/08/on-calamares-docker-and-sabayon.html</guid>
-      <description>Since i became Sabayon developer, i started to work on customizing it and giving some love to the entropy packages.
-A lot as been done in those months, and you can see that picking up a &amp;ldquo;-dev&amp;rdquo; image from our mirrors.
-After giving to the entropy packages a fullfill of love (systemd was bumped, ati-drivers and nvidia-drivers as well to be in line with upstream, implemented iptables saving rules for systemd, &amp;hellip; ) then we decided that the time of Anaconda installer was finished.</description>
+      <description>&lt;p&gt;Since i became Sabayon developer, i started to work on customizing it and giving some love to the entropy packages.&lt;br&gt;&#xA;A lot as been done in those months, and you can see that picking up &lt;a href=&#34;http://na.mirror.garr.it/mirrors/sabayonlinux/iso/daily/&#34;&gt;a &amp;ldquo;-dev&amp;rdquo; image from our mirrors&lt;/a&gt;.&lt;br&gt;&#xA;After giving to the entropy packages a fullfill of love (systemd was bumped, ati-drivers and nvidia-drivers as well to be in line with upstream, implemented iptables saving rules for systemd, &amp;hellip; ) then we decided that the time of Anaconda installer was finished.&lt;br&gt;&#xA;Anaconda was buggy and most of the users couldn&amp;rsquo;t even install Sabayon also if, for now, we loose a lot of  nice features like &lt;strong&gt;LUKS&lt;/strong&gt; support and **LVM **we chose to swap it with the new and shiny &lt;a href=&#34;http://calamares.io/&#34;&gt;Calamares&lt;/a&gt; .&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

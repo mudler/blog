@@ -4,21 +4,20 @@
   <url>
     <loc>https://mudler.pm/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url><url>
-    <loc>https://mudler.pm/posts/local-ai-jetson-nano-devkit/</loc>
+    <loc>https://mudler.pm/posts/2024/05/30/localai-and-llama.cpp-on-jetson-nano-devkit/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mudler.pm/posts/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mudler.pm/posts/smart-slackbot-for-teams/</loc>
+    <loc>https://mudler.pm/posts/2023/06/22/create-a-question-answering-bot-for-slack-on-your-data-that-you-can-run-locally/</loc>
     <lastmod>2023-06-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mudler.pm/posts/localai-question-answering/</loc>
+    <loc>https://mudler.pm/posts/2023/05/12/question-answering-on-documents-locally-with-langchain-localai-chroma-and-gpt4all/</loc>
     <lastmod>2023-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mudler.pm/posts/localai/</loc>
+    <loc>https://mudler.pm/posts/2023/05/11/localai-updates/</loc>
     <lastmod>2023-05-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mudler.pm/tags/community-repositories/</loc>
@@ -208,9 +207,6 @@
     <lastmod>2014-03-02T01:40:00-08:00</lastmod>
   </url><url>
     <loc>https://mudler.pm/blog/</loc>
-  </url><url>
-    <loc>https://mudler.pm/search/</loc>
-    <priority>0.1</priority>
   </url><url>
     <loc>https://mudler.pm/search/</loc>
     <priority>0.1</priority>

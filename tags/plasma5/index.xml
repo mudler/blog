@@ -1,74 +1,48 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>plasma5 on Mudler blog</title>
+    <title>Plasma5 on Mudler blog</title>
     <link>https://mudler.pm/tags/plasma5/</link>
-    <description>Recent content in plasma5 on Mudler blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <description>Recent content in Plasma5 on Mudler blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 28 Sep 2015 11:07:00 -0700</lastBuildDate><atom:link href="https://mudler.pm/tags/plasma5/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Sep 2015 11:07:00 -0700</lastBuildDate>
+    <atom:link href="https://mudler.pm/tags/plasma5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sabayon 15.10 press release</title>
       <link>https://mudler.pm/2015/09/sabayon-1510-press-release.html</link>
       <pubDate>Mon, 28 Sep 2015 11:07:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/09/sabayon-1510-press-release.html</guid>
-      <description>Image: an ancient hen-foot print found on Mars (Mars Photo credit to NASA)
-Sabayon 15.10 is a modern and easy to use Linux distribution based on Gentoo, following an extreme, yet reliable, rolling release model.
-This is a monthly release generated, tested and published to mirrors by our build servers containing the latest and greatest collection of software available in the Entropy repositories.
-The ChangeLog files related to this release are available on our mirrors.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://3.bp.blogspot.com/-AbWz1Wk7__U/Vgl_vSomVNI/AAAAAAAAL4I/rdcLxP0vxOE/s1600/mars-sabayon.jpg&#34;&gt;&lt;img src=&#34;http://3.bp.blogspot.com/-AbWz1Wk7__U/Vgl_vSomVNI/AAAAAAAAL4I/rdcLxP0vxOE/s400/mars-sabayon.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Image: an ancient hen-foot print found on Mars (Mars Photo credit to NASA)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Sabayon &lt;strong&gt;15.10&lt;/strong&gt; is a modern and easy to use Linux distribution based on Gentoo, following an extreme, yet reliable, rolling release model.&lt;/p&gt;&#xA;&lt;p&gt;This is a monthly release generated, tested and published to mirrors by our build servers containing the latest and greatest collection of software available in the Entropy repositories.&lt;/p&gt;&#xA;&lt;p&gt;The ChangeLog files related to this release are available &lt;a href=&#34;http://dl.sabayon.org/iso/ChangeLogs/&#34;&gt;on our mirrors.&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Sabayon is moving to KDE Plasma 5.4</title>
       <link>https://mudler.pm/2015/09/sabayon-is-moving-to-kde-plasma-54.html</link>
       <pubDate>Sat, 12 Sep 2015 10:36:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/09/sabayon-is-moving-to-kde-plasma-54.html</guid>
-      <description>Sabayon is officially moving to Plasma 5, please read if you are a KDE Sabayon user.
-KDM is going to be removed! migrate to SDDM now!
-Yes, finally we are moving on.
-While KDE 4 was a pretty stable DM, Plasma 5 brings awesomeness and, if you didn&amp;rsquo;t noticed, it&amp;rsquo;s the future.
-From KDM to SDDM We tried to do our best to make the transition as smooth as possible and automatic, but if your system just got broken here is why: the KDE team announced SDDM as the default KDE display manager.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://3.bp.blogspot.com/-jRJmCVvyYJ4/Vebu_7a86OI/AAAAAAAALnE/d8DCNFt13_w/s1600/plasma_sab.png&#34;&gt;&lt;img src=&#34;http://3.bp.blogspot.com/-jRJmCVvyYJ4/Vebu_7a86OI/AAAAAAAALnE/d8DCNFt13_w/s320/plasma_sab.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Sabayon is officially moving to Plasma 5, &lt;strong&gt;please read if you are a KDE Sabayon user.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;KDM is going to be removed! migrate to SDDM now!&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Yes, finally we are moving on.&lt;/p&gt;&#xA;&lt;p&gt;While KDE 4 was a pretty stable DM, Plasma 5 brings awesomeness and, if you didn&amp;rsquo;t noticed, it&amp;rsquo;s the future.&lt;/p&gt;&#xA;&lt;h2 id=&#34;from-kdm-to-sddm&#34;&gt;From KDM to SDDM&lt;/h2&gt;&#xA;&lt;p&gt;We tried to do our best to make the transition as smooth as possible and automatic, but if your system just got broken here is why: the KDE team announced SDDM as the default KDE display manager.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Tech Preview: Sabayon Plasma 5 LiveCD</title>
       <link>https://mudler.pm/2015/09/tech-preview-sabayon-plasma-5-livecd.html</link>
       <pubDate>Wed, 02 Sep 2015 05:46:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/09/tech-preview-sabayon-plasma-5-livecd.html</guid>
-      <description>Thanks, Unfortunately running in VirtualBox 4.3.28&amp;hellip; Unknown - Sep 3, 2015
-Thanks, Unfortunately running in VirtualBox 4.3.28, NetworkManager is crashing and can&amp;rsquo;t access desktop. :(
-Thanks for your feedback, i run the image on VirtualBox 4.3.28 as well without problems, can you try to change the Network Adaptor type under the image settings, Network-&amp;gt; Advanced -&amp;gt; Card type
-Thanks, your tip solve the startup. Dolphin link from main menu is broken.</description>
+      <description>&lt;h4 id=&#34;thanks-unfortunately-running-in-virtualbox-4328&#34;&gt;Thanks, Unfortunately running in VirtualBox 4.3.28&amp;hellip;&lt;/h4&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.blogger.com/profile/13048373511639941641&#34; title=&#34;noreply@blogger.com&#34;&gt;Unknown&lt;/a&gt; - &lt;time datetime=&#34;2015-09-02T08:36:36.416-07:00&#34;&gt;Sep 3, 2015&lt;/time&gt;&lt;/p&gt;&#xA;&lt;p&gt;Thanks, Unfortunately running in VirtualBox 4.3.28, NetworkManager is crashing and can&amp;rsquo;t access desktop. :(&lt;/p&gt;&#xA;&lt;hr /&gt;&#xA;#### Thanks for your feedback, i run the image on Virtu...&#xA;[Ettore](https://www.blogger.com/profile/03411449232588367668 &#34;noreply@blogger.com&#34;) - &lt;time datetime=&#34;2015-09-03T10:27:44.048-07:00&#34;&gt;Sep 4, 2015&lt;/time&gt;&#xA;&lt;p&gt;Thanks for your feedback, i run the image on VirtualBox 4.3.28 as well without problems, can you try to change the Network Adaptor type under the image settings, Network-&amp;gt; Advanced -&amp;gt; Card type&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Tech Preview: Sabayon Plasma 5 LiveCD</title>
       <link>https://mudler.pm/2015/09/tech-preview-sabayon-plasma-5-livecd.html</link>
       <pubDate>Wed, 02 Sep 2015 05:46:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/09/tech-preview-sabayon-plasma-5-livecd.html</guid>
-      <description>!! WARNING - HERE BE DRAGONS !!
-Sabayon Plasma 5 LiveCD Tech preview is available for download
-This release is just for testing only, it is just a preview of Plasma5 on Sabayon for those of you that wants just to snoop on what&amp;rsquo;s going on without touching your system.
-If you want to install Plasma 5 with the community repository, follow those instructions.
-Known issues: Dolphin Shortcut on favorites is not working Desktop isn&amp;rsquo;t in folderview so you can&amp;rsquo;t quickly access to the install icon, but the installer is present (search for &amp;ldquo;Calamares&amp;rdquo; or &amp;ldquo;Installer&amp;rdquo; in the Plasma menu) No Sabayon artwork is present, plasma is vanilla Please, if you encounter other issues let us know, Thank you!</description>
+      <description>&lt;p&gt;&lt;strong&gt;!!&lt;/strong&gt; &lt;strong&gt;WARNING&lt;/strong&gt; &lt;strong&gt;- HERE BE DRAGONS&lt;/strong&gt; &lt;strong&gt;!!&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://1.bp.blogspot.com/-jRJmCVvyYJ4/Vebu_7a86OI/AAAAAAAALnA/tCSegvEXQDc/s1600/plasma_sab.png&#34;&gt;&lt;img src=&#34;http://1.bp.blogspot.com/-jRJmCVvyYJ4/Vebu_7a86OI/AAAAAAAALnA/tCSegvEXQDc/s320/plasma_sab.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;strong&gt;Sabayon&lt;/strong&gt; &lt;strong&gt;Plasma 5&lt;/strong&gt; &lt;strong&gt;LiveCD&lt;/strong&gt;  &lt;strong&gt;Tech&lt;/strong&gt;  &lt;strong&gt;preview&lt;/strong&gt; &lt;strong&gt;is available for&lt;/strong&gt; &lt;strong&gt;&lt;a href=&#34;https://mirror.spike-pentesting.org/mirrors/spike/mirror/images/&#34;&gt;download&lt;/a&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;This release is just for testing only, it is just a preview of Plasma5 on Sabayon for those of you that &lt;/p&gt;&#xA;&lt;p&gt;wants just to snoop on what&amp;rsquo;s going on without touching your system.&lt;/p&gt;&#xA;&lt;p&gt;If you want to install Plasma 5 with the community repository, &lt;a href=&#34;http://blog.mudler.pm/p/sabayon-plasma5-community-repository_27.html&#34;&gt;follow those instructions.&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;known-issues&#34;&gt;Known issues:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dolphin Shortcut on favorites is not working&lt;/li&gt;&#xA;&lt;li&gt;Desktop isn&amp;rsquo;t in folderview so you can&amp;rsquo;t quickly access to the install icon, but the installer is present (search for &amp;ldquo;Calamares&amp;rdquo; or &amp;ldquo;Installer&amp;rdquo; in the Plasma menu)&lt;/li&gt;&#xA;&lt;li&gt;No Sabayon artwork is present, plasma is vanilla&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Please, if you encounter other issues let us know, Thank you!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>KDE Plasma 5.4, available on Plasma5 Sabayon community repository</title>
       <link>https://mudler.pm/2015/08/kde-plasma-54-available-on-plasma5.html</link>
       <pubDate>Thu, 27 Aug 2015 05:03:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/08/kde-plasma-54-available-on-plasma5.html</guid>
-      <description>I&amp;rsquo;m glad to announce that Plasma 5.4 is available on Sabayon Plasma5 community repository.
-Plasma 5.4
-The KDE team announced on 25 August the release of Plasma 5.4:
-This release of Plasma brings many nice touches for our users such as much improved high DPI support, KRunner auto-completion and many new beautiful Breeze icons. It also lays the ground for the future with a tech preview of Wayland session available. We&amp;rsquo;re shipping a few new components such as an Audio Volume Plasma Widget, monitor calibration tool and the User Manager tool comes out beta.</description>
+      <description>&lt;p&gt;I&amp;rsquo;m glad to announce that Plasma 5.4 &lt;strong&gt;is available&lt;/strong&gt; on Sabayon Plasma5 community repository.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.kde.org/announcements/plasma-5.4/plasma-screen-desktop-2-shadow.png&#34;&gt;&lt;img src=&#34;https://www.kde.org/announcements/plasma-5.4/plasma-screen-desktop-2-shadow.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Plasma 5.4&lt;/p&gt;&#xA;&lt;p&gt;The KDE team announced on 25 August the release of Plasma 5.4:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This release of Plasma brings many nice touches for our users such as much improved high DPI support, KRunner auto-completion and many new beautiful Breeze icons. It also lays the ground for the future with a tech preview of Wayland session available. We&amp;rsquo;re shipping a few new components such as an Audio Volume Plasma Widget, monitor calibration tool and the User Manager tool comes out beta. &lt;a href=&#34;https://www.kde.org/announcements/plasma-5.4.0.php?site_locale=en&#34;&gt;Look at the official press release here&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

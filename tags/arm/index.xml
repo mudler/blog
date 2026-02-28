@@ -4,43 +4,31 @@
     <title>ARM on Mudler blog</title>
     <link>https://mudler.pm/tags/arm/</link>
     <description>Recent content in ARM on Mudler blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <generator>Hugo</generator>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 07 Feb 2016 10:22:00 -0800</lastBuildDate><atom:link href="https://mudler.pm/tags/arm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Feb 2016 10:22:00 -0800</lastBuildDate>
+    <atom:link href="https://mudler.pm/tags/arm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Updates: Rpi2 joins to testing boards, Mate testing repository, Sabayon devkit</title>
       <link>https://mudler.pm/2016/02/updates-rpi2-joins-to-testing-boards.html</link>
       <pubDate>Sun, 07 Feb 2016 10:22:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/2016/02/updates-rpi2-joins-to-testing-boards.html</guid>
-      <description>Updates, TMiD (This Month in the Dev world)
-Something landed here! Thanks to +Ben Roberts for the donation!
-ARM Marsala, the board that +Ben Roberts was so kind to donate has just landed here, and i&amp;rsquo;m very happy about it, because that means that i can test against the board again myself.
-I&amp;rsquo;m glad also to announce that the ROS framework and some other goodies(among of them firefox and libreoffice) have been pushed into our ARM repo.</description>
+      <description>&lt;p&gt;Updates, TMiD (This Month in the Dev world)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://the9gag.com/images/pictuers/thumb/eat_sleep_code_repeat.jpg&#34;&gt;&lt;img src=&#34;http://the9gag.com/images/pictuers/thumb/eat_sleep_code_repeat.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Something landed here! Thanks to &lt;a href=&#34;https://plus.google.com/104283756158326784792&#34;&gt;+Ben Roberts&lt;/a&gt; for the donation!&lt;/p&gt;&#xA;&lt;h2 id=&#34;arm&#34;&gt; ARM&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://4.bp.blogspot.com/-2-6OxD55XIw/VreGFqrZAGI/AAAAAAAAOTg/QsV25IFm1dA/s1600/photo_2016-02-07_18-59-21.jpg&#34;&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-2-6OxD55XIw/VreGFqrZAGI/AAAAAAAAOTg/QsV25IFm1dA/s320/photo_2016-02-07_18-59-21.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Marsala, the board that &lt;a href=&#34;https://plus.google.com/104283756158326784792&#34;&gt;+Ben Roberts&lt;/a&gt; was so kind to donate has just landed here, and i&amp;rsquo;m very happy about it, because that means that i can test against the board again myself.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m glad also to announce that the ROS framework and some other goodies(among of them firefox and libreoffice) have been pushed into our ARM repo.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Tech Preview: Sabayon on RaspberryPi2 </title>
       <link>https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html</link>
       <pubDate>Mon, 11 Jan 2016 05:02:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html</guid>
-      <description>hi, this is a really good new are there chances o&amp;hellip; Unknown - Feb 6, 2016
-hi, this is a really good new
-are there chances of having sabayon on Raspberry PI (not PI2)?</description>
+      <description>&lt;h4 id=&#34;hi-this-is-a-really-good-new-are-there-chances-o&#34;&gt;hi, this is a really good new are there chances o&amp;hellip;&lt;/h4&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.blogger.com/profile/14210313797077979642&#34; title=&#34;noreply@blogger.com&#34;&gt;Unknown&lt;/a&gt; - &lt;time datetime=&#34;2016-02-20T00:58:52.881-08:00&#34;&gt;Feb 6, 2016&lt;/time&gt;&lt;/p&gt;&#xA;&lt;p&gt;hi, this is a really good new&lt;/p&gt;&#xA;&lt;p&gt;are there chances of having sabayon on Raspberry PI (not PI2)?&lt;/p&gt;&#xA;&lt;hr /&gt;</description>
     </item>
-    
     <item>
       <title>Tech Preview: Sabayon on RaspberryPi2 </title>
       <link>https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html</link>
       <pubDate>Mon, 11 Jan 2016 05:02:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html</guid>
-      <description>As anticipated on Sabayon Linux site releases notes, that day was going to be close.
-ARM meet Sabayon, Sabayon meet ARM.
-The approach to the ARM(hfp) support will be different from the previous attempt, we are not going to support kernels for each different board we intend to build images, instead we will release cutted images with vendor-kernel to avoid incompatibilities and unexpected features. This is what almost every distribution does for tons of reasons, among them i want just to underline that in those years we have seen a lot of new ARM boards out of there and we can&amp;rsquo;t just support all of them, mantain a kernel branch for each one would results low QA (since our dev-team is small) and probably in hard decision to be made when support will be dropped from vendors (think also on how short is a board lifespan, and how projects dies quickly).</description>
+      <description>&lt;p&gt;As anticipated on Sabayon Linux site releases notes, that day was going to be close.&lt;br&gt;&#xA;&lt;strong&gt;ARM&lt;/strong&gt; meet &lt;strong&gt;Sabayon&lt;/strong&gt;, &lt;strong&gt;Sabayon&lt;/strong&gt; meet &lt;strong&gt;ARM&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.raspberrypi.org/wp-content/uploads/2015/01/Pi2ModB1GB_-comp.jpeg&#34;&gt;&lt;img src=&#34;https://www.raspberrypi.org/wp-content/uploads/2015/01/Pi2ModB1GB_-comp.jpeg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;The approach to the ARM(hfp) support will be different from the previous attempt, we are not going to support  kernels for each different board we intend to build images, instead we will release cutted images with vendor-kernel to avoid incompatibilities and unexpected features. This is what almost every distribution does for tons of reasons, among them i want just to underline that in those years we have seen a lot of new ARM boards out of there and we can&amp;rsquo;t just support all of them, mantain a kernel branch for each one would results low QA (since our dev-team is small) and probably in hard decision to be made when support will be dropped from vendors (think also on how short is a board lifespan, and how projects dies quickly). In that way, we can still provide support also for legacy devices as well.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,21 +4,17 @@
     <title>Raspberry on Mudler blog</title>
     <link>https://mudler.pm/tags/raspberry/</link>
     <description>Recent content in Raspberry on Mudler blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <generator>Hugo</generator>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 07 Feb 2016 10:22:00 -0800</lastBuildDate><atom:link href="https://mudler.pm/tags/raspberry/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Feb 2016 10:22:00 -0800</lastBuildDate>
+    <atom:link href="https://mudler.pm/tags/raspberry/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Updates: Rpi2 joins to testing boards, Mate testing repository, Sabayon devkit</title>
       <link>https://mudler.pm/2016/02/updates-rpi2-joins-to-testing-boards.html</link>
       <pubDate>Sun, 07 Feb 2016 10:22:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/2016/02/updates-rpi2-joins-to-testing-boards.html</guid>
-      <description>Updates, TMiD (This Month in the Dev world)
-Something landed here! Thanks to +Ben Roberts for the donation!
-ARM Marsala, the board that +Ben Roberts was so kind to donate has just landed here, and i&amp;rsquo;m very happy about it, because that means that i can test against the board again myself.
-I&amp;rsquo;m glad also to announce that the ROS framework and some other goodies(among of them firefox and libreoffice) have been pushed into our ARM repo.</description>
+      <description>&lt;p&gt;Updates, TMiD (This Month in the Dev world)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://the9gag.com/images/pictuers/thumb/eat_sleep_code_repeat.jpg&#34;&gt;&lt;img src=&#34;http://the9gag.com/images/pictuers/thumb/eat_sleep_code_repeat.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Something landed here! Thanks to &lt;a href=&#34;https://plus.google.com/104283756158326784792&#34;&gt;+Ben Roberts&lt;/a&gt; for the donation!&lt;/p&gt;&#xA;&lt;h2 id=&#34;arm&#34;&gt; ARM&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://4.bp.blogspot.com/-2-6OxD55XIw/VreGFqrZAGI/AAAAAAAAOTg/QsV25IFm1dA/s1600/photo_2016-02-07_18-59-21.jpg&#34;&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-2-6OxD55XIw/VreGFqrZAGI/AAAAAAAAOTg/QsV25IFm1dA/s320/photo_2016-02-07_18-59-21.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Marsala, the board that &lt;a href=&#34;https://plus.google.com/104283756158326784792&#34;&gt;+Ben Roberts&lt;/a&gt; was so kind to donate has just landed here, and i&amp;rsquo;m very happy about it, because that means that i can test against the board again myself.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m glad also to announce that the ROS framework and some other goodies(among of them firefox and libreoffice) have been pushed into our ARM repo.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

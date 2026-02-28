@@ -1,57 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>docker on Mudler blog</title>
+    <title>Docker on Mudler blog</title>
     <link>https://mudler.pm/tags/docker/</link>
-    <description>Recent content in docker on Mudler blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <description>Recent content in Docker on Mudler blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 15 Nov 2015 07:09:00 -0800</lastBuildDate><atom:link href="https://mudler.pm/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Nov 2015 07:09:00 -0800</lastBuildDate>
+    <atom:link href="https://mudler.pm/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</title>
       <link>https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html</link>
       <pubDate>Sun, 15 Nov 2015 07:09:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html</guid>
-      <description>With spawning a compilation, the second line (with&amp;hellip; fusion809 - Nov 4, 2015
-With spawning a compilation, the second line (with the package you wish to merge) is it possible to point to a specific version of a package. For example, atm I&amp;rsquo;d like to merge app-editors/atom-1.2.0 from the Sabayon overlay, do I have to enter it as `app-editors/atom-1.2.0 &amp;ndash;overlay sabayon` or `=app-editors/atom-1.2.0 &amp;ndash;overlay sabayon`?
-In section 3 I think you gave incorrect syntax, although it may be because of formatting limitations imposed by blogger.</description>
+      <description>&lt;h4 id=&#34;with-spawning-a-compilation-the-second-line-with&#34;&gt;With spawning a compilation, the second line (with&amp;hellip;&lt;/h4&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.blogger.com/profile/14316408440182908236&#34; title=&#34;noreply@blogger.com&#34;&gt;fusion809&lt;/a&gt; - &lt;time datetime=&#34;2015-11-18T22:15:18.006-08:00&#34;&gt;Nov 4, 2015&lt;/time&gt;&lt;/p&gt;&#xA;&lt;p&gt;With spawning a compilation, the second line (with the package you wish to merge) is it possible to point to a specific version of a package. For example, atm I&amp;rsquo;d like to merge app-editors/atom-1.2.0 from the Sabayon overlay, do I have to enter it as `app-editors/atom-1.2.0 &amp;ndash;overlay sabayon` or `=app-editors/atom-1.2.0 &amp;ndash;overlay sabayon`?&lt;/p&gt;&#xA;&lt;hr /&gt;&#xA;#### In section 3 I think you gave incorrect syntax, al...&#xA;[fusion809](https://www.blogger.com/profile/14316408440182908236 &#34;noreply@blogger.com&#34;) - &lt;time datetime=&#34;2015-11-18T23:11:19.327-08:00&#34;&gt;Nov 4, 2015&lt;/time&gt;&#xA;&lt;p&gt;In section 3 I think you gave incorrect syntax, although it may be because of formatting limitations imposed by blogger. I think the two lines:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</title>
       <link>https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html</link>
       <pubDate>Sun, 15 Nov 2015 07:09:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html</guid>
-      <description>As previously anticipated in the previous blog post, here i explain what&amp;rsquo;s going on with Sabayon Docker images, and how can the Official Sabayon images help you in developing/deploying your application. In this article, i&amp;rsquo;ll show how to build Sabayon/Gentoo packages using Docker.
-I&amp;rsquo;ll cover five cases and will be divided in differents articles:
-You want to build packages locally You want to remotely build packages You want to host an overlay or a Sabayon repository and want your packages to get built on each push to the git repository You want to track remote repository changes and test (useful if you can&amp;rsquo;t setup a webhook) Setup an Entropy repo with a Docker image, and how to mantain packages In future, i&amp;rsquo;ll write also a post also on how to track the packages remotely with CircleCi.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://1.bp.blogspot.com/-s-2KEJ0FoF8/VkiGi_oCjBI/AAAAAAAAMfg/JkAeUmowseI/s1600/cloud-47581_1280.png&#34;&gt;&lt;img src=&#34;http://1.bp.blogspot.com/-s-2KEJ0FoF8/VkiGi_oCjBI/AAAAAAAAMfg/JkAeUmowseI/s640/cloud-47581_1280.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;As previously anticipated in the previous blog post, here i explain what&amp;rsquo;s going on with Sabayon Docker images, and how can the Official Sabayon images help you in developing/deploying your application. In this article, i&amp;rsquo;ll show how to build Sabayon/Gentoo packages using Docker.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ll cover five cases and will be divided in differents articles:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;You want to build packages locally&lt;/li&gt;&#xA;&lt;li&gt;You want to remotely build packages&lt;/li&gt;&#xA;&lt;li&gt;You want to host an overlay or a Sabayon repository and want your packages to get built on each push to the git repository&lt;/li&gt;&#xA;&lt;li&gt;You want to track remote repository changes and test (useful if you can&amp;rsquo;t setup a webhook)&lt;/li&gt;&#xA;&lt;li&gt;Setup an Entropy repo with a Docker image, and how to mantain packages&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;In future, i&amp;rsquo;ll write also a post also on how to track the packages remotely with CircleCi.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Sabayon 15.10 press release</title>
       <link>https://mudler.pm/2015/09/sabayon-1510-press-release.html</link>
       <pubDate>Mon, 28 Sep 2015 11:07:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/09/sabayon-1510-press-release.html</guid>
-      <description>Image: an ancient hen-foot print found on Mars (Mars Photo credit to NASA)
-Sabayon 15.10 is a modern and easy to use Linux distribution based on Gentoo, following an extreme, yet reliable, rolling release model.
-This is a monthly release generated, tested and published to mirrors by our build servers containing the latest and greatest collection of software available in the Entropy repositories.
-The ChangeLog files related to this release are available on our mirrors.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://3.bp.blogspot.com/-AbWz1Wk7__U/Vgl_vSomVNI/AAAAAAAAL4I/rdcLxP0vxOE/s1600/mars-sabayon.jpg&#34;&gt;&lt;img src=&#34;http://3.bp.blogspot.com/-AbWz1Wk7__U/Vgl_vSomVNI/AAAAAAAAL4I/rdcLxP0vxOE/s400/mars-sabayon.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Image: an ancient hen-foot print found on Mars (Mars Photo credit to NASA)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Sabayon &lt;strong&gt;15.10&lt;/strong&gt; is a modern and easy to use Linux distribution based on Gentoo, following an extreme, yet reliable, rolling release model.&lt;/p&gt;&#xA;&lt;p&gt;This is a monthly release generated, tested and published to mirrors by our build servers containing the latest and greatest collection of software available in the Entropy repositories.&lt;/p&gt;&#xA;&lt;p&gt;The ChangeLog files related to this release are available &lt;a href=&#34;http://dl.sabayon.org/iso/ChangeLogs/&#34;&gt;on our mirrors.&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>on Calamares, Docker and Sabayon</title>
       <link>https://mudler.pm/2015/08/on-calamares-docker-and-sabayon.html</link>
       <pubDate>Mon, 10 Aug 2015 04:29:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/08/on-calamares-docker-and-sabayon.html</guid>
-      <description>Since i became Sabayon developer, i started to work on customizing it and giving some love to the entropy packages.
-A lot as been done in those months, and you can see that picking up a &amp;ldquo;-dev&amp;rdquo; image from our mirrors.
-After giving to the entropy packages a fullfill of love (systemd was bumped, ati-drivers and nvidia-drivers as well to be in line with upstream, implemented iptables saving rules for systemd, &amp;hellip; ) then we decided that the time of Anaconda installer was finished.</description>
+      <description>&lt;p&gt;Since i became Sabayon developer, i started to work on customizing it and giving some love to the entropy packages.&lt;br&gt;&#xA;A lot as been done in those months, and you can see that picking up &lt;a href=&#34;http://na.mirror.garr.it/mirrors/sabayonlinux/iso/daily/&#34;&gt;a &amp;ldquo;-dev&amp;rdquo; image from our mirrors&lt;/a&gt;.&lt;br&gt;&#xA;After giving to the entropy packages a fullfill of love (systemd was bumped, ati-drivers and nvidia-drivers as well to be in line with upstream, implemented iptables saving rules for systemd, &amp;hellip; ) then we decided that the time of Anaconda installer was finished.&lt;br&gt;&#xA;Anaconda was buggy and most of the users couldn&amp;rsquo;t even install Sabayon also if, for now, we loose a lot of  nice features like &lt;strong&gt;LUKS&lt;/strong&gt; support and **LVM **we chose to swap it with the new and shiny &lt;a href=&#34;http://calamares.io/&#34;&gt;Calamares&lt;/a&gt; .&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

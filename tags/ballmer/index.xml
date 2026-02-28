@@ -1,37 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ballmer on Mudler blog</title>
+    <title>Ballmer on Mudler blog</title>
     <link>https://mudler.pm/tags/ballmer/</link>
-    <description>Recent content in ballmer on Mudler blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <description>Recent content in Ballmer on Mudler blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 07 Oct 2015 14:28:00 -0700</lastBuildDate><atom:link href="https://mudler.pm/tags/ballmer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Oct 2015 14:28:00 -0700</lastBuildDate>
+    <atom:link href="https://mudler.pm/tags/ballmer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sabayon: testers, testers, testers</title>
       <link>https://mudler.pm/2015/10/sabayon-testers-testers-testers.html</link>
       <pubDate>Wed, 07 Oct 2015 14:28:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/10/sabayon-testers-testers-testers.html</guid>
-      <description>I will give it a go installing new motherboard tod&amp;hellip; Unknown - Oct 4, 2015
-I will give it a go installing new motherboard today will start testing after thate
-Thanks for your efforts , please remember to file a bug for whatever problem you will face!
-I have jut installed a new motherboard,it is a msi z97a the only problem so far is I cant install sabayon in uefi mode I am runing 15.</description>
+      <description>&lt;h4 id=&#34;i-will-give-it-a-go-installing-new-motherboard-tod&#34;&gt;I will give it a go installing new motherboard tod&amp;hellip;&lt;/h4&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.blogger.com/profile/02509968321297586933&#34; title=&#34;noreply@blogger.com&#34;&gt;Unknown&lt;/a&gt; - &lt;time datetime=&#34;2015-10-07T17:29:49.660-07:00&#34;&gt;Oct 4, 2015&lt;/time&gt;&lt;/p&gt;&#xA;&lt;p&gt;I will give it a go installing new motherboard today will start testing after thate&lt;/p&gt;&#xA;&lt;hr /&gt;&#xA;#### Thanks for your efforts , please remember to file ...&#xA;[Ettore](https://www.blogger.com/profile/03411449232588367668 &#34;noreply@blogger.com&#34;) - &lt;time datetime=&#34;2015-10-08T02:33:20.827-07:00&#34;&gt;Oct 4, 2015&lt;/time&gt;&#xA;&lt;p&gt;Thanks for your efforts , please remember to file a bug for whatever problem you will face!&lt;/p&gt;&#xA;&lt;hr /&gt;&#xA;#### I have jut installed a new motherboard,it is a msi...&#xA;[Unknown](https://www.blogger.com/profile/02509968321297586933 &#34;noreply@blogger.com&#34;) - &lt;time datetime=&#34;2015-10-08T06:38:10.996-07:00&#34;&gt;Oct 4, 2015&lt;/time&gt;&#xA;&lt;p&gt;I have jut installed a new motherboard,it is a msi z97a the only problem so far is I cant install sabayon in uefi mode I am runing 15.10 on the other hard dive fedora 22 xfce installed in uefi mode no problem&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Sabayon: testers, testers, testers</title>
       <link>https://mudler.pm/2015/10/sabayon-testers-testers-testers.html</link>
       <pubDate>Wed, 07 Oct 2015 14:28:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/10/sabayon-testers-testers-testers.html</guid>
-      <description>Sabayon, official call for testers (and well, developers are welcome too)
-Testers, come to us Probably most of you already have seen Ballmer in show-mode
-Also if controversial, it was a quite funny commercial / raindance move, balls included. But i can say that he is wrong, testers are as important as developers.
-Consider helping Sabayon in a different way: testing it.
-I am here, begging YOU for some help. The more the merrier!</description>
+      <description>&lt;p&gt;Sabayon, official call for testers (and well, developers are welcome too)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://4.bp.blogspot.com/-aKxCHaqb3X4/VhTf8i951mI/AAAAAAAAMB0/1HrGxtWUY2Q/s1600/keep-calm-and-test-develop.png&#34;&gt;&lt;img src=&#34;http://4.bp.blogspot.com/-aKxCHaqb3X4/VhTf8i951mI/AAAAAAAAMB0/1HrGxtWUY2Q/s320/keep-calm-and-test-develop.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;testers-come-to-us&#34;&gt;Testers, come to us&lt;/h2&gt;&#xA;&lt;p&gt;Probably most of you already have seen Ballmer in &lt;em&gt;show-mode&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Also if controversial, it was a quite funny commercial / raindance move, balls included. But i can say that he is wrong, &lt;strong&gt;testers are as important as developers.&lt;/strong&gt;&lt;br&gt;&#xA;Consider helping Sabayon in a &lt;em&gt;different&lt;/em&gt; way: testing it.&lt;/p&gt;&#xA;&lt;p&gt;I am here, begging YOU for some help. The more the merrier! What we need are brave folks proud to be bleeding edge, ready to install all the latest updates, capable observers that carries on using their machine normally BUT taking notes on functionality, installation problems, and any other weirdness or lack thereof.&lt;br&gt;&#xA;Grab a freshly built image or enable our testing repositories, but more importantly:_ report back_ to our &lt;a href=&#34;https://bugs.sabayon.org/&#34;&gt;bugzilla&lt;/a&gt; or dropping by on our IRC channel (#sabayon on chat.freenode.net).&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

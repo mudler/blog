@@ -4,306 +4,241 @@
     <title>Tags on Mudler blog</title>
     <link>https://mudler.pm/tags/</link>
     <description>Recent content in Tags on Mudler blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <generator>Hugo</generator>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 18 Apr 2016 06:02:00 -0700</lastBuildDate><atom:link href="https://mudler.pm/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Apr 2016 06:02:00 -0700</lastBuildDate>
+    <atom:link href="https://mudler.pm/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Community Repositories</title>
       <link>https://mudler.pm/tags/community-repositories/</link>
       <pubDate>Mon, 18 Apr 2016 06:02:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/community-repositories/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>entropy</title>
+      <title>Entropy</title>
       <link>https://mudler.pm/tags/entropy/</link>
       <pubDate>Mon, 18 Apr 2016 06:02:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/entropy/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gentoo</title>
+      <title>Gentoo</title>
       <link>https://mudler.pm/tags/gentoo/</link>
       <pubDate>Mon, 18 Apr 2016 06:02:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/gentoo/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>linux</title>
+      <title>Linux</title>
       <link>https://mudler.pm/tags/linux/</link>
       <pubDate>Mon, 18 Apr 2016 06:02:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/linux/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>sabayon</title>
+      <title>Sabayon</title>
       <link>https://mudler.pm/tags/sabayon/</link>
       <pubDate>Mon, 18 Apr 2016 06:02:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/sabayon/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SCR</title>
       <link>https://mudler.pm/tags/scr/</link>
       <pubDate>Mon, 18 Apr 2016 06:02:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/scr/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>updates</title>
+      <title>Updates</title>
       <link>https://mudler.pm/tags/updates/</link>
       <pubDate>Mon, 18 Apr 2016 06:02:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/updates/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ARM</title>
       <link>https://mudler.pm/tags/arm/</link>
       <pubDate>Sun, 07 Feb 2016 10:22:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/tags/arm/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Raspberry</title>
       <link>https://mudler.pm/tags/raspberry/</link>
       <pubDate>Sun, 07 Feb 2016 10:22:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/tags/raspberry/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>testers</title>
+      <title>Testers</title>
       <link>https://mudler.pm/tags/testers/</link>
       <pubDate>Sun, 07 Feb 2016 10:22:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/tags/testers/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Pi2</title>
       <link>https://mudler.pm/tags/pi2/</link>
       <pubDate>Mon, 11 Jan 2016 05:02:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/tags/pi2/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Raspberry Pi2</title>
       <link>https://mudler.pm/tags/raspberry-pi2/</link>
       <pubDate>Mon, 11 Jan 2016 05:02:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/tags/raspberry-pi2/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>RaspberryPi2</title>
       <link>https://mudler.pm/tags/raspberrypi2/</link>
       <pubDate>Mon, 11 Jan 2016 05:02:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/tags/raspberrypi2/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>tech preview</title>
+      <title>Tech Preview</title>
       <link>https://mudler.pm/tags/tech-preview/</link>
       <pubDate>Mon, 11 Jan 2016 05:02:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/tags/tech-preview/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>docker</title>
+      <title>Docker</title>
       <link>https://mudler.pm/tags/docker/</link>
       <pubDate>Sun, 15 Nov 2015 07:09:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/tags/docker/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>equo</title>
+      <title>Equo</title>
       <link>https://mudler.pm/tags/equo/</link>
       <pubDate>Sun, 15 Nov 2015 07:09:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/tags/equo/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ballmer</title>
+      <title>Ballmer</title>
       <link>https://mudler.pm/tags/ballmer/</link>
       <pubDate>Wed, 07 Oct 2015 14:28:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/ballmer/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>developers</title>
+      <title>Developers</title>
       <link>https://mudler.pm/tags/developers/</link>
       <pubDate>Wed, 07 Oct 2015 14:28:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/developers/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>server</title>
+      <title>Server</title>
       <link>https://mudler.pm/tags/server/</link>
       <pubDate>Wed, 07 Oct 2015 14:28:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/server/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>torvalds</title>
+      <title>Torvalds</title>
       <link>https://mudler.pm/tags/torvalds/</link>
       <pubDate>Wed, 07 Oct 2015 14:28:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/torvalds/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>calamares</title>
+      <title>Calamares</title>
       <link>https://mudler.pm/tags/calamares/</link>
       <pubDate>Mon, 28 Sep 2015 11:07:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/calamares/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>kde</title>
+      <title>Kde</title>
       <link>https://mudler.pm/tags/kde/</link>
       <pubDate>Mon, 28 Sep 2015 11:07:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/kde/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>plasma5</title>
+      <title>Plasma5</title>
       <link>https://mudler.pm/tags/plasma5/</link>
       <pubDate>Mon, 28 Sep 2015 11:07:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/plasma5/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>press release</title>
+      <title>Press Release</title>
       <link>https://mudler.pm/tags/press-release/</link>
       <pubDate>Mon, 28 Sep 2015 11:07:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/press-release/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>plasma</title>
+      <title>Plasma</title>
       <link>https://mudler.pm/tags/plasma/</link>
       <pubDate>Sat, 12 Sep 2015 10:36:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/plasma/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>portage</title>
+      <title>Portage</title>
       <link>https://mudler.pm/tags/portage/</link>
       <pubDate>Sat, 12 Sep 2015 10:36:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/portage/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>community</title>
+      <title>Community</title>
       <link>https://mudler.pm/tags/community/</link>
       <pubDate>Thu, 27 Aug 2015 05:03:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/community/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>installer</title>
+      <title>Installer</title>
       <link>https://mudler.pm/tags/installer/</link>
       <pubDate>Mon, 10 Aug 2015 04:29:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/installer/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>domotic</title>
+      <title>Domotic</title>
       <link>https://mudler.pm/tags/domotic/</link>
       <pubDate>Sat, 29 Mar 2014 02:15:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/domotic/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>embedded</title>
+      <title>Embedded</title>
       <link>https://mudler.pm/tags/embedded/</link>
       <pubDate>Sat, 29 Mar 2014 02:15:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/embedded/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>google</title>
+      <title>Google</title>
       <link>https://mudler.pm/tags/google/</link>
       <pubDate>Sat, 29 Mar 2014 02:15:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/google/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>perl</title>
+      <title>Perl</title>
       <link>https://mudler.pm/tags/perl/</link>
       <pubDate>Sat, 29 Mar 2014 02:15:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/tags/perl/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>welcome</title>
+      <title>Welcome</title>
       <link>https://mudler.pm/tags/welcome/</link>
       <pubDate>Sun, 02 Mar 2014 01:40:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/tags/welcome/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

@@ -4,30 +4,24 @@
     <title>Community Repositories on Mudler blog</title>
     <link>https://mudler.pm/tags/community-repositories/</link>
     <description>Recent content in Community Repositories on Mudler blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <generator>Hugo</generator>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 18 Apr 2016 06:02:00 -0700</lastBuildDate><atom:link href="https://mudler.pm/tags/community-repositories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Apr 2016 06:02:00 -0700</lastBuildDate>
+    <atom:link href="https://mudler.pm/tags/community-repositories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Whut?! Sabayon Community Repositories is here!</title>
       <link>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</link>
       <pubDate>Mon, 18 Apr 2016 06:02:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</guid>
-      <description>Maaaaaaaaaaaaany dependencies for enman… Still, he&amp;hellip; Tedel - Apr 1, 2016
-Maaaaaaaaaaaaany dependencies for enman…
-Still, here we go! :D</description>
+      <description>&lt;h4 id=&#34;maaaaaaaaaaaaany-dependencies-for-enman-still-he&#34;&gt;Maaaaaaaaaaaaany dependencies for enman… Still, he&amp;hellip;&lt;/h4&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.blogger.com/profile/05988645683809592011&#34; title=&#34;noreply@blogger.com&#34;&gt;Tedel&lt;/a&gt; - &lt;time datetime=&#34;2016-04-18T14:39:43.293-07:00&#34;&gt;Apr 1, 2016&lt;/time&gt;&lt;/p&gt;&#xA;&lt;p&gt;Maaaaaaaaaaaaany dependencies for enman…&lt;br&gt;&#xA;Still, here we go! :D&lt;/p&gt;&#xA;&lt;hr /&gt;</description>
     </item>
-    
     <item>
       <title>Whut?! Sabayon Community Repositories is here!</title>
       <link>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</link>
       <pubDate>Mon, 18 Apr 2016 06:02:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</guid>
-      <description>Hello users,
-Time passed when i first wrote the article &amp;ldquo;[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services&amp;rdquo; that was going to be divided into parts. But things changed amazingly fast and there is better news, I wrote up a suite of tools that makes the whole operation much easier, thanks also to +Ben Roberts (optiz0r) who contributed in the development and he is also kindly sponsoring the buildserver.</description>
+      <description>&lt;p&gt;Hello users,&lt;/p&gt;&#xA;&lt;p&gt;Time passed when i first wrote the article &amp;ldquo;&lt;a href=&#34;https://blog.mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html&#34;&gt;[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services&lt;/a&gt;&amp;rdquo; that was going to be divided into parts. But things changed amazingly fast and there is better news, I wrote up a suite of tools that makes the whole operation much easier, thanks also to &lt;a href=&#34;https://plus.google.com/104283756158326784792&#34;&gt;+Ben Roberts&lt;/a&gt; (optiz0r) who contributed in the development and he is also kindly sponsoring the buildserver.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

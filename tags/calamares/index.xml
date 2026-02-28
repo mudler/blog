@@ -1,35 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>calamares on Mudler blog</title>
+    <title>Calamares on Mudler blog</title>
     <link>https://mudler.pm/tags/calamares/</link>
-    <description>Recent content in calamares on Mudler blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <description>Recent content in Calamares on Mudler blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 28 Sep 2015 11:07:00 -0700</lastBuildDate><atom:link href="https://mudler.pm/tags/calamares/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Sep 2015 11:07:00 -0700</lastBuildDate>
+    <atom:link href="https://mudler.pm/tags/calamares/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sabayon 15.10 press release</title>
       <link>https://mudler.pm/2015/09/sabayon-1510-press-release.html</link>
       <pubDate>Mon, 28 Sep 2015 11:07:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/09/sabayon-1510-press-release.html</guid>
-      <description>Image: an ancient hen-foot print found on Mars (Mars Photo credit to NASA)
-Sabayon 15.10 is a modern and easy to use Linux distribution based on Gentoo, following an extreme, yet reliable, rolling release model.
-This is a monthly release generated, tested and published to mirrors by our build servers containing the latest and greatest collection of software available in the Entropy repositories.
-The ChangeLog files related to this release are available on our mirrors.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://3.bp.blogspot.com/-AbWz1Wk7__U/Vgl_vSomVNI/AAAAAAAAL4I/rdcLxP0vxOE/s1600/mars-sabayon.jpg&#34;&gt;&lt;img src=&#34;http://3.bp.blogspot.com/-AbWz1Wk7__U/Vgl_vSomVNI/AAAAAAAAL4I/rdcLxP0vxOE/s400/mars-sabayon.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Image: an ancient hen-foot print found on Mars (Mars Photo credit to NASA)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Sabayon &lt;strong&gt;15.10&lt;/strong&gt; is a modern and easy to use Linux distribution based on Gentoo, following an extreme, yet reliable, rolling release model.&lt;/p&gt;&#xA;&lt;p&gt;This is a monthly release generated, tested and published to mirrors by our build servers containing the latest and greatest collection of software available in the Entropy repositories.&lt;/p&gt;&#xA;&lt;p&gt;The ChangeLog files related to this release are available &lt;a href=&#34;http://dl.sabayon.org/iso/ChangeLogs/&#34;&gt;on our mirrors.&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>on Calamares, Docker and Sabayon</title>
       <link>https://mudler.pm/2015/08/on-calamares-docker-and-sabayon.html</link>
       <pubDate>Mon, 10 Aug 2015 04:29:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/08/on-calamares-docker-and-sabayon.html</guid>
-      <description>Since i became Sabayon developer, i started to work on customizing it and giving some love to the entropy packages.
-A lot as been done in those months, and you can see that picking up a &amp;ldquo;-dev&amp;rdquo; image from our mirrors.
-After giving to the entropy packages a fullfill of love (systemd was bumped, ati-drivers and nvidia-drivers as well to be in line with upstream, implemented iptables saving rules for systemd, &amp;hellip; ) then we decided that the time of Anaconda installer was finished.</description>
+      <description>&lt;p&gt;Since i became Sabayon developer, i started to work on customizing it and giving some love to the entropy packages.&lt;br&gt;&#xA;A lot as been done in those months, and you can see that picking up &lt;a href=&#34;http://na.mirror.garr.it/mirrors/sabayonlinux/iso/daily/&#34;&gt;a &amp;ldquo;-dev&amp;rdquo; image from our mirrors&lt;/a&gt;.&lt;br&gt;&#xA;After giving to the entropy packages a fullfill of love (systemd was bumped, ati-drivers and nvidia-drivers as well to be in line with upstream, implemented iptables saving rules for systemd, &amp;hellip; ) then we decided that the time of Anaconda installer was finished.&lt;br&gt;&#xA;Anaconda was buggy and most of the users couldn&amp;rsquo;t even install Sabayon also if, for now, we loose a lot of  nice features like &lt;strong&gt;LUKS&lt;/strong&gt; support and **LVM **we chose to swap it with the new and shiny &lt;a href=&#34;http://calamares.io/&#34;&gt;Calamares&lt;/a&gt; .&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

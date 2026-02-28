@@ -1,80 +1,55 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>gentoo on Mudler blog</title>
+    <title>Gentoo on Mudler blog</title>
     <link>https://mudler.pm/tags/gentoo/</link>
-    <description>Recent content in gentoo on Mudler blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <description>Recent content in Gentoo on Mudler blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 18 Apr 2016 06:02:00 -0700</lastBuildDate><atom:link href="https://mudler.pm/tags/gentoo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Apr 2016 06:02:00 -0700</lastBuildDate>
+    <atom:link href="https://mudler.pm/tags/gentoo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Whut?! Sabayon Community Repositories is here!</title>
       <link>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</link>
       <pubDate>Mon, 18 Apr 2016 06:02:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</guid>
-      <description>Maaaaaaaaaaaaany dependencies for enman… Still, he&amp;hellip; Tedel - Apr 1, 2016
-Maaaaaaaaaaaaany dependencies for enman…
-Still, here we go! :D</description>
+      <description>&lt;h4 id=&#34;maaaaaaaaaaaaany-dependencies-for-enman-still-he&#34;&gt;Maaaaaaaaaaaaany dependencies for enman… Still, he&amp;hellip;&lt;/h4&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.blogger.com/profile/05988645683809592011&#34; title=&#34;noreply@blogger.com&#34;&gt;Tedel&lt;/a&gt; - &lt;time datetime=&#34;2016-04-18T14:39:43.293-07:00&#34;&gt;Apr 1, 2016&lt;/time&gt;&lt;/p&gt;&#xA;&lt;p&gt;Maaaaaaaaaaaaany dependencies for enman…&lt;br&gt;&#xA;Still, here we go! :D&lt;/p&gt;&#xA;&lt;hr /&gt;</description>
     </item>
-    
     <item>
       <title>Whut?! Sabayon Community Repositories is here!</title>
       <link>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</link>
       <pubDate>Mon, 18 Apr 2016 06:02:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</guid>
-      <description>Hello users,
-Time passed when i first wrote the article &amp;ldquo;[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services&amp;rdquo; that was going to be divided into parts. But things changed amazingly fast and there is better news, I wrote up a suite of tools that makes the whole operation much easier, thanks also to +Ben Roberts (optiz0r) who contributed in the development and he is also kindly sponsoring the buildserver.</description>
+      <description>&lt;p&gt;Hello users,&lt;/p&gt;&#xA;&lt;p&gt;Time passed when i first wrote the article &amp;ldquo;&lt;a href=&#34;https://blog.mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html&#34;&gt;[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services&lt;/a&gt;&amp;rdquo; that was going to be divided into parts. But things changed amazingly fast and there is better news, I wrote up a suite of tools that makes the whole operation much easier, thanks also to &lt;a href=&#34;https://plus.google.com/104283756158326784792&#34;&gt;+Ben Roberts&lt;/a&gt; (optiz0r) who contributed in the development and he is also kindly sponsoring the buildserver.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</title>
       <link>https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html</link>
       <pubDate>Sun, 15 Nov 2015 07:09:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html</guid>
-      <description>With spawning a compilation, the second line (with&amp;hellip; fusion809 - Nov 4, 2015
-With spawning a compilation, the second line (with the package you wish to merge) is it possible to point to a specific version of a package. For example, atm I&amp;rsquo;d like to merge app-editors/atom-1.2.0 from the Sabayon overlay, do I have to enter it as `app-editors/atom-1.2.0 &amp;ndash;overlay sabayon` or `=app-editors/atom-1.2.0 &amp;ndash;overlay sabayon`?
-In section 3 I think you gave incorrect syntax, although it may be because of formatting limitations imposed by blogger.</description>
+      <description>&lt;h4 id=&#34;with-spawning-a-compilation-the-second-line-with&#34;&gt;With spawning a compilation, the second line (with&amp;hellip;&lt;/h4&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.blogger.com/profile/14316408440182908236&#34; title=&#34;noreply@blogger.com&#34;&gt;fusion809&lt;/a&gt; - &lt;time datetime=&#34;2015-11-18T22:15:18.006-08:00&#34;&gt;Nov 4, 2015&lt;/time&gt;&lt;/p&gt;&#xA;&lt;p&gt;With spawning a compilation, the second line (with the package you wish to merge) is it possible to point to a specific version of a package. For example, atm I&amp;rsquo;d like to merge app-editors/atom-1.2.0 from the Sabayon overlay, do I have to enter it as `app-editors/atom-1.2.0 &amp;ndash;overlay sabayon` or `=app-editors/atom-1.2.0 &amp;ndash;overlay sabayon`?&lt;/p&gt;&#xA;&lt;hr /&gt;&#xA;#### In section 3 I think you gave incorrect syntax, al...&#xA;[fusion809](https://www.blogger.com/profile/14316408440182908236 &#34;noreply@blogger.com&#34;) - &lt;time datetime=&#34;2015-11-18T23:11:19.327-08:00&#34;&gt;Nov 4, 2015&lt;/time&gt;&#xA;&lt;p&gt;In section 3 I think you gave incorrect syntax, although it may be because of formatting limitations imposed by blogger. I think the two lines:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</title>
       <link>https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html</link>
       <pubDate>Sun, 15 Nov 2015 07:09:00 -0800</pubDate>
-      
       <guid>https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html</guid>
-      <description>As previously anticipated in the previous blog post, here i explain what&amp;rsquo;s going on with Sabayon Docker images, and how can the Official Sabayon images help you in developing/deploying your application. In this article, i&amp;rsquo;ll show how to build Sabayon/Gentoo packages using Docker.
-I&amp;rsquo;ll cover five cases and will be divided in differents articles:
-You want to build packages locally You want to remotely build packages You want to host an overlay or a Sabayon repository and want your packages to get built on each push to the git repository You want to track remote repository changes and test (useful if you can&amp;rsquo;t setup a webhook) Setup an Entropy repo with a Docker image, and how to mantain packages In future, i&amp;rsquo;ll write also a post also on how to track the packages remotely with CircleCi.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://1.bp.blogspot.com/-s-2KEJ0FoF8/VkiGi_oCjBI/AAAAAAAAMfg/JkAeUmowseI/s1600/cloud-47581_1280.png&#34;&gt;&lt;img src=&#34;http://1.bp.blogspot.com/-s-2KEJ0FoF8/VkiGi_oCjBI/AAAAAAAAMfg/JkAeUmowseI/s640/cloud-47581_1280.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;As previously anticipated in the previous blog post, here i explain what&amp;rsquo;s going on with Sabayon Docker images, and how can the Official Sabayon images help you in developing/deploying your application. In this article, i&amp;rsquo;ll show how to build Sabayon/Gentoo packages using Docker.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ll cover five cases and will be divided in differents articles:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;You want to build packages locally&lt;/li&gt;&#xA;&lt;li&gt;You want to remotely build packages&lt;/li&gt;&#xA;&lt;li&gt;You want to host an overlay or a Sabayon repository and want your packages to get built on each push to the git repository&lt;/li&gt;&#xA;&lt;li&gt;You want to track remote repository changes and test (useful if you can&amp;rsquo;t setup a webhook)&lt;/li&gt;&#xA;&lt;li&gt;Setup an Entropy repo with a Docker image, and how to mantain packages&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;In future, i&amp;rsquo;ll write also a post also on how to track the packages remotely with CircleCi.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Sabayon is moving to KDE Plasma 5.4</title>
       <link>https://mudler.pm/2015/09/sabayon-is-moving-to-kde-plasma-54.html</link>
       <pubDate>Sat, 12 Sep 2015 10:36:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/09/sabayon-is-moving-to-kde-plasma-54.html</guid>
-      <description>Sabayon is officially moving to Plasma 5, please read if you are a KDE Sabayon user.
-KDM is going to be removed! migrate to SDDM now!
-Yes, finally we are moving on.
-While KDE 4 was a pretty stable DM, Plasma 5 brings awesomeness and, if you didn&amp;rsquo;t noticed, it&amp;rsquo;s the future.
-From KDM to SDDM We tried to do our best to make the transition as smooth as possible and automatic, but if your system just got broken here is why: the KDE team announced SDDM as the default KDE display manager.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://3.bp.blogspot.com/-jRJmCVvyYJ4/Vebu_7a86OI/AAAAAAAALnE/d8DCNFt13_w/s1600/plasma_sab.png&#34;&gt;&lt;img src=&#34;http://3.bp.blogspot.com/-jRJmCVvyYJ4/Vebu_7a86OI/AAAAAAAALnE/d8DCNFt13_w/s320/plasma_sab.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Sabayon is officially moving to Plasma 5, &lt;strong&gt;please read if you are a KDE Sabayon user.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;KDM is going to be removed! migrate to SDDM now!&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Yes, finally we are moving on.&lt;/p&gt;&#xA;&lt;p&gt;While KDE 4 was a pretty stable DM, Plasma 5 brings awesomeness and, if you didn&amp;rsquo;t noticed, it&amp;rsquo;s the future.&lt;/p&gt;&#xA;&lt;h2 id=&#34;from-kdm-to-sddm&#34;&gt;From KDM to SDDM&lt;/h2&gt;&#xA;&lt;p&gt;We tried to do our best to make the transition as smooth as possible and automatic, but if your system just got broken here is why: the KDE team announced SDDM as the default KDE display manager.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>KDE Plasma 5.4, available on Plasma5 Sabayon community repository</title>
       <link>https://mudler.pm/2015/08/kde-plasma-54-available-on-plasma5.html</link>
       <pubDate>Thu, 27 Aug 2015 05:03:00 -0700</pubDate>
-      
       <guid>https://mudler.pm/2015/08/kde-plasma-54-available-on-plasma5.html</guid>
-      <description>I&amp;rsquo;m glad to announce that Plasma 5.4 is available on Sabayon Plasma5 community repository.
-Plasma 5.4
-The KDE team announced on 25 August the release of Plasma 5.4:
-This release of Plasma brings many nice touches for our users such as much improved high DPI support, KRunner auto-completion and many new beautiful Breeze icons. It also lays the ground for the future with a tech preview of Wayland session available. We&amp;rsquo;re shipping a few new components such as an Audio Volume Plasma Widget, monitor calibration tool and the User Manager tool comes out beta.</description>
+      <description>&lt;p&gt;I&amp;rsquo;m glad to announce that Plasma 5.4 &lt;strong&gt;is available&lt;/strong&gt; on Sabayon Plasma5 community repository.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.kde.org/announcements/plasma-5.4/plasma-screen-desktop-2-shadow.png&#34;&gt;&lt;img src=&#34;https://www.kde.org/announcements/plasma-5.4/plasma-screen-desktop-2-shadow.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Plasma 5.4&lt;/p&gt;&#xA;&lt;p&gt;The KDE team announced on 25 August the release of Plasma 5.4:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This release of Plasma brings many nice touches for our users such as much improved high DPI support, KRunner auto-completion and many new beautiful Breeze icons. It also lays the ground for the future with a tech preview of Wayland session available. We&amp;rsquo;re shipping a few new components such as an Audio Volume Plasma Widget, monitor calibration tool and the User Manager tool comes out beta. &lt;a href=&#34;https://www.kde.org/announcements/plasma-5.4.0.php?site_locale=en&#34;&gt;Look at the official press release here&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
