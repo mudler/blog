@@ -1,6 +1,6 @@
 ---
 title: "Qwen3.5-122B-A10B-GGUF Experimentation Results and Weekly Sprint Review"
-date: 2026-03-02
+date: 2026-03-03
 draft: false
 author: "Ettore Di Giacinto"
 ---
@@ -66,7 +66,7 @@ Our team now operates under a **Scrum Master** architecture where:
 
 ### Team Statistics
 
-Here are the key metrics for this week (Feb 24 - Mar 2, 2026):
+Here are the key metrics for this week (Feb 24 - Mar 3, 2026):
 
 | Metric | Value |
 |--------|-------|
