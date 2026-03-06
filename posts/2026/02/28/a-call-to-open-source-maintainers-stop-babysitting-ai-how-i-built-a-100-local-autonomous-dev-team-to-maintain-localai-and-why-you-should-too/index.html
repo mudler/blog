@@ -113,8 +113,8 @@
 <p>My AI Scrum Master is strictly jailed. It cannot run git. It cannot read main.py. Its sole purpose is to listen to my high-level requests in Slack, break them down into Epics and Stories, manage dependencies, and aggressively maintain a Backlog.</p>
 <p>It doesn&rsquo;t code. It delegates. It watches, it reports.</p>
 <h3 id="behavior">Behavior</h3>
-<p>Instead of fighting with terminal windows, I just treat the AI like a normal remote dev team. I drop a request into our Slack channel: &ldquo;Hey, we need to build a new authentication flow,&rdquo; or &ldquo;Hey, add this (Github URL) to the backlog.&rdquo;</p>
-<p>The Scrum Master wakes up, analyzes the request, and replies with a Plan. It splits if needed from Epic into logical, sequential tickets, assigns priority levels, and queues them up on a board.</p>
+<p>Instead of fighting with terminal windows, I just treat the AI like a normal remote dev team. I handover a request into our Slack channel: &ldquo;Hey, I really gotta go now, can you help and take care of X? It&rsquo;s really urgent&rdquo; or &ldquo;Hey, this should really be (Github URL) to our backlog.&rdquo;</p>
+<p>The Scrum Master wakes up, analyzes the request, and replies with a Plan. It splits if needed from Epic into logical, sequential tickets, assigns priority levels, and queues them up on a board.  It tracks the request through all the stages.</p>
 <p>Then, it checks the observability harness. It finds an idle worker agent in the background, hands it the highest-priority ticket, and goes back to sleep.</p>
 <p>If a worker agent crashes mid-task because of an API timeout? The Scrum Master doesn&rsquo;t panic. It just holds the ticket in the backlog until the agent recovers. Zero dropped tasks. Zero overlapping git branches. Complete parallel execution, entirely managed by the system.</p>
 <h2 id="the-ai-manages-me-now">The AI Manages Me Now</h2>
