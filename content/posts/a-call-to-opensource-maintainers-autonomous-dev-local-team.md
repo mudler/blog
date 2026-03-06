@@ -59,9 +59,9 @@ It doesn't code. It delegates. It watches, it reports.
 
 ### Behavior
 
-Instead of fighting with terminal windows, I just treat the AI like a normal remote dev team. I drop a request into our Slack channel: "Hey, we need to build a new authentication flow," or "Hey, add this (Github URL) to the backlog."
+Instead of fighting with terminal windows, I just treat the AI like a normal remote dev team. I handover a request into our Slack channel: "Hey, I really gotta go now, can you help and take care of X? It's really urgent" or "Hey, this should really be (Github URL) to our backlog."
 
-The Scrum Master wakes up, analyzes the request, and replies with a Plan. It splits if needed from Epic into logical, sequential tickets, assigns priority levels, and queues them up on a board.
+The Scrum Master wakes up, analyzes the request, and replies with a Plan. It splits if needed from Epic into logical, sequential tickets, assigns priority levels, and queues them up on a board.  It tracks the request through all the stages.
 
 Then, it checks the observability harness. It finds an idle worker agent in the background, hands it the highest-priority ticket, and goes back to sleep.
 
