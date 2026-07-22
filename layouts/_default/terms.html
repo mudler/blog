@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="man-page">
+  <div class="manhead"><span>{{ upper .Title }}(7)</span><span>{{ site.Title }} Manual</span><span>{{ upper .Title }}(7)</span></div>
+  <ul class="post-rows" data-pager>
+    {{ range .Data.Terms.ByCount }}
+    <li class="post-row"><span class="dt">{{ .Count }} post{{ if ne .Count 1 }}s{{ end }}</span><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

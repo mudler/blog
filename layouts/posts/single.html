@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article class="memo">
+  <hr class="memo-rule" aria-hidden="true"><hr class="memo-rule thin" aria-hidden="true">
+  {{ $posts := where site.RegularPages "Section" "posts" }}
+  {{ $n := len (where $posts "Date" "le" .Date) }}
+  <div class="memo-tag"><span>MUDLER.PM</span><span>TECHNICAL MEMORANDUM</span><span>N. {{ $n }}</span></div>
+  <header class="memo-head">
+    <h1>{{ .Title }}</h1>
+    <p class="memo-byline">{{ .Params.author | default "Ettore Di Giacinto" }} · {{ .Date.Format "2 January 2006" }} · {{ .ReadingTime }} min read</p>
+  </header>
+  <div class="memo-body">
+    {{ .Content }}
+  </div>
+  {{ with .Params.tags }}
+  <div class="memo-tags">{{ range . }}<a href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}</div>
+  {{ end }}
+  <nav class="memo-seealso">
+    <h2>SEE ALSO</h2>
+    <ul>
+      {{ with .NextInSection }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <i>(newer)</i></li>{{ end }}
+      {{ with .PrevInSection }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <i>(older)</i></li>{{ end }}
+      <li><a href="/posts/">all posts</a></li>
+    </ul>
+  </nav>
+</article>
+{{ end }}
