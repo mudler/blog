@@ -1,3 +1,4 @@
+import { animate, stagger } from './vendor/anime.esm.min.js'
 // mudler.pm — the site behaves like less(1).
 const html = document.documentElement
 html.classList.add('js')
@@ -87,3 +88,33 @@ document.addEventListener('keydown', e => {
 })
 
 // ---------- ANIMATIONS (Task 9 appends below) ----------
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches
+if (!reduceMotion) {
+  const secs = document.querySelectorAll('.man-sec')
+  if (secs.length) {
+    animate(secs, { opacity: [0, 1], translateY: [8, 0], delay: stagger(60), duration: 350, ease: 'outQuad' })
+  }
+  const listRows = document.querySelectorAll('[data-pager] .post-row')
+  if (listRows.length) {
+    animate(listRows, { opacity: [0, 1], delay: stagger(25), duration: 220, ease: 'linear' })
+  }
+  const rules = document.querySelectorAll('.memo-rule')
+  if (rules.length) {
+    animate(rules, { scaleX: [0, 1], duration: 500, ease: 'outQuart' })
+  }
+  const memoTop = document.querySelectorAll('.memo-tag, .memo-head')
+  if (memoTop.length) {
+    animate(memoTop, { opacity: [0, 1], translateY: [10, 0], duration: 400, delay: 150, ease: 'outQuad' })
+  }
+  // one-time typewriter on the NAME line
+  const tw = document.querySelector('.typewriter')
+  if (tw) {
+    const full = tw.textContent
+    tw.textContent = ''
+    let i = 0
+    const id = setInterval(() => {
+      tw.textContent = full.slice(0, ++i)
+      if (i >= full.length) clearInterval(id)
+    }, 16)
+  }
+}
