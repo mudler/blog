@@ -6,3 +6,5 @@
 <script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
 {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{ $js := resources.Get "js/site.js" | js.Build (dict "minify" true "target" "es2018") | fingerprint }}
+<script type="module" src="{{ $js.RelPermalink }}"></script>

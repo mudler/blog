@@ -245,3 +245,19 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .memo-seealso ul { list-style: none; padding: 0; margin: 0; }
 .memo-seealso li { margin-bottom: 0.3rem; }
 .memo-seealso i { color: var(--muted); }
+
+/* ---------- key-bindings overlay ---------- */
+.kb-help {
+  position: fixed; inset: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 60%, transparent);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono);
+}
+.kb-box {
+  background: var(--bg); border: 2px solid var(--text);
+  max-width: 34rem; width: calc(100% - 2rem);
+  padding: 1.25rem 1.5rem 1.5rem;
+  box-shadow: 0.5rem 0.5rem 0 color-mix(in srgb, var(--text) 25%, transparent);
+}
+.kb-box .manhead { margin-bottom: 0.75rem; }
+.kb-box h2.sec { margin-top: 0; }
