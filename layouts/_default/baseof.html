@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{ partial "head.html" . }}
+</head>
+<body>
+{{ partial "header.html" . }}
+<main id="main">
+{{ block "main" . }}{{ end }}
+</main>
+{{ partial "footer.html" . }}
+<div class="status-line" id="status-line" aria-hidden="true">Manual page mudler(1) (press ? for help)</div>
+</body>
+</html>

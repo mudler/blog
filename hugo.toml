@@ -1,34 +1,24 @@
-baseurl       = "https://mudler.pm"
-title         = "Mudler blog"
-languageCode  = "en-us"
-theme         = "github.com/goodroot/hugo-classic"
-enableEmoji   = true
-ignoreFiles   = ["\\.Rmd$", "_files$", "_cache$"]
+baseurl      = "https://mudler.pm"
+title        = "mudler.pm"
+languageCode = "en-us"
+enableEmoji  = true
+ignoreFiles  = ["\\.Rmd$", "_files$", "_cache$"]
 
 [pagination]
-pagerSize = 10
-
-[module]
-[[module.imports]]
-path = "github.com/goodroot/hugo-classic"
+pagerSize = 100
 
 [outputs]
-home = ["HTML", "RSS", "JSON", "AMP"]
+home = ["HTML", "RSS", "JSON"]
 page = ["HTML"]
 
 [markup.goldmark.renderer]
 unsafe = true
 
 [markup.highlight]
-anchorLineNos    = false
-codeFences       = true
-guessSyntax      = false
-lineNoStart      = 1
-lineNos          = false
-lineNumbersInTable = true
-noClasses        = true
-style            = "monokai"
-tabWidth         = 4
+codeFences  = true
+guessSyntax = false
+lineNos     = false
+noClasses   = false
 
 [permalinks]
 posts = "/posts/:year/:month/:day/:slug/"
@@ -40,33 +30,31 @@ series   = "series"
 
 [[menu.main]]
 identifier = "blog"
-name      = "Blog"
-url       = "/posts/"
-weight    = 1
+name       = "blog"
+url        = "/posts/"
+weight     = 1
+
+[[menu.main]]
+identifier = "projects"
+name       = "projects"
+url        = "/projects/"
+weight     = 2
 
 [[menu.main]]
 identifier = "about"
-name      = "About"
-url       = "/about/"
-weight    = 2
+name       = "about"
+url        = "/about/"
+weight     = 3
 
 [[menu.main]]
 identifier = "search"
-name      = "Search"
-url       = "/search/"
-weight    = 3
-
-[[menu.feed]]
-name = "Subscribe"
-url  = "/index.xml"
+name       = "search"
+url        = "/search/"
+weight     = 4
 
 [languages.en]
-title       = "Mudler blog"
-subtitle    = "Place where I write about stuff"
-keywords    = ""
-copyright   = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+title     = "mudler.pm"
+copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 
 [params]
-description = "Mudler blog - Place where I write about stuff"
-custom_css  = ["css/theme-override.css"]
-footer      = "[GitHub](https://github.com/mudler) | [X/Twitter](https://twitter.com/mudler_it) | [LinkedIn](https://www.linkedin.com/in/ettore-di-giacinto-211a4166/)"
+description = "Ettore Di Giacinto (mudler) — creator of LocalAI. Local AI is the way."

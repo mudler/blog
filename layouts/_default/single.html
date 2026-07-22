@@ -1,0 +1,6 @@
+{{ define "main" }}
+<article class="man-page prose">
+  {{ if not .Params.hideTitle }}<h1>{{ .Title }}</h1>{{ end }}
+  {{ .Content }}
+</article>
+{{ end }}

@@ -1,0 +1,7 @@
+{{ define "main" }}
+<div class="man-page">
+  <p class="man-404">No manual entry for <span id="miss-path">this page</span></p>
+  <p><a href="/">See mudler(1)</a></p>
+  <script>var m=document.getElementById("miss-path");if(m)m.textContent=location.pathname;</script>
+</div>
+{{ end }}
