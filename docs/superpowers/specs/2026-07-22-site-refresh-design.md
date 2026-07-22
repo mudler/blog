@@ -104,7 +104,7 @@ Star counts hand-maintained, rounded ("47k").
 local-first AI, CNCF Kairos maintainer, @mocaccinoOS. History compressed to one
 paragraph (Gentoo → Sabayon lead → SUSE openQA/Cloud Foundry/Elemental → Rancher).
 Consulting: independent OSS consultant — mention Spectro Cloud once, lightly
-("currently working with Spectro Cloud, among others"); NOT in landing/chrome.
+("currently working with Spectro Cloud"); NOT in landing/chrome.
 Contact + sponsor links. Photo kept. The old link dump moves to /projects.
 
 ### Post pages — technical memo
