@@ -216,7 +216,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .memo-rule { border: 0; border-top: 2.5px solid var(--text); margin: 0 0 0.2rem; transform-origin: left; }
 .memo-rule.thin { border-top-width: 1px; margin: 0 0 1.8rem; }
 .memo-tag {
-  display: flex; justify-content: space-between; gap: 1rem;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;
   font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.14em;
   color: var(--muted); margin-bottom: 2rem;
 }
@@ -232,8 +232,9 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 .memo-body h2 { font-size: 1.25rem; }
 .memo-body h3 { font-size: 1.1rem; }
-.memo-body .hanchor { visibility: hidden; text-decoration: none; color: var(--muted); font-size: 0.85em; }
-.memo-body h2:hover .hanchor, .memo-body h3:hover .hanchor, .memo-body h4:hover .hanchor { visibility: visible; }
+/* heading anchors — hidden until heading hover, site-wide */
+.hanchor { visibility: hidden; text-decoration: none; color: var(--muted); font-size: 0.85em; }
+h1:hover .hanchor, h2:hover .hanchor, h3:hover .hanchor, h4:hover .hanchor { visibility: visible; }
 .memo-body blockquote { border-left: 3px solid var(--red); margin: 1.4rem 0; padding: 0.2rem 1.4rem; color: var(--muted); }
 .memo-body pre, .memo-body code { font-family: var(--mono); }
 .memo-body img { display: block; margin: 1.5rem auto; }

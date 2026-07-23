@@ -10,7 +10,7 @@ hidelanguage = true
 
 # About me
 
-![me](https://github.com/mudler/blog/assets/2420543/5794f640-7c7d-4f9a-a617-ecc31356c08a)
+![me](/images/me.jpg)
 
 Hey! Thanks for stopping by.
 

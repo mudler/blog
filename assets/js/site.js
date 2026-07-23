@@ -33,9 +33,19 @@ function select(i) {
 
 // ---------- help overlay ----------
 const help = document.getElementById('kb-help')
+let helpReturnFocus = null
 function toggleHelp(force) {
   if (!help) return
-  help.hidden = force !== undefined ? !force : !help.hidden
+  const open = force !== undefined ? force : help.hidden
+  help.hidden = !open
+  if (open) {
+    helpReturnFocus = document.activeElement
+    const box = help.querySelector('.kb-box')
+    if (box) box.focus()
+  } else if (helpReturnFocus && document.contains(helpReturnFocus)) {
+    helpReturnFocus.focus()
+    helpReturnFocus = null
+  }
 }
 if (help) help.addEventListener('click', e => { if (e.target === help) toggleHelp(false) })
 
