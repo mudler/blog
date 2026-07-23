@@ -248,6 +248,7 @@ h1:hover .hanchor, h2:hover .hanchor, h3:hover .hanchor, h4:hover .hanchor { vis
 .memo-seealso i { color: var(--muted); }
 
 /* ---------- key-bindings overlay ---------- */
+.kb-help[hidden] { display: none; }
 .kb-help {
   position: fixed; inset: 0; z-index: 10;
   background: color-mix(in srgb, var(--bg) 60%, transparent);
