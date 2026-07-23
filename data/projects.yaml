@@ -1,0 +1,207 @@
+# Single source of truth for /projects/ and the landing PROJECTS section.
+# meta is a free-form display string; stars are rounded on purpose.
+groups:
+  - name: Created
+    items:
+      - name: LocalAI
+        url: https://github.com/mudler/LocalAI
+        desc: Open-source AI engine — LLMs, vision, voice, image and video on any hardware, no GPU required.
+        meta: Go · MIT · 47k stars
+        featured: true
+      - name: LocalAGI
+        url: https://github.com/mudler/LocalAGI
+        desc: Self-hostable AI agent platform; drop-in replacement for the OpenAI Responses API.
+        meta: Go · 1.8k stars
+        featured: true
+      - name: LocalRecall
+        url: https://github.com/mudler/LocalRecall
+        desc: 100% local memory layer and knowledge base for agents, with a web UI.
+        meta: Go · 900+ stars
+        featured: true
+      - name: EdgeVPN
+        url: https://github.com/mudler/edgevpn
+        desc: Decentralized peer-to-peer VPN built on libp2p — no central server, token-based discovery.
+        meta: Go · 1.9k stars
+        featured: true
+      - name: Kairos
+        url: https://github.com/kairos-io/kairos
+        desc: Immutable Linux meta-distribution for edge Kubernetes. Donated to the CNCF.
+        meta: Go · CNCF · 1.7k stars
+        featured: true
+      - name: luet
+        url: https://github.com/mudler/luet
+        desc: Zero-dependency container-based package manager using SAT solving and QLearning.
+        meta: Go · 300 stars
+      - name: yip
+        url: https://github.com/mudler/yip
+        desc: YAML instructions processor — a lightweight cloud-init alternative.
+        meta: Go
+      - name: poco
+        url: https://github.com/mudler/poco
+        desc: Portable containers — turn container images into static, daemonless binaries.
+        meta: Go
+      - name: golauncher
+        url: https://github.com/mudler/golauncher
+        desc: Extensible application launcher and window switcher in under 300 lines of Go.
+        meta: Go
+      - name: docker-companion
+        url: https://github.com/mudler/docker-companion
+        desc: Squash and unpack Docker images, in Go.
+        meta: Go
+      - name: entities
+        url: https://github.com/mudler/entities
+        desc: Declarative modern identity manager for UNIX systems.
+        meta: Go
+      - name: MCPs
+        url: https://github.com/mudler/MCPs
+        desc: Personal MCP servers used with LocalAI.
+        meta: Go
+
+  - name: LocalAI ecosystem
+    items:
+      - name: apex-quant
+        url: https://github.com/localai-org/apex-quant
+        desc: Adaptive precision for expert models — MoE-aware mixed-precision quantization.
+        meta: localai-org · 400 stars
+      - name: privacy-filter.cpp
+        url: https://github.com/localai-org/privacy-filter.cpp
+        desc: OpenAI's privacy-filter NER model in a minimal C++/ggml runtime.
+        meta: C++ · localai-org
+      - name: LocalVQE
+        url: https://github.com/localai-org/LocalVQE
+        desc: Neural real-time acoustic echo cancellation — ggml and PyTorch inference.
+        meta: C++ · localai-org
+      - name: vibevoice.cpp
+        url: https://github.com/localai-org/vibevoice.cpp
+        desc: C++ port of Microsoft VibeVoice on ggml.
+        meta: C++ · localai-org
+      - name: ced.cpp
+        url: https://github.com/localai-org/ced.cpp
+        desc: ggml port of the CED audio-tagging model.
+        meta: C++ · localai-org
+      - name: moss-transcribe.cpp
+        url: https://github.com/localai-org/moss-transcribe.cpp
+        desc: C++17 port of OpenMOSS MOSS-Transcribe-Diarize.
+        meta: C++ · localai-org
+      - name: free-splatter.cpp
+        url: https://github.com/localai-org/free-splatter.cpp
+        desc: ggml port of FreeSplatter pose-free Gaussian splatting.
+        meta: C++ · localai-org
+      - name: rf-detr.cpp
+        url: https://github.com/localai-org/rf-detr.cpp
+        desc: RT-DETR object detection in C++ with ggml.
+        meta: C++ · localai-org
+      - name: voice-detect.cpp
+        url: https://github.com/localai-org/voice-detect.cpp
+        desc: C++17 speaker recognition and voice analysis engine.
+        meta: C++ · localai-org
+
+  - name: ggml / C++ ports
+    items:
+      - name: depth-anything.cpp
+        url: https://github.com/mudler/depth-anything.cpp
+        desc: From-scratch C++17/ggml port of ByteDance's Depth Anything 3. No Python at inference.
+        meta: C++ · 800+ stars
+        featured: true
+      - name: parakeet.cpp
+        url: https://github.com/mudler/parakeet.cpp
+        desc: NVIDIA Parakeet ASR in C++ with ggml.
+        meta: C++ · 700+ stars
+        featured: true
+      - name: locate-anything.cpp
+        url: https://github.com/mudler/locate-anything.cpp
+        desc: NVIDIA LocateAnything-3B ported to ggml.
+        meta: C++ · 350+ stars
+      - name: voxtral-tts.c
+        url: https://github.com/mudler/voxtral-tts.c
+        desc: Pure C implementation of Voxtral-4B-TTS.
+        meta: C
+      - name: vllm.cpp
+        url: https://github.com/mudler/vllm.cpp
+        desc: Community 1:1 vLLM port in C++.
+        meta: C++ · active
+
+  - name: Libraries & tools
+    items:
+      - name: cogito
+        url: https://github.com/mudler/cogito
+        desc: Go library for co-operative agentic software, tuned for small OSS models.
+        meta: Go
+      - name: nib
+        url: https://github.com/mudler/nib
+        desc: Zero-dependency terminal LLM agent harness — a single static binary.
+        meta: Go
+      - name: skillserver
+        url: https://github.com/mudler/skillserver
+        desc: Create, manage and share skills between agents.
+        meta: Go
+      - name: go-llama.cpp
+        url: https://github.com/go-skynet/go-llama.cpp
+        desc: The original Go bindings for llama.cpp.
+        meta: go-skynet · 900+ stars
+      - name: go-pluggable
+        url: https://github.com/mudler/go-pluggable
+        desc: Light bus-event driven plugin library for Golang.
+        meta: Go
+      - name: herd
+        url: https://github.com/spectrocloud-labs/herd
+        desc: An embeddable runnable DAG for Go.
+        meta: Go
+      - name: Mojo::IOLoop::ReadWriteProcess
+        url: https://github.com/openSUSE/Mojo-IOLoop-ReadWriteProcess
+        desc: Perl process management library, donated to openSUSE.
+        meta: Perl
+      - name: Algorithm::SAT & Algorithm::QLearning
+        url: https://metacpan.org/dist/Algorithm-SAT-Backtracking
+        desc: SAT solving and Q-learning on CPAN.
+        meta: Perl
+
+  - name: Contributed to
+    items:
+      - name: Gentoo Linux
+        url: https://gentoo.org
+        desc: Gentoo developer — genkernel-next, MATE maintainer.
+      - name: Sabayon Linux
+        url: https://github.com/Sabayon
+        desc: Lead developer of the distribution and its community repositories.
+      - name: openSUSE / openQA
+        url: https://open.qa
+        desc: Rewrote the openQA scheduler and its process-management layer at SUSE.
+      - name: Cloud Foundry
+        url: https://cloudfoundry.org
+        desc: KubeCF and Quarks-operator work at SUSE; EiriniX extensions.
+      - name: llama.cpp
+        url: https://github.com/ggerganov/llama.cpp
+        desc: Created the Go bindings; assorted fixes.
+      - name: gpt4all
+        url: https://github.com/nomic-ai/gpt4all
+        desc: Contributed the Golang bindings.
+
+  - name: Models
+    items:
+      - name: LocalAI function-call fine-tunes
+        url: https://huggingface.co/mudler
+        desc: Function-calling fine-tune family — llama3.2 1b/3b, phi-4, qwen2.5-7b, llama3-8b.
+        meta: Hugging Face
+      - name: Italian LLMs
+        url: https://huggingface.co/mudler/Minerva-3B-Llama3-Instruct-v0.1
+        desc: Minerva-3B instruct tunes (Minerva-3B-Llama3-Instruct, Asinello-Minerva).
+        meta: Hugging Face
+
+  - name: Talks & papers
+    items:
+      - name: Secure Edge-Native Architecture (with Intel)
+        url: https://github.com/kairos-io/kairos/files/11250843/Secure-Edge-Native-Architecture-white-paper-20240417.3.pdf
+        desc: Whitepaper on trusted boot and secure edge with Kairos.
+      - name: Livin' Kubernetes on the (Immutable) Edge
+        url: https://thenewstack.io/livin-kubernetes-on-the-immutable-edge-with-kairos-project/
+        desc: The New Stack, on Kairos.
+      - name: Trusted Boot at the Edge
+        url: https://thenewstack.io/honey-i-secured-your-boot-edge-trusted-boot-with-kairos/
+        desc: The New Stack, on securing devices at the edge.
+      - name: LocalAI meets k8sgpt
+        url: https://www.youtube.com/watch?v=PKrDNuJ_dfE
+        desc: CNCF talk.
+      - name: Building immutable Linux derivatives with cOS
+        url: https://www.youtube.com/watch?v=4MLo3wWSoQo
+        desc: Conference talk on the Elemental toolkit lineage.

@@ -1,0 +1,55 @@
+{{ define "main" }}
+<article class="man-page home">
+  <div class="manhead"><span>MUDLER(1)</span><span>General Commands Manual</span><span>MUDLER(1)</span></div>
+
+  <section class="man-sec">
+    <h2 class="sec">NAME</h2>
+    <div class="ind"><p><b>mudler</b> — <span class="typewriter">Ettore Di Giacinto; builds AI that runs on hardware you own</span></p></div>
+  </section>
+
+  <section class="man-sec">
+    <h2 class="sec">SYNOPSIS</h2>
+    <div class="ind"><p><b>mudler</b> [<b>--local</b>] [<b>--no-cloud</b>] [<b>--since</b> <i>2008</i>] <i>model</i> ...</p></div>
+  </section>
+
+  <section class="man-sec">
+    <h2 class="sec">DESCRIPTION</h2>
+    <div class="ind">
+      <p>Local AI is the way. Creator of <a href="https://localai.io"><b>LocalAI</b></a>. Builds local-first AI infrastructure, immutable Linux, and from-scratch C++/ggml ports of models that were never meant to leave Python.</p>
+      <p>Formerly: Gentoo developer, Sabayon lead, SUSE (openQA, Elemental), Rancher. Currently maintains the LocalAI ecosystem and CNCF Kairos.</p>
+    </div>
+  </section>
+
+  <section class="man-sec">
+    <h2 class="sec">PROJECTS</h2>
+    <div class="ind">
+      {{ range site.Data.projects.groups }}{{ range .items }}{{ if .featured }}
+      <div class="opt"><b><a href="{{ .url }}">{{ .name }}</a></b><span>{{ .desc }}{{ with .meta }} <i>({{ . }})</i>{{ end }}</span></div>
+      {{ end }}{{ end }}{{ end }}
+      <div class="opt"><b>...</b><span><a href="/projects/"><i>see projects(7) for the full list</i></a></span></div>
+    </div>
+  </section>
+
+  <section class="man-sec">
+    <h2 class="sec">POSTS</h2>
+    <div class="ind">
+      <ul class="post-rows" data-pager>
+        {{ range first 5 (where site.RegularPages "Section" "posts") }}{{ partial "post-item.html" . }}{{ end }}
+      </ul>
+      <p style="margin-top:0.7rem"><a href="/posts/"><i>all posts →</i></a></p>
+    </div>
+  </section>
+
+  <section class="man-sec">
+    <h2 class="sec">SEE ALSO</h2>
+    <div class="ind"><p>
+      <a href="https://github.com/mudler"><b>github</b>(1)</a>,
+      <a href="https://twitter.com/mudler_it"><b>x</b>(1)</a>,
+      <a href="https://huggingface.co/mudler"><b>huggingface</b>(1)</a>,
+      <a href="https://www.linkedin.com/in/ettore-di-giacinto-211a4166/"><b>linkedin</b>(1)</a>,
+      <a href="https://github.com/sponsors/mudler"><b>sponsor</b>(8)</a>,
+      <a href="/index.xml"><b>rss</b>(5)</a>
+    </p></div>
+  </section>
+</article>
+{{ end }}

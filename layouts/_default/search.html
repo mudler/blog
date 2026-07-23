@@ -1,34 +1,25 @@
-{{ partial "header.html" . }}
-
-<div class="content-wrapper">
-  <main>
-    <h1><span class="title">Search</span></h1>
-    <p class="search-intro">Search posts by keyword. Results are powered by client-side search via the site index.</p>
-
-    <form action="{{ .Permalink }}" method="GET" class="search-form" role="search">
-      <label for="search-query" class="visually-hidden">Search</label>
-      <input type="search" name="q" id="search-query" placeholder="Search posts…" class="search-input" autofocus>
-      <button type="submit" class="search-button">Search</button>
-    </form>
-
-    <div id="search-results"></div>
-    <div class="search-loading" style="display: none;">Loading…</div>
-
-    <script id="search-result-template" type="text/x-js-template">
-    <div id="summary-${key}" class="search-result-item">
-        <h3><a href="${link}">${title}</a></h3>
-        <p class="search-snippet">${snippet}</p>
-        <p class="search-meta">
-            <small>${ isset tags }Tags: ${tags}${ end }</small>
-        </p>
-    </div>
-    </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
-    {{ $script := resources.Get "js/search.js" | minify | fingerprint }}
-    <script src="{{ $script.Permalink }}" {{ printf "integrity=%q" $script.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
-  </main>
+{{ define "main" }}
+<div class="man-page search-page">
+  <div class="manhead"><span>SEARCH(1)</span><span>{{ site.Title }} Manual</span><span>SEARCH(1)</span></div>
+  <p class="search-intro">Search the manual, as if at the <code>less</code> prompt.</p>
+  <form action="{{ .Permalink }}" method="GET" class="search-form" role="search">
+    <label for="search-query" class="search-prompt" aria-hidden="true">/</label>
+    <label for="search-query" class="visually-hidden">Search</label>
+    <input type="search" name="q" id="search-query" placeholder="pattern" class="search-input" autofocus>
+    <button type="submit" class="search-button">search</button>
+  </form>
+  <div id="search-results"></div>
+  <div class="search-loading" style="display:none;">Loading…</div>
+  <script id="search-result-template" type="text/x-js-template">
+  <div id="summary-${key}" class="search-result-item">
+      <h3><a href="${link}">${title}</a></h3>
+      <p class="search-snippet">${snippet}</p>
+      <p class="search-meta"><small>${ isset tags }Tags: ${tags}${ end }</small></p>
+  </div>
+  </script>
+  <script src="/js/vendor/fuse.min.js"></script>
+  <script src="/js/vendor/mark.min.js"></script>
+  {{ $script := resources.Get "js/search.js" | minify | fingerprint }}
+  <script src="{{ $script.RelPermalink }}"></script>
 </div>
-
-{{ partial "footer.html" . }}
+{{ end }}

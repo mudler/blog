@@ -1,0 +1,29 @@
+{{ define "main" }}
+<article class="man-page projects">
+  <div class="manhead"><span>PROJECTS(7)</span><span>Miscellaneous Information Manual</span><span>PROJECTS(7)</span></div>
+
+  <section class="man-sec">
+    <h2 class="sec">NAME</h2>
+    <div class="ind"><p><b>projects</b> — things mudler has built, ported, maintained, or broken over ~two decades</p></div>
+  </section>
+
+  {{ range site.Data.projects.groups }}
+  <section class="man-sec">
+    <h2 class="sec">{{ upper .name }}</h2>
+    <div class="ind">
+      {{ range .items }}
+      <div class="opt">
+        <b>{{ if .url }}<a href="{{ .url }}">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}</b>
+        <span>{{ .desc }}{{ with .meta }} <i>({{ . }})</i>{{ end }}</span>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <section class="man-sec">
+    <h2 class="sec">SEE ALSO</h2>
+    <div class="ind"><p><a href="/"><b>mudler</b>(1)</a>, <a href="/about/"><b>about</b>(7)</a>, <a href="https://github.com/mudler"><b>github</b>(1)</a></p></div>
+  </section>
+</article>
+{{ end }}
