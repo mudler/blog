@@ -1,77 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Question Answering on Documents locally with LangChain, LocalAI, Chroma, and GPT4All — mudler.pm</title>
+<meta name="description" content="Ettore Di Giacinto (mudler) — creator of LocalAI. Local AI is the way.">
+<link rel="alternate" type="application/rss+xml" title="mudler.pm" href="https://mudler.pm/index.xml">
+<script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    <link rel="manifest" href="/images/site.webmanifest">
+<link rel="stylesheet" href="/css/main.min.09a407d4caedef9f4a35528755bc74339e7b69e87ca9a26b1c397f13f6baab58.css">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mudler blog - Place where I write about stuff">
-    <title>Question Answering on Documents locally with LangChain, LocalAI, Chroma, and GPT4All | Mudler blog</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
-    <link rel="stylesheet" href="https://mudler.pm/css/theme-override.css">
-    
-  </head>
+<script type="module" src="/js/site.88ebe1b0e35e5f6a8b8e87e795a9e9aad1344345abe8b977ef0af4fee00545d0.js"></script>
 
-  <body>
-    <header>
-      <nav>
-        <ul>
-          
-          
-          <li class="pull-left ">
-            <a href="https://mudler.pm/">~/mudler blog</a>
-          </li>
-          
-          
-          <li class="pull-left ">
-            <a href="/posts/">~/blog</a>
-          </li>
-          
-          
-          <li class="pull-left ">
-            <a href="/about/">~/about</a>
-          </li>
-          
-          
-          <li class="pull-left ">
-            <a href="/search/">~/search</a>
-          </li>
-          
+</head>
+<body>
+<nav class="site-nav" aria-label="Site">
+  <a class="brand" href="/">mudler.pm</a>
+  <span class="nav-links"><a href="/posts/">blog</a><a href="/projects/">projects</a><a href="/about/">about</a><a href="/search/">search</a><button id="theme-toggle" class="theme-toggle" aria-label="Toggle color scheme" title="Toggle theme [t]">☾</button></span>
+</nav>
 
-          
-          
-          <li class="pull-right">
-            <a href="/index.xml">~/subscribe</a>
-          </li>
-          
+<main id="main">
 
-        </ul>
-      </nav>
-    </header>
-
-
-<div class="article-meta">
-<h1><span class="title">Question Answering on Documents locally with LangChain, LocalAI, Chroma, and GPT4All</span></h1>
-
-<h2 class="date">2023/05/12</h2>
-<p class="terms">
+<article class="memo">
+  <hr class="memo-rule" aria-hidden="true"><hr class="memo-rule thin" aria-hidden="true">
   
   
-  
-  
-  
-</p>
-</div>
-
-
-
-<div class="content-wrapper">
-  <main>
+  <div class="memo-tag"><span>MUDLER.PM</span><span>TECHNICAL MEMORANDUM</span><span>N. 29</span></div>
+  <header class="memo-head">
+    <h1>Question Answering on Documents locally with LangChain, LocalAI, Chroma, and GPT4All</h1>
+    <p class="memo-byline">Ettore Di Giacinto · 12 May 2023 · 10 min read</p>
+  </header>
+  <div class="memo-body">
     <p>Have you ever dreamed of building AI-native applications that can leverage the power of large language models (LLMs) without relying on expensive cloud services or complex infrastructure? If so, you’re not alone. Many developers are looking for ways to create and deploy AI-powered solutions that are fast, flexible, and cost-effective, or just experiment locally. In this blog post, I’m going to show you how you can use three amazing tools and a language model like gpt4all to : LangChain, LocalAI, and Chroma.</p>
 <ul>
 <li>
@@ -88,22 +47,22 @@
 </li>
 </ul>
 <p>Together, these four tools form a powerful combination that can help you create and deploy AI-native applications with ease and efficiency. In the following sections, I’ll show you how to use them in practice to do question answering on a document.</p>
-<h2 id="localai">LocalAI</h2>
+<h2 id="localai">LocalAI <a class="hanchor" href="#localai" aria-label="Link to this section">§</a></h2>
 <p><img src="https://user-images.githubusercontent.com/2420543/233147843-88697415-6dbf-4368-a862-ab217f9f7342.jpeg" alt=""></p>
 <p><a href="https://github.com/go-skynet/LocalAI">LocalAI</a> is a drop-in replacement REST API compatible with OpenAI for local CPU inferencing. It allows you to run models locally or on-prem with consumer grade hardware, supporting multiple models families. LocalAI is a community-driven project, focused on making the AI accessible to anyone.</p>
 <p>LocalAI uses C++ bindings for optimizing speed and performance. It is based on <a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a> gpt4all, rwkv.cpp, ggml, whisper.cpp for audio transcriptions, and bert.cpp for embedding. LocalAI also supports GPT4ALL-J which is licensed under Apache 2.0, and MosaicLM PT models which are also usable for commercial applications. (see <a href="https://github.com/go-skynet/LocalAI#model-compatibility-table">here the table of supported models</a>)</p>
 <p>To use LocalAI, you need to install it on your machine and run it as a service, or either on the cloud or in a dedicated environment. You can then use the same API endpoints as OpenAI to interact with the models. For example, you can use the <code>/v1/models</code> endpoint to list the available models, or the <code>/v1/completions</code> endpoint to generate text completions, but computation is executed locally, with CPU-compatible models. You can download models from <a href="https://gpt4all.io/index.html">Gpt4all</a>.</p>
 <p>LocalAI also supports various ranges of configuration and prompt templates, which are predefined prompts that can help you generate specific outputs with the models. For example, you can use the summarizer template to generate summaries of texts, or the sentiment-analyzer template to analyze the sentiment of texts. You can find more <a href="https://github.com/go-skynet/LocalAI/tree/master/examples">examples</a> and <a href="https://github.com/go-skynet/LocalAI/tree/master/prompt-templates">prompt templates</a> in the <a href="https://github.com/go-skynet/LocalAI">LocalAI</a> repository.</p>
-<h2 id="langchain-and-chroma">Langchain and Chroma</h2>
+<h2 id="langchain-and-chroma">Langchain and Chroma <a class="hanchor" href="#langchain-and-chroma" aria-label="Link to this section">§</a></h2>
 <p><img src="https://blog.langchain.dev/content/images/size/w1000/2023/02/langchain-chroma-light.png" alt=""></p>
 <p><a href="https://www.trychroma.com/">Chroma</a> is a vector store and embedding database designed for AI workloads. It allows you to store and work with embeddings, which are the AI-native way to represent any kind of data. It also offers high performance and flexibility for working with different types of embeddings and algorithms. Chroma was founded to build tools that leverage the power of embeddings. Embeddings are the perfect fit for working with all kinds of AI-powered tools and algorithms, such as LLMs, semantic search, example selection, and more.</p>
 <p><a href="https://python.langchain.com/en/latest/">LangChain</a> is a modular and flexible framework for developing AI-native applications using LLMs. It allows you to easily prototype and experiment with different models, data sources, and use cases, such as chat bots, question answering services, and agents. LangChain also provides a rich ecosystem of integrations with other tools and platforms, such as Notion, PDFs, ClearML, CerebriumAI, and more.</p>
 <p>Together, those are powerful and convenient tools that can help you store and work with embeddings in a simple and efficient way. It can also help you enhance your LLM applications with pluggable knowledge, facts, and skills. In the next section, I’ll show you how to use LangChain and Chroma together with LocalAI to create and deploy AI-native applications locally.</p>
-<h2 id="question-answering-with-localai-chromadb-and-langchain">Question answering with LocalAI, ChromaDB and Langchain</h2>
+<h2 id="question-answering-with-localai-chromadb-and-langchain">Question answering with LocalAI, ChromaDB and Langchain <a class="hanchor" href="#question-answering-with-localai-chromadb-and-langchain" aria-label="Link to this section">§</a></h2>
 <p>In this example, I&rsquo;ll show you how to use <code>LocalAI</code> with the <code>gpt4all</code> models with <code>LangChain</code> and <code>Chroma</code> to enable question answering on a set of documents. We’ll use the state of the union speeches from different US presidents as our data source, and we’ll use the <code>ggml-gpt4all-j</code> model served by LocalAI to generate answers. Note, you can use any model compatible with <code>LocalAI</code>.</p>
 <p>To run this example, you’ll need to have LocalAI, LangChain, and Chroma installed on your machine. You’ll also need to download the models and the data files from the links provided below. Alternatively, you can use the docker-compose file to start the LocalAI API and the Chroma service with the models and data already loaded.</p>
 <p>The example consists of two steps: creating a storage and querying the storage. In the first step, we’ll use LangChain and Chroma to create a local vector database from our document set. This will allow us to perform semantic search on the documents using embeddings. In the second step, we’ll use LangChain and LocalAI to query the storage using natural language questions. We’ll use the gpt4all model served by LocalAI using the <em>OpenAI</em> api and python client to generate answers based on the most relevant documents. The key aspect here is that we will configure the python client to use the LocalAI API endpoint instead of OpenAI.</p>
-<h3 id="step-1-start-localai">Step 1: Start LocalAI</h3>
+<h3 id="step-1-start-localai">Step 1: Start LocalAI <a class="hanchor" href="#step-1-start-localai" aria-label="Link to this section">§</a></h3>
 <p>To start LocalAI, we can either build it locally or use <code>docker-compose</code>. Note the steps here are for <code>Linux</code> machines. If you are on <code>Mac</code> you need to build the binary manually:</p>
 <pre tabindex="0"><code># Clone LocalAI
 git clone https://github.com/go-skynet/LocalAI
@@ -117,7 +76,7 @@ wget https://gpt4all.io/models/ggml-gpt4all-j.bin -O models/ggml-gpt4all-j
 docker-compose up
 </code></pre><p>This will start the LocalAI server locally, with the models required for embeddings (<code>bert</code>) and for question answering (<code>gpt4all</code>).</p>
 <p>Note: The example contains a <code>models</code> folder with the configuration for <code>gpt4all</code> and the <code>embeddings</code> models already prepared. LocalAI will map gpt4all to <code>gpt-3.5-turbo</code> model, and <code>bert</code> to the embeddings endpoints.</p>
-<h3 id="step-2-create-a-vector-database">Step 2: Create a vector database</h3>
+<h3 id="step-2-create-a-vector-database">Step 2: Create a vector database <a class="hanchor" href="#step-2-create-a-vector-database" aria-label="Link to this section">§</a></h3>
 <p>To create a vectore database, we’ll use a script which uses LangChain and Chroma to create a collection of documents and their embeddings. The script takes a text file as input, where each line is a document. In our case, we’ll use the <code>state_of_the_union.txt</code> file, which we will use to ask it questions later for.</p>
 <p>Download the data:</p>
 <pre tabindex="0"><code># Download data used for training
@@ -141,34 +100,34 @@ wget https://raw.githubusercontent.com/hwchase17/chat-your-data/master/state_of_
 <li>It creates a Chroma object that stores the embeddings in a vector database. It also specifies a persist_directory where the embeddings are saved on disk.</li>
 <li>It calls the persist method to save the embeddings.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.vectorstores <span style="color:#f92672">import</span> Chroma
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.embeddings <span style="color:#f92672">import</span> OpenAIEmbeddings
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.text_splitter <span style="color:#f92672">import</span> RecursiveCharacterTextSplitter,TokenTextSplitter,CharacterTextSplitter
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.llms <span style="color:#f92672">import</span> OpenAI
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.chains <span style="color:#f92672">import</span> VectorDBQA
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.document_loaders <span style="color:#f92672">import</span> TextLoader
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>base_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>environ<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;OPENAI_API_BASE&#39;</span>, <span style="color:#e6db74">&#39;http://localhost:8080/v1&#39;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Load and process the text</span>
-</span></span><span style="display:flex;"><span>loader <span style="color:#f92672">=</span> TextLoader(<span style="color:#e6db74">&#39;state_of_the_union.txt&#39;</span>)
-</span></span><span style="display:flex;"><span>documents <span style="color:#f92672">=</span> loader<span style="color:#f92672">.</span>load()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>text_splitter <span style="color:#f92672">=</span> CharacterTextSplitter(chunk_size<span style="color:#f92672">=</span><span style="color:#ae81ff">300</span>, chunk_overlap<span style="color:#f92672">=</span><span style="color:#ae81ff">70</span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#text_splitter = TokenTextSplitter()</span>
-</span></span><span style="display:flex;"><span>texts <span style="color:#f92672">=</span> text_splitter<span style="color:#f92672">.</span>split_documents(documents)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Embed and store the texts</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Supplying a persist_directory will store the embeddings on disk</span>
-</span></span><span style="display:flex;"><span>persist_directory <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;db&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>embedding <span style="color:#f92672">=</span> OpenAIEmbeddings(model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-embedding-ada-002&#34;</span>)
-</span></span><span style="display:flex;"><span>vectordb <span style="color:#f92672">=</span> Chroma<span style="color:#f92672">.</span>from_documents(documents<span style="color:#f92672">=</span>texts, embedding<span style="color:#f92672">=</span>embedding, persist_directory<span style="color:#f92672">=</span>persist_directory)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>vectordb<span style="color:#f92672">.</span>persist()
-</span></span><span style="display:flex;"><span>vectordb <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.vectorstores</span> <span class="kn">import</span> <span class="n">Chroma</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.embeddings</span> <span class="kn">import</span> <span class="n">OpenAIEmbeddings</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.text_splitter</span> <span class="kn">import</span> <span class="n">RecursiveCharacterTextSplitter</span><span class="p">,</span><span class="n">TokenTextSplitter</span><span class="p">,</span><span class="n">CharacterTextSplitter</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.llms</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.chains</span> <span class="kn">import</span> <span class="n">VectorDBQA</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.document_loaders</span> <span class="kn">import</span> <span class="n">TextLoader</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">base_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;OPENAI_API_BASE&#39;</span><span class="p">,</span> <span class="s1">&#39;http://localhost:8080/v1&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Load and process the text</span>
+</span></span><span class="line"><span class="cl"><span class="n">loader</span> <span class="o">=</span> <span class="n">TextLoader</span><span class="p">(</span><span class="s1">&#39;state_of_the_union.txt&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">documents</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">text_splitter</span> <span class="o">=</span> <span class="n">CharacterTextSplitter</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">chunk_overlap</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#text_splitter = TokenTextSplitter()</span>
+</span></span><span class="line"><span class="cl"><span class="n">texts</span> <span class="o">=</span> <span class="n">text_splitter</span><span class="o">.</span><span class="n">split_documents</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Embed and store the texts</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Supplying a persist_directory will store the embeddings on disk</span>
+</span></span><span class="line"><span class="cl"><span class="n">persist_directory</span> <span class="o">=</span> <span class="s1">&#39;db&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">embedding</span> <span class="o">=</span> <span class="n">OpenAIEmbeddings</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&#34;text-embedding-ada-002&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">vectordb</span> <span class="o">=</span> <span class="n">Chroma</span><span class="o">.</span><span class="n">from_documents</span><span class="p">(</span><span class="n">documents</span><span class="o">=</span><span class="n">texts</span><span class="p">,</span> <span class="n">embedding</span><span class="o">=</span><span class="n">embedding</span><span class="p">,</span> <span class="n">persist_directory</span><span class="o">=</span><span class="n">persist_directory</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">vectordb</span><span class="o">.</span><span class="n">persist</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">vectordb</span> <span class="o">=</span> <span class="kc">None</span>
 </span></span></code></pre></div><p>To run the script, execute the following commands:</p>
 <pre tabindex="0"><code># Set environment variables
 export OPENAI_API_BASE=http://localhost:8080/v1
@@ -177,7 +136,7 @@ export OPENAI_API_KEY=sk-
 # Run store.py script
 python store.py
 </code></pre><p>After it finishes, a directory named <code>db</code> will be created with the vector index database.</p>
-<h3 id="step-3-query-the-storage">Step 3: Query the storage</h3>
+<h3 id="step-3-query-the-storage">Step 3: Query the storage <a class="hanchor" href="#step-3-query-the-storage" aria-label="Link to this section">§</a></h3>
 <p>Now we can query our vector database with <code>gpt4all</code>.</p>
 <p>To query the storage, we’ll use a python script which uses LangChain and LocalAI to generate answers from natural language questions.</p>
 <p>Our script will do the following:</p>
@@ -187,24 +146,24 @@ python store.py
 <li>It creates a question answering system using the VectorDBQA class, which can query the vector store using natural language questions. It also uses the OpenAI class, which is a wrapper for the OpenAI API that can specify parameters such as temperature and model name. In this case, it uses the <code>gpt-3.5-turbo</code> model, and LocalAI is configured to redirect requests to the <code>gpt4all</code> model instead.</li>
 <li>Finally, it runs a sample query on the question answering system, asking “What the president said about taxes ?” and prints the answer.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.vectorstores <span style="color:#f92672">import</span> Chroma
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.embeddings <span style="color:#f92672">import</span> OpenAIEmbeddings
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.llms <span style="color:#f92672">import</span> OpenAI
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.chains <span style="color:#f92672">import</span> VectorDBQA
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>base_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>environ<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;OPENAI_API_BASE&#39;</span>, <span style="color:#e6db74">&#39;http://localhost:8080/v1&#39;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Load and process the text</span>
-</span></span><span style="display:flex;"><span>embedding <span style="color:#f92672">=</span> OpenAIEmbeddings()
-</span></span><span style="display:flex;"><span>persist_directory <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;db&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Now we can load the persisted database from disk, and use it as normal. </span>
-</span></span><span style="display:flex;"><span>vectordb <span style="color:#f92672">=</span> Chroma(persist_directory<span style="color:#f92672">=</span>persist_directory, embedding_function<span style="color:#f92672">=</span>embedding)
-</span></span><span style="display:flex;"><span>qa <span style="color:#f92672">=</span> VectorDBQA<span style="color:#f92672">.</span>from_chain_type(llm<span style="color:#f92672">=</span>OpenAI(temperature<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, model_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gpt-3.5-turbo&#34;</span>, openai_api_base<span style="color:#f92672">=</span>base_path), chain_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stuff&#34;</span>, vectorstore<span style="color:#f92672">=</span>vectordb)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;What the president said about taxes ?&#34;</span>
-</span></span><span style="display:flex;"><span>print(qa<span style="color:#f92672">.</span>run(query))
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.vectorstores</span> <span class="kn">import</span> <span class="n">Chroma</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.embeddings</span> <span class="kn">import</span> <span class="n">OpenAIEmbeddings</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.llms</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.chains</span> <span class="kn">import</span> <span class="n">VectorDBQA</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">base_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;OPENAI_API_BASE&#39;</span><span class="p">,</span> <span class="s1">&#39;http://localhost:8080/v1&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Load and process the text</span>
+</span></span><span class="line"><span class="cl"><span class="n">embedding</span> <span class="o">=</span> <span class="n">OpenAIEmbeddings</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">persist_directory</span> <span class="o">=</span> <span class="s1">&#39;db&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Now we can load the persisted database from disk, and use it as normal. </span>
+</span></span><span class="line"><span class="cl"><span class="n">vectordb</span> <span class="o">=</span> <span class="n">Chroma</span><span class="p">(</span><span class="n">persist_directory</span><span class="o">=</span><span class="n">persist_directory</span><span class="p">,</span> <span class="n">embedding_function</span><span class="o">=</span><span class="n">embedding</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">qa</span> <span class="o">=</span> <span class="n">VectorDBQA</span><span class="o">.</span><span class="n">from_chain_type</span><span class="p">(</span><span class="n">llm</span><span class="o">=</span><span class="n">OpenAI</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">model_name</span><span class="o">=</span><span class="s2">&#34;gpt-3.5-turbo&#34;</span><span class="p">,</span> <span class="n">openai_api_base</span><span class="o">=</span><span class="n">base_path</span><span class="p">),</span> <span class="n">chain_type</span><span class="o">=</span><span class="s2">&#34;stuff&#34;</span><span class="p">,</span> <span class="n">vectorstore</span><span class="o">=</span><span class="n">vectordb</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">query</span> <span class="o">=</span> <span class="s2">&#34;What the president said about taxes ?&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">qa</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
 </span></span></code></pre></div><p>To run the script, execute the following commands:</p>
 <pre tabindex="0"><code># Set environment variables
 export OPENAI_API_BASE=http://localhost:8080/v1
@@ -213,7 +172,7 @@ export OPENAI_API_KEY=sk-
 # Run query.py
 python query.py
 # President Trump recently stated during a press conference regarding tax reform legislation that &#34;we&#39;re getting rid of all these loopholes.&#34; He also mentioned that he wants to simplify the system further through changes such as increasing the standard deduction amount and making other adjustments aimed at reducing taxpayers&#39; overall burden.    
-</code></pre><h2 id="conclusions">Conclusions:</h2>
+</code></pre><h2 id="conclusions">Conclusions: <a class="hanchor" href="#conclusions" aria-label="Link to this section">§</a></h2>
 <p>In this blog post, we showed you how to use LangChain and Chroma together with LocalAI to enable question answering on a set of documents. We used the state of the union speeches from different US presidents as our data source, and we used the ggml-gpt4all-j model from LocalAI to generate answers. We also used Chroma as a vector store and embedding database to perform semantic search on the documents using embeddings.</p>
 <p>This is just one example of how you can use these three amazing tools to create and deploy AI-native applications with ease and efficiency. You can also use them for other use cases, such as chat bots, agents, summarizers, sentiment analyzers, and more. You can also use different models, data sources, and integrations with other tools and platforms.</p>
 <p>We hope you enjoyed this blog post and learned something new. If you want to try it out for yourself, you can find the code and the instructions in <a href="https://github.com/go-skynet/LocalAI/tree/master/examples/langchain-chroma">this GitHub repo</a>. You can also find more resources and documentation for LangChain, LocalAI, and Chroma in the links below.</p>
@@ -224,7 +183,7 @@ python query.py
 <li>LocalAI: <a href="https://github.com/go-skynet/LocalAI">https://github.com/go-skynet/LocalAI</a></li>
 </ul>
 <p>We’d love to hear your feedback and suggestions on how to improve these tools and make them more useful for you. You can join our Discord channels and chat with us and other developers:</p>
-<h2 id="links">Links</h2>
+<h2 id="links">Links <a class="hanchor" href="#links" aria-label="Link to this section">§</a></h2>
 <ul>
 <li>Full example code: <a href="https://github.com/go-skynet/LocalAI/tree/master/examples/langchain-chroma">https://github.com/go-skynet/LocalAI/tree/master/examples/langchain-chroma</a></li>
 <li>LocalAI examples: <a href="https://github.com/go-skynet/LocalAI/tree/master/examples">https://github.com/go-skynet/LocalAI/tree/master/examples</a></li>
@@ -235,42 +194,48 @@ python query.py
 </ul>
 <p>Thank you for reading and happy coding!</p>
 
-    <a href="/"> >> Home</a>
-  </main>
+  </div>
+  
+  <nav class="memo-seealso">
+    <h2>SEE ALSO</h2>
+    <ul>
+      <li><a href="/posts/2023/06/22/create-a-question-answering-bot-for-slack-on-your-data-that-you-can-run-locally/">Create a Question answering bot for Slack on your data, that you can run locally</a> <i>(newer)</i></li>
+      <li><a href="/posts/2023/05/11/localai-updates/">LocalAI updates</a> <i>(older)</i></li>
+      <li><a href="/posts/">all posts</a></li>
+    </ul>
+  </nav>
+</article>
+
+</main>
+<footer class="site-footer">
+  <div class="man-footline"><span>Linux</span><span>July 2026</span><span>MUDLER(1)<span class="cursor" aria-hidden="true">▊</span></span></div>
+  <div class="footlinks">
+    <a href="https://github.com/mudler">github</a> ·
+    <a href="https://twitter.com/mudler_it">x</a> ·
+    <a href="https://huggingface.co/mudler">huggingface</a> ·
+    <a href="https://www.linkedin.com/in/ettore-di-giacinto-211a4166/">linkedin</a> ·
+    <a href="https://github.com/sponsors/mudler">sponsor</a> ·
+    <a href="/index.xml">rss</a> ·
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>
+  </div>
+</footer>
+
+<div id="kb-help" class="kb-help" hidden>
+  <div class="kb-box" role="dialog" aria-modal="true" aria-label="Key bindings" tabindex="-1">
+    <div class="manhead"><span>KEYS(1)</span><span></span><span>KEYS(1)</span></div>
+    <h2 class="sec">KEY BINDINGS</h2>
+    <div class="ind">
+      <div class="opt"><b>j / k</b><span>select next / previous entry</span></div>
+      <div class="opt"><b>Enter</b><span>open selection</span></div>
+      <div class="opt"><b>g / G</b><span>go to top / bottom</span></div>
+      <div class="opt"><b>/</b><span>search the manual</span></div>
+      <div class="opt"><b>t</b><span>toggle light / dark pager</span></div>
+      <div class="opt"><b>q</b><span>quit to mudler(1)</span></div>
+      <div class="opt"><b>?</b><span>toggle this help</span></div>
+    </div>
+  </div>
 </div>
-    <footer>
-      
-      
-      <script>
-      (function() {
-        function center_el(tagName) {
-          var tags = document.getElementsByTagName(tagName), i, tag;
-          for (i = 0; i < tags.length; i++) {
-            tag = tags[i];
-            var parent = tag.parentElement;
-            
-            if (parent.childNodes.length === 1) {
-              
-              if (parent.nodeName === 'A') {
-                parent = parent.parentElement;
-                if (parent.childNodes.length != 1) continue;
-              }
-              if (parent.nodeName === 'P') parent.style.textAlign = 'center';
-            }
-          }
-        }
-        var tagNames = ['img', 'embed', 'object'];
-        for (var i = 0; i < tagNames.length; i++) {
-          center_el(tagNames[i]);
-        }
-      })();
-      </script>
 
-      
-      <hr/>
-      <a href="https://github.com/mudler">GitHub</a> | <a href="https://twitter.com/mudler_it">X/Twitter</a> | <a href="https://www.linkedin.com/in/ettore-di-giacinto-211a4166/">LinkedIn</a>
-      
-    </footer>
-  </body>
+<div class="status-line" id="status-line" aria-hidden="true">Manual page mudler(1) (press ? for help)</div>
+</body>
 </html>
-

@@ -1,104 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LocalAI and llama.cpp on Jetson Nano Devkit — mudler.pm</title>
+<meta name="description" content="Ettore Di Giacinto (mudler) — creator of LocalAI. Local AI is the way.">
+<link rel="alternate" type="application/rss+xml" title="mudler.pm" href="https://mudler.pm/index.xml">
+<script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    <link rel="manifest" href="/images/site.webmanifest">
+<link rel="stylesheet" href="/css/main.min.09a407d4caedef9f4a35528755bc74339e7b69e87ca9a26b1c397f13f6baab58.css">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mudler blog - Place where I write about stuff">
-    <title>LocalAI and llama.cpp on Jetson Nano Devkit | Mudler blog</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
-    <link rel="stylesheet" href="https://mudler.pm/css/theme-override.css">
-    
-  </head>
+<script type="module" src="/js/site.88ebe1b0e35e5f6a8b8e87e795a9e9aad1344345abe8b977ef0af4fee00545d0.js"></script>
 
-  <body>
-    <header>
-      <nav>
-        <ul>
-          
-          
-          <li class="pull-left ">
-            <a href="https://mudler.pm/">~/mudler blog</a>
-          </li>
-          
-          
-          <li class="pull-left ">
-            <a href="/posts/">~/blog</a>
-          </li>
-          
-          
-          <li class="pull-left ">
-            <a href="/about/">~/about</a>
-          </li>
-          
-          
-          <li class="pull-left ">
-            <a href="/search/">~/search</a>
-          </li>
-          
+</head>
+<body>
+<nav class="site-nav" aria-label="Site">
+  <a class="brand" href="/">mudler.pm</a>
+  <span class="nav-links"><a href="/posts/">blog</a><a href="/projects/">projects</a><a href="/about/">about</a><a href="/search/">search</a><button id="theme-toggle" class="theme-toggle" aria-label="Toggle color scheme" title="Toggle theme [t]">☾</button></span>
+</nav>
 
-          
-          
-          <li class="pull-right">
-            <a href="/index.xml">~/subscribe</a>
-          </li>
-          
+<main id="main">
 
-        </ul>
-      </nav>
-    </header>
-
-
-<div class="article-meta">
-<h1><span class="title">LocalAI and llama.cpp on Jetson Nano Devkit</span></h1>
-
-<h2 class="date">2024/05/30</h2>
-<p class="terms">
+<article class="memo">
+  <hr class="memo-rule" aria-hidden="true"><hr class="memo-rule thin" aria-hidden="true">
   
   
-  
-  
-  
-</p>
-</div>
-
-
-
-<div class="content-wrapper">
-  <main>
+  <div class="memo-tag"><span>MUDLER.PM</span><span>TECHNICAL MEMORANDUM</span><span>N. 31</span></div>
+  <header class="memo-head">
+    <h1>LocalAI and llama.cpp on Jetson Nano Devkit</h1>
+    <p class="memo-byline">Ettore Di Giacinto · 30 May 2024 · 8 min read</p>
+  </header>
+  <div class="memo-body">
     <p>If you are a lucky(?) owner of the Jetson Nano Devkit (4GB), and you don&rsquo;t know anymore on what to do with it, you can try to run LocalAI with llama.cpp on it.</p>
 <p>The Jetson Nano Devkit is currently not supported anymore by Nvidia, and receives little to no attention, however, it can <em>still</em> do something, and if you are like me that recycles the board at home, you might want to have fun with it by running AI on top of it. It might be also good candidate for the workload distribution features that LocalAI has (see: <a href="https://localai.io/features/distribute/%29">https://localai.io/features/distribute/)</a>, but leaving that for another post.</p>
 <p>Disclaimer: you aren&rsquo;t going to run big models with it, but phi-3 runs and you can have fun with it!</p>
 <p>I&rsquo;ll leave to another post for the setup I got with the Orin AGX, this covers for now only the Jetson Nano devkit as I recently did these steps to prepare a cluster to show-off on one of my upcoming talks!</p>
 <p><img src="https://github.com/mudler/blog/assets/2420543/f7c050b6-3b08-4652-99d1-51438a1a7300" alt="Screenshot from 2024-05-31 19-16-18"></p>
-<h2 id="requirements">Requirements</h2>
+<h2 id="requirements">Requirements <a class="hanchor" href="#requirements" aria-label="Link to this section">§</a></h2>
 <p>First of all, you need to get the latest Jetson Nano Devkit tooling that is - by now - it is 32.7.4.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://developer.nvidia.com/downloads/embedded/l4t/r32_release_v7.4/t210/jetson-210_linux_r32.7.4_aarch64.tbz2
-</span></span><span style="display:flex;"><span>tar -xvf jetson-210_linux_r32.7.4_aarch64.tbz2
-</span></span><span style="display:flex;"><span>cd Linux_for_Tegra
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget https://developer.nvidia.com/downloads/embedded/l4t/r32_release_v7.4/t210/jetson-210_linux_r32.7.4_aarch64.tbz2
+</span></span><span class="line"><span class="cl">tar -xvf jetson-210_linux_r32.7.4_aarch64.tbz2
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> Linux_for_Tegra
 </span></span></code></pre></div><p>Then you need to flash the device with the latest image, so we need a rootfs:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://developer.nvidia.com/downloads/embedded/l4t/r32_release_v7.4/t210/tegra_linux_sample-root-filesystem_r32.7.4_aarch64.tbz2
-</span></span><span style="display:flex;"><span>mkdir rootfs
-</span></span><span style="display:flex;"><span>tar -xvf tegra_linux_sample-root-filesystem_r32.7.4_aarch64.tbz2 -C rootfs
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget https://developer.nvidia.com/downloads/embedded/l4t/r32_release_v7.4/t210/tegra_linux_sample-root-filesystem_r32.7.4_aarch64.tbz2
+</span></span><span class="line"><span class="cl">mkdir rootfs
+</span></span><span class="line"><span class="cl">tar -xvf tegra_linux_sample-root-filesystem_r32.7.4_aarch64.tbz2 -C rootfs
 </span></span></code></pre></div><p>Reminder: you need to prepare the rootfs by running (and requires QEMU with aarch64 support):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ./apply_binaries.sh
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ./apply_binaries.sh
 </span></span></code></pre></div><p>Then you can flash the device with the following command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ./flash.sh jetson-nano-devkit-emmc mmcblk0p1
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ./flash.sh jetson-nano-devkit-emmc mmcblk0p1
 </span></span></code></pre></div><p>Make sure to put the device in recovery mode before running the flash command (notes below).</p>
-<h3 id="enter-recovery-mode">Enter recovery mode</h3>
+<h3 id="enter-recovery-mode">Enter recovery mode <a class="hanchor" href="#enter-recovery-mode" aria-label="Link to this section">§</a></h3>
 <ul>
 <li>Jumper the J48 power select pin first and plug the power jack (optional, depend on devkit board)</li>
 <li>Jumper the recovery pin and the reset pin. In my case it was on the edge of the Compute module.</li>
 <li>Plug the MicroUSB cable to the PC</li>
 <li>Plug the power to the board (DC on the board)</li>
 </ul>
-<h4 id="verify-you-are-in-recovery-mode">Verify you are in recovery mode</h4>
+<h4 id="verify-you-are-in-recovery-mode">Verify you are in recovery mode <a class="hanchor" href="#verify-you-are-in-recovery-mode" aria-label="Link to this section">§</a></h4>
 <p>You should be able to see the Nvidia device as <code>NVIDIA Corp. APX</code> by running “lsusb” command on your host.</p>
 <pre tabindex="0"><code># lsusb
 Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
@@ -109,64 +68,64 @@ Bus 003 Device 005: ID 8087:0033 Intel Corp.
 Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-</code></pre><h2 id="cleanup">Cleanup</h2>
+</code></pre><h2 id="cleanup">Cleanup <a class="hanchor" href="#cleanup" aria-label="Link to this section">§</a></h2>
 <p>We might need some extra space, especially if you are booting from the eMMC like me. We can remove all the graphical packages and docs like this on a booted system, but this might be a bit of a delicate process, beware and make sure you know what you are doing before running this command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get remove ubuntu-desktop gnome-* libreoffice*
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> read p; <span style="color:#66d9ef">do</span>
-</span></span><span style="display:flex;"><span>  sudo apt-get remove -y <span style="color:#e6db74">&#34;</span>$p<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span> &lt; &lt;<span style="color:#f92672">(</span>curl -L https://raw.githubusercontent.com/NVIDIA-AI-IOT/jetson-min-disk/main/assets/nvubuntu-bionic-packages_only-in-desktop.txt<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>sudo apt-get install network-manager
-</span></span><span style="display:flex;"><span>sudo dpkg -r --force-depends <span style="color:#e6db74">&#34;cuda-documentation-10-2&#34;</span> <span style="color:#e6db74">&#34;cuda-samples-10-2&#34;</span> <span style="color:#e6db74">&#34;libnvinfer-samples&#34;</span> <span style="color:#e6db74">&#34;libvisionworks-samples&#34;</span> <span style="color:#e6db74">&#34;libnvinfer-doc&#34;</span> <span style="color:#e6db74">&#34;vpi1-samples&#34;</span>
-</span></span></code></pre></div><h2 id="install-build-dependencies">Install Build dependencies</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get remove ubuntu-desktop gnome-* libreoffice*
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="nb">read</span> p<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  sudo apt-get remove -y <span class="s2">&#34;</span><span class="nv">$p</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span> &lt; &lt;<span class="o">(</span>curl -L https://raw.githubusercontent.com/NVIDIA-AI-IOT/jetson-min-disk/main/assets/nvubuntu-bionic-packages_only-in-desktop.txt<span class="o">)</span>
+</span></span><span class="line"><span class="cl">sudo apt-get install network-manager
+</span></span><span class="line"><span class="cl">sudo dpkg -r --force-depends <span class="s2">&#34;cuda-documentation-10-2&#34;</span> <span class="s2">&#34;cuda-samples-10-2&#34;</span> <span class="s2">&#34;libnvinfer-samples&#34;</span> <span class="s2">&#34;libvisionworks-samples&#34;</span> <span class="s2">&#34;libnvinfer-doc&#34;</span> <span class="s2">&#34;vpi1-samples&#34;</span>
+</span></span></code></pre></div><h2 id="install-build-dependencies">Install Build dependencies <a class="hanchor" href="#install-build-dependencies" aria-label="Link to this section">§</a></h2>
 <p>The packages on the Jetson Nano are really old ( we are talking about gcc 7 ! ) as this is an Ubuntu 18.04.</p>
 <p>We need then to install few things manually to go ahead:</p>
-<h3 id="cmake">Cmake</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install CMAKE: </span>
-</span></span><span style="display:flex;"><span>wget https://github.com/Kitware/CMake/releases/download/v3.26.4/cmake-3.26.4.tar.gz
-</span></span><span style="display:flex;"><span>tar xvf cmake-3.26.4.tar.gz
-</span></span><span style="display:flex;"><span>cd cmake-3.26.4
-</span></span><span style="display:flex;"><span>./configure
-</span></span><span style="display:flex;"><span>make
-</span></span><span style="display:flex;"><span>make install
-</span></span></code></pre></div><h3 id="gcc-8">GCC-8</h3>
+<h3 id="cmake">Cmake <a class="hanchor" href="#cmake" aria-label="Link to this section">§</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Install CMAKE: </span>
+</span></span><span class="line"><span class="cl">wget https://github.com/Kitware/CMake/releases/download/v3.26.4/cmake-3.26.4.tar.gz
+</span></span><span class="line"><span class="cl">tar xvf cmake-3.26.4.tar.gz
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> cmake-3.26.4
+</span></span><span class="line"><span class="cl">./configure
+</span></span><span class="line"><span class="cl">make
+</span></span><span class="line"><span class="cl">make install
+</span></span></code></pre></div><h3 id="gcc-8">GCC-8 <a class="hanchor" href="#gcc-8" aria-label="Link to this section">§</a></h3>
 <p>We need gcc 8 for <code>-std=c++20</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-</span></span><span style="display:flex;"><span>sudo apt-get install -y gcc-8 g++-8
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+</span></span><span class="line"><span class="cl">sudo apt-get install -y gcc-8 g++-8
 </span></span></code></pre></div><p>You might need to setup alternatives, just in case ( I didn&rsquo;t had to ):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#Remove the previous alternatives</span>
-</span></span><span style="display:flex;"><span>sudo update-alternatives --remove-all gcc
-</span></span><span style="display:flex;"><span>sudo update-alternatives --remove-all g++
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#Define the compiler</span>
-</span></span><span style="display:flex;"><span>sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 <span style="color:#ae81ff">30</span>
-</span></span><span style="display:flex;"><span>sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 <span style="color:#ae81ff">30</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc <span style="color:#ae81ff">30</span>
-</span></span><span style="display:flex;"><span>sudo update-alternatives --set cc /usr/bin/gcc
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ <span style="color:#ae81ff">30</span>
-</span></span><span style="display:flex;"><span>sudo update-alternatives --set c++ /usr/bin/g++
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#Confirm and update (You can use the default setting)</span>
-</span></span><span style="display:flex;"><span>sudo update-alternatives --config gcc
-</span></span><span style="display:flex;"><span>sudo update-alternatives --config g++
-</span></span></code></pre></div><h3 id="install-cuda">Install cuda</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -y nvidia-cuda zlib1g-dev
-</span></span></code></pre></div><h3 id="install-protoc">Install protoc</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#Remove the previous alternatives</span>
+</span></span><span class="line"><span class="cl">sudo update-alternatives --remove-all gcc
+</span></span><span class="line"><span class="cl">sudo update-alternatives --remove-all g++
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Define the compiler</span>
+</span></span><span class="line"><span class="cl">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 <span class="m">30</span>
+</span></span><span class="line"><span class="cl">sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 <span class="m">30</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc <span class="m">30</span>
+</span></span><span class="line"><span class="cl">sudo update-alternatives --set cc /usr/bin/gcc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ <span class="m">30</span>
+</span></span><span class="line"><span class="cl">sudo update-alternatives --set c++ /usr/bin/g++
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Confirm and update (You can use the default setting)</span>
+</span></span><span class="line"><span class="cl">sudo update-alternatives --config gcc
+</span></span><span class="line"><span class="cl">sudo update-alternatives --config g++
+</span></span></code></pre></div><h3 id="install-cuda">Install cuda <a class="hanchor" href="#install-cuda" aria-label="Link to this section">§</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get install -y nvidia-cuda zlib1g-dev
+</span></span></code></pre></div><h3 id="install-protoc">Install protoc <a class="hanchor" href="#install-protoc" aria-label="Link to this section">§</a></h3>
 <p>Protoc in repositories is old! get the latest one:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -L -s https://github.com/protocolbuffers/protobuf/releases/download/v26.1/protoc-26.1-linux-aarch_64.zip -o protoc.zip <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>unzip -j -d /usr/local/bin protoc.zip bin/protoc <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>rm protoc.zip
-</span></span></code></pre></div><h3 id="install-golang">Install golang</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://go.dev/dl/go1.22.3.linux-arm64.tar.gz
-</span></span><span style="display:flex;"><span>sudo tar -C /usr/local -xzf go1.22.3.linux-amd64.tar.gz
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export PATH=</span>$PATH<span style="color:#e6db74">:/usr/local/go/bin:</span>$HOME<span style="color:#e6db74">/go/bin:/usr/local/cuda/bin&#34;</span> &gt;&gt; ~/.bashrc
-</span></span><span style="display:flex;"><span>source ~/.bashrc
-</span></span></code></pre></div><h2 id="install-localai">Install LocalAI</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -L -s https://github.com/protocolbuffers/protobuf/releases/download/v26.1/protoc-26.1-linux-aarch_64.zip -o protoc.zip <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>unzip -j -d /usr/local/bin protoc.zip bin/protoc <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>rm protoc.zip
+</span></span></code></pre></div><h3 id="install-golang">Install golang <a class="hanchor" href="#install-golang" aria-label="Link to this section">§</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget https://go.dev/dl/go1.22.3.linux-arm64.tar.gz
+</span></span><span class="line"><span class="cl">sudo tar -C /usr/local -xzf go1.22.3.linux-amd64.tar.gz
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;export PATH=</span><span class="nv">$PATH</span><span class="s2">:/usr/local/go/bin:</span><span class="nv">$HOME</span><span class="s2">/go/bin:/usr/local/cuda/bin&#34;</span> &gt;&gt; ~/.bashrc
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.bashrc
+</span></span></code></pre></div><h2 id="install-localai">Install LocalAI <a class="hanchor" href="#install-localai" aria-label="Link to this section">§</a></h2>
 <p>We are going to build LocalAI from source, as the prebuilt binaries are not available for the Jetson Nano and CUDA. The Jetson nano uses CUDA 10.2.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/mudler/LocalAI
-</span></span><span style="display:flex;"><span>cd LocalAI
-</span></span><span style="display:flex;"><span>BUILD_GRPC_FOR_BACKEND_LLAMA<span style="color:#f92672">=</span>true GRPC_BACKENDS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;backend-assets/grpc/llama-cpp&#34;</span> BUILD_TYPE<span style="color:#f92672">=</span>cublas GO_TAGS<span style="color:#f92672">=</span>p2p make build
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/mudler/LocalAI
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> LocalAI
+</span></span><span class="line"><span class="cl"><span class="nv">BUILD_GRPC_FOR_BACKEND_LLAMA</span><span class="o">=</span><span class="nb">true</span> <span class="nv">GRPC_BACKENDS</span><span class="o">=</span><span class="s2">&#34;backend-assets/grpc/llama-cpp&#34;</span> <span class="nv">BUILD_TYPE</span><span class="o">=</span>cublas <span class="nv">GO_TAGS</span><span class="o">=</span>p2p make build
 </span></span></code></pre></div><p>We are going to build only the llama-cpp backend (I did not try the others for now).</p>
 <p>Its going to take a while, grab a coffee and wait for the build to finish.</p>
 <p>&hellip; and boom, it fails compiling ?!.</p>
@@ -234,9 +193,9 @@ index 5e77471f..1ad54af8 100644
  #define ggml_vqtbl1q_s8   vqtbl1q_s8
  #define ggml_vqtbl1q_u8   vqtbl1q_u8
 </code></pre><p>Apply the patch in <code>LocalAI/backend/cpp/llama-cpp/llama.cpp/ggml/src</code>.</p>
-<h2 id="result">Result</h2>
+<h2 id="result">Result <a class="hanchor" href="#result" aria-label="Link to this section">§</a></h2>
 <p>Now you should have a binary, <code>local-ai</code>, and you can run phi-3 with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./local-ai run https://gist.githubusercontent.com/mudler/86dbff5fdf46e993b81dd366a679ea32/raw/20e6416719e86f99954b8ea7a26b1aa680db6f59/phi-3-mini-jetson.yaml
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./local-ai run https://gist.githubusercontent.com/mudler/86dbff5fdf46e993b81dd366a679ea32/raw/20e6416719e86f99954b8ea7a26b1aa680db6f59/phi-3-mini-jetson.yaml
 </span></span></code></pre></div><p>Example output:</p>
 <pre tabindex="0"><code>6:43PM DBG GRPC(phi-2-layla-v1-chatml-Q4_K.gguf-127.0.0.1:40757): stderr llm_load_print_meta: freq_base_train  = 10000.0
 6:43PM DBG GRPC(phi-2-layla-v1-chatml-Q4_K.gguf-127.0.0.1:40757): stderr llm_load_print_meta: freq_scale_train = 1
@@ -282,42 +241,48 @@ index 5e77471f..1ad54af8 100644
 6:45PM DBG GRPC(phi-2-layla-v1-chatml-Q4_K.gguf-127.0.0.1:40757): stderr llama_new_context_with_model: graph nodes  = 1161
 6:45PM DBG GRPC(phi-2-layla-v1-chatml-Q4_K.gguf-127.0.0.1:40757): stderr llama_new_context_with_model: graph splits = 2
 </code></pre>
-    <a href="/"> >> Home</a>
-  </main>
+  </div>
+  
+  <nav class="memo-seealso">
+    <h2>SEE ALSO</h2>
+    <ul>
+      <li><a href="/posts/2026/02/28/a-call-to-open-source-maintainers-stop-babysitting-ai-how-i-built-a-100-local-autonomous-dev-team-to-maintain-localai-and-why-you-should-too/">A call to open source maintainers, stop babysitting AI: How I Built a 100% Local Autonomous Dev Team to Maintain LocalAI, and why you should too</a> <i>(newer)</i></li>
+      <li><a href="/posts/2023/06/22/create-a-question-answering-bot-for-slack-on-your-data-that-you-can-run-locally/">Create a Question answering bot for Slack on your data, that you can run locally</a> <i>(older)</i></li>
+      <li><a href="/posts/">all posts</a></li>
+    </ul>
+  </nav>
+</article>
+
+</main>
+<footer class="site-footer">
+  <div class="man-footline"><span>Linux</span><span>July 2026</span><span>MUDLER(1)<span class="cursor" aria-hidden="true">▊</span></span></div>
+  <div class="footlinks">
+    <a href="https://github.com/mudler">github</a> ·
+    <a href="https://twitter.com/mudler_it">x</a> ·
+    <a href="https://huggingface.co/mudler">huggingface</a> ·
+    <a href="https://www.linkedin.com/in/ettore-di-giacinto-211a4166/">linkedin</a> ·
+    <a href="https://github.com/sponsors/mudler">sponsor</a> ·
+    <a href="/index.xml">rss</a> ·
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>
+  </div>
+</footer>
+
+<div id="kb-help" class="kb-help" hidden>
+  <div class="kb-box" role="dialog" aria-modal="true" aria-label="Key bindings" tabindex="-1">
+    <div class="manhead"><span>KEYS(1)</span><span></span><span>KEYS(1)</span></div>
+    <h2 class="sec">KEY BINDINGS</h2>
+    <div class="ind">
+      <div class="opt"><b>j / k</b><span>select next / previous entry</span></div>
+      <div class="opt"><b>Enter</b><span>open selection</span></div>
+      <div class="opt"><b>g / G</b><span>go to top / bottom</span></div>
+      <div class="opt"><b>/</b><span>search the manual</span></div>
+      <div class="opt"><b>t</b><span>toggle light / dark pager</span></div>
+      <div class="opt"><b>q</b><span>quit to mudler(1)</span></div>
+      <div class="opt"><b>?</b><span>toggle this help</span></div>
+    </div>
+  </div>
 </div>
-    <footer>
-      
-      
-      <script>
-      (function() {
-        function center_el(tagName) {
-          var tags = document.getElementsByTagName(tagName), i, tag;
-          for (i = 0; i < tags.length; i++) {
-            tag = tags[i];
-            var parent = tag.parentElement;
-            
-            if (parent.childNodes.length === 1) {
-              
-              if (parent.nodeName === 'A') {
-                parent = parent.parentElement;
-                if (parent.childNodes.length != 1) continue;
-              }
-              if (parent.nodeName === 'P') parent.style.textAlign = 'center';
-            }
-          }
-        }
-        var tagNames = ['img', 'embed', 'object'];
-        for (var i = 0; i < tagNames.length; i++) {
-          center_el(tagNames[i]);
-        }
-      })();
-      </script>
 
-      
-      <hr/>
-      <a href="https://github.com/mudler">GitHub</a> | <a href="https://twitter.com/mudler_it">X/Twitter</a> | <a href="https://www.linkedin.com/in/ettore-di-giacinto-211a4166/">LinkedIn</a>
-      
-    </footer>
-  </body>
+<div class="status-line" id="status-line" aria-hidden="true">Manual page mudler(1) (press ? for help)</div>
+</body>
 </html>
-

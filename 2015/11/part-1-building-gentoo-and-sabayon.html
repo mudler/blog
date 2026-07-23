@@ -1,79 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services — mudler.pm</title>
+<meta name="description" content="Ettore Di Giacinto (mudler) — creator of LocalAI. Local AI is the way.">
+<link rel="alternate" type="application/rss+xml" title="mudler.pm" href="https://mudler.pm/index.xml">
+<script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    <link rel="manifest" href="/images/site.webmanifest">
+<link rel="stylesheet" href="/css/main.min.09a407d4caedef9f4a35528755bc74339e7b69e87ca9a26b1c397f13f6baab58.css">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mudler blog - Place where I write about stuff">
-    <title>[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services | Mudler blog</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
-    <link rel="stylesheet" href="https://mudler.pm/css/theme-override.css">
-    
-  </head>
+<script type="module" src="/js/site.88ebe1b0e35e5f6a8b8e87e795a9e9aad1344345abe8b977ef0af4fee00545d0.js"></script>
 
-  <body>
-    <header>
-      <nav>
-        <ul>
-          
-          
-          <li class="pull-left ">
-            <a href="https://mudler.pm/">~/mudler blog</a>
-          </li>
-          
-          
-          <li class="pull-left ">
-            <a href="/posts/">~/blog</a>
-          </li>
-          
-          
-          <li class="pull-left ">
-            <a href="/about/">~/about</a>
-          </li>
-          
-          
-          <li class="pull-left ">
-            <a href="/search/">~/search</a>
-          </li>
-          
+</head>
+<body>
+<nav class="site-nav" aria-label="Site">
+  <a class="brand" href="/">mudler.pm</a>
+  <span class="nav-links"><a href="/posts/">blog</a><a href="/projects/">projects</a><a href="/about/">about</a><a href="/search/">search</a><button id="theme-toggle" class="theme-toggle" aria-label="Toggle color scheme" title="Toggle theme [t]">☾</button></span>
+</nav>
 
-          
-          
-          <li class="pull-right">
-            <a href="/index.xml">~/subscribe</a>
-          </li>
-          
+<main id="main">
 
-        </ul>
-      </nav>
-    </header>
-
-
-<div class="article-meta">
-<h1><span class="title">[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</span></h1>
-
-<h2 class="date">2015/11/15</h2>
-<p class="terms">
+<article class="memo">
+  <hr class="memo-rule" aria-hidden="true"><hr class="memo-rule thin" aria-hidden="true">
   
   
-  
-  
-  Tags: <a href="/tags/sabayon">sabayon</a> <a href="/tags/docker">docker</a> <a href="/tags/equo">equo</a> <a href="/tags/gentoo">gentoo</a> 
-  
-  
-</p>
-</div>
-
-
-
-<div class="content-wrapper">
-  <main>
+  <div class="memo-tag"><span>MUDLER.PM</span><span>TECHNICAL MEMORANDUM</span><span>N. 22</span></div>
+  <header class="memo-head">
+    <h1>[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</h1>
+    <p class="memo-byline">Ettore Di Giacinto · 15 November 2015 · 8 min read</p>
+  </header>
+  <div class="memo-body">
     <p><a href="http://1.bp.blogspot.com/-s-2KEJ0FoF8/VkiGi_oCjBI/AAAAAAAAMfg/JkAeUmowseI/s1600/cloud-47581_1280.png"><img src="http://1.bp.blogspot.com/-s-2KEJ0FoF8/VkiGi_oCjBI/AAAAAAAAMfg/JkAeUmowseI/s640/cloud-47581_1280.png" alt=""></a></p>
 <p>As previously anticipated in the previous blog post, here i explain what&rsquo;s going on with Sabayon Docker images, and how can the Official Sabayon images help you in developing/deploying your application. In this article, i&rsquo;ll show how to build Sabayon/Gentoo packages using Docker.</p>
 <p>I&rsquo;ll cover five cases and will be divided in differents articles:</p>
@@ -85,15 +42,15 @@
 <li>Setup an Entropy repo with a Docker image, and how to mantain packages</li>
 </ol>
 <p>In future, i&rsquo;ll write also a post also on how to track the packages remotely with CircleCi.</p>
-<h2 id="introduction">Introduction</h2>
+<h2 id="introduction">Introduction <a class="hanchor" href="#introduction" aria-label="Link to this section">§</a></h2>
 <p>It has been a while that i&rsquo;m putting my head on how i could leverage Cloud provider&rsquo;s free services to build packages and improve the QA of the building process at all. Continous Integration applied to Linux Distribution Developing process can lead to quite awesome perspectives. [I will digress on this on a future article]</p>
 <p>For those who are unfamiliar with Docker..<strong>What the heck is Docker?</strong> From their site:</p>
 <blockquote>
 <p><em>Docker allows you to package an application with all of its dependencies into a standardized unit for software development.Docker containers wrap up a piece of software in a complete filesystem that contains everything it needs to run: code, runtime, system tools, system libraries – anything you can install on a server. This guarantees that it will always run the same, regardless of the environment it is running in.</em></p>
 </blockquote>
 <p>We can look at Docker like a box which can be filled to be used like an entire OS, but at the same time share the kernel with the host (sorry to be much semplicistic, we are not discussing about the Docker technlogy here).</p>
-<h2 id="differents-images-differents-purposes">Differents images, differents purposes</h2>
-<h4 id="the-sabayon-images-provides-the-software-stack-present-on-the-entropy-repositories-thus-allowing-easily-to-use-emerge-gentoo-package-manager-equo-sabayon-package-manager-and-eit-sabayon-repository-manager-in-an-every-linux-distribution-so-also-aliens-can-use-it">The Sabayon images provides the software stack present on the Entropy repositories, thus allowing easily to use emerge (Gentoo package manager), equo (Sabayon package manager) and Eit (Sabayon repository manager) in an every linux distribution (So, also aliens can use it).</h4>
+<h2 id="differents-images-differents-purposes">Differents images, differents purposes <a class="hanchor" href="#differents-images-differents-purposes" aria-label="Link to this section">§</a></h2>
+<h4 id="the-sabayon-images-provides-the-software-stack-present-on-the-entropy-repositories-thus-allowing-easily-to-use-emerge-gentoo-package-manager-equo-sabayon-package-manager-and-eit-sabayon-repository-manager-in-an-every-linux-distribution-so-also-aliens-can-use-it">The Sabayon images provides the software stack present on the Entropy repositories, thus allowing easily to use emerge (Gentoo package manager), equo (Sabayon package manager) and Eit (Sabayon repository manager) in an every linux distribution (So, also aliens can use it). <a class="hanchor" href="#the-sabayon-images-provides-the-software-stack-present-on-the-entropy-repositories-thus-allowing-easily-to-use-emerge-gentoo-package-manager-equo-sabayon-package-manager-and-eit-sabayon-repository-manager-in-an-every-linux-distribution-so-also-aliens-can-use-it" aria-label="Link to this section">§</a></h4>
 <p>At Sabayon, we currently are providing various flavors of Docker images, the most useful for developers/users/hobbist are: </p>
 <ul>
 <li><strong><a href="https://hub.docker.com/r/sabayon/base-amd64/">sabayon/base-amd64</a></strong>: A light image that ships the minimum Sabayon package set</li>
@@ -105,7 +62,7 @@
 <p>While the <strong>sabayon/base-amd64</strong> image can be used to deploy your services, and be the base of your applications container, the <strong>sabayon/builder-amd64</strong> is a ready-to-use image to build package, it&rsquo;s all already setup for you.</p>
 <p>As already said, i&rsquo;m going to cover four cases here, then you are free to pick up the solution that suits you well.</p>
 <p>In this part i&rsquo;m going to talk on how to build packages locally, without having to setup your environment.</p>
-<h2 id="building-the-packages-locally-with-docker">Building the packages locally with Docker</h2>
+<h2 id="building-the-packages-locally-with-docker">Building the packages locally with Docker <a class="hanchor" href="#building-the-packages-locally-with-docker" aria-label="Link to this section">§</a></h2>
 <p>I&rsquo;ll start from the easier task. <em>Building packages with your machine.</em></p>
 <p>Let&rsquo;s say that there is an ebuild available in an overlay, which you are interested in and is not available in Entropy. Consider of course, that not all ebuilds will compile, some are not mantained and not work as expected.</p>
 <p>We are going to use the sabayon/builder-amd64 image to build portage packages.</p>
@@ -141,7 +98,7 @@ If you want the Docker service to be launched on boot:</p>
 </blockquote>
 </blockquote>
 <p><em>Note: If you don&rsquo;t want to use sudo on each docker command, put your user into the &ldquo;docker&rdquo; group.</em></p>
-<h2 id="_3-spawn-a-compilation_"><em>3) Spawn a compilation</em></h2>
+<h2 id="_3-spawn-a-compilation_"><em>3) Spawn a compilation</em> <a class="hanchor" href="#_3-spawn-a-compilation_" aria-label="Link to this section">§</a></h2>
 <p>Let&rsquo;s say that now we want to compile app-text/tree. <br>
 Now we can launch a new container from the sabayon/builder-amd64 image, giving it as argument the package we want to compile:</p>
 <blockquote>
@@ -179,7 +136,7 @@ Now we can launch a new container from the sabayon/builder-amd64 image, giving i
 <li>**<PACKAGE> **the last argument is the command that we want to launch inside the container, we could of course launch other commands here, this is just an example</li>
 </ul>
 <p>If you don&rsquo;t have already pulled the docker image (docker pull sabayon/base-amd64) this will be done automatically, leaving you to use just one command.</p>
-<h2 id="example---advanced">Example - Advanced</h2>
+<h2 id="example---advanced">Example - Advanced <a class="hanchor" href="#example---advanced" aria-label="Link to this section">§</a></h2>
 <p><strong>The -v flag can furthermore exploited and chained to obtain more fine-grained tweaks</strong></p>
 <p>_Going to cover a minor example regarding sabayon/builder-amd64 image here. _<br>
 <em>You can of course customize it further, and replace all the configuration that&rsquo;s already been setup on the Docker Image.</em><br>
@@ -192,24 +149,24 @@ Now we can launch a new container from the sabayon/builder-amd64 image, giving i
 <li><em>custom.keywords: will contain your keywords</em></li>
 </ul>
 <p>Exporting those files to your container is a matter of adding an argument to your docker run command.</p>
-<h4 id="heading"></h4>
-<h4 id="example-exporting-your-customunmask">Example. Exporting your custom.unmask:</h4>
+<h4 id="heading"> <a class="hanchor" href="#heading" aria-label="Link to this section">§</a></h4>
+<h4 id="example-exporting-your-customunmask">Example. Exporting your custom.unmask: <a class="hanchor" href="#example-exporting-your-customunmask" aria-label="Link to this section">§</a></h4>
 <blockquote>
 <p><em>-v /my/path/custom.unmask:/opt/sabayon-build/conf/intel/portage/package.unmask/custom.unmask</em></p>
 </blockquote>
-<h4 id="example-exporting-your-custommask">Example. Exporting your custom.mask:</h4>
+<h4 id="example-exporting-your-custommask">Example. Exporting your custom.mask: <a class="hanchor" href="#example-exporting-your-custommask" aria-label="Link to this section">§</a></h4>
 <blockquote>
 <p>_-v /my/path/custom.mask:/opt/sabayon-build/conf/intel/portage/package.mask/custom.mask _</p>
 </blockquote>
-<h4 id="example-exporting-your-customuse">Example. Exporting your custom.use:</h4>
+<h4 id="example-exporting-your-customuse">Example. Exporting your custom.use: <a class="hanchor" href="#example-exporting-your-customuse" aria-label="Link to this section">§</a></h4>
 <blockquote>
 <p>_-v /my/path/custom.use:/opt/sabayon-build/conf/intel/portage/package.use/custom.use _</p>
 </blockquote>
-<h4 id="example-exporting-your-customenv">Example. Exporting your custom.env:</h4>
+<h4 id="example-exporting-your-customenv">Example. Exporting your custom.env: <a class="hanchor" href="#example-exporting-your-customenv" aria-label="Link to this section">§</a></h4>
 <blockquote>
 <p><em>-v /my/path/custom.env:/opt/sabayon-build/conf/intel/portage/package.env/custom.env</em></p>
 </blockquote>
-<h4 id="example-exporting-your-customkeywords">Example. Exporting your custom.keywords:</h4>
+<h4 id="example-exporting-your-customkeywords">Example. Exporting your custom.keywords: <a class="hanchor" href="#example-exporting-your-customkeywords" aria-label="Link to this section">§</a></h4>
 <blockquote>
 <p><em>-v /my/path/custom.keywords:/opt/sabayon-build/conf/intel/portage/package.keywords/custom.keywords</em></p>
 </blockquote>
@@ -231,42 +188,50 @@ Now we can launch a new container from the sabayon/builder-amd64 image, giving i
 </blockquote>
 <p>That&rsquo;s it for now!</p>
 
-    <a href="/"> >> Home</a>
-  </main>
+  </div>
+  
+  <div class="memo-tags"><a href="/tags/sabayon/">sabayon</a><a href="/tags/docker/">docker</a><a href="/tags/equo/">equo</a><a href="/tags/gentoo/">gentoo</a></div>
+  
+  <nav class="memo-seealso">
+    <h2>SEE ALSO</h2>
+    <ul>
+      <li><a href="/2015/11/part-1-building-gentoo-and-sabayon.html">[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</a> <i>(newer)</i></li>
+      <li><a href="/2015/10/sabayon-testers-testers-testers.html">Sabayon: testers, testers, testers</a> <i>(older)</i></li>
+      <li><a href="/posts/">all posts</a></li>
+    </ul>
+  </nav>
+</article>
+
+</main>
+<footer class="site-footer">
+  <div class="man-footline"><span>Linux</span><span>July 2026</span><span>MUDLER(1)<span class="cursor" aria-hidden="true">▊</span></span></div>
+  <div class="footlinks">
+    <a href="https://github.com/mudler">github</a> ·
+    <a href="https://twitter.com/mudler_it">x</a> ·
+    <a href="https://huggingface.co/mudler">huggingface</a> ·
+    <a href="https://www.linkedin.com/in/ettore-di-giacinto-211a4166/">linkedin</a> ·
+    <a href="https://github.com/sponsors/mudler">sponsor</a> ·
+    <a href="/index.xml">rss</a> ·
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>
+  </div>
+</footer>
+
+<div id="kb-help" class="kb-help" hidden>
+  <div class="kb-box" role="dialog" aria-modal="true" aria-label="Key bindings" tabindex="-1">
+    <div class="manhead"><span>KEYS(1)</span><span></span><span>KEYS(1)</span></div>
+    <h2 class="sec">KEY BINDINGS</h2>
+    <div class="ind">
+      <div class="opt"><b>j / k</b><span>select next / previous entry</span></div>
+      <div class="opt"><b>Enter</b><span>open selection</span></div>
+      <div class="opt"><b>g / G</b><span>go to top / bottom</span></div>
+      <div class="opt"><b>/</b><span>search the manual</span></div>
+      <div class="opt"><b>t</b><span>toggle light / dark pager</span></div>
+      <div class="opt"><b>q</b><span>quit to mudler(1)</span></div>
+      <div class="opt"><b>?</b><span>toggle this help</span></div>
+    </div>
+  </div>
 </div>
-    <footer>
-      
-      
-      <script>
-      (function() {
-        function center_el(tagName) {
-          var tags = document.getElementsByTagName(tagName), i, tag;
-          for (i = 0; i < tags.length; i++) {
-            tag = tags[i];
-            var parent = tag.parentElement;
-            
-            if (parent.childNodes.length === 1) {
-              
-              if (parent.nodeName === 'A') {
-                parent = parent.parentElement;
-                if (parent.childNodes.length != 1) continue;
-              }
-              if (parent.nodeName === 'P') parent.style.textAlign = 'center';
-            }
-          }
-        }
-        var tagNames = ['img', 'embed', 'object'];
-        for (var i = 0; i < tagNames.length; i++) {
-          center_el(tagNames[i]);
-        }
-      })();
-      </script>
 
-      
-      <hr/>
-      <a href="https://github.com/mudler">GitHub</a> | <a href="https://twitter.com/mudler_it">X/Twitter</a> | <a href="https://www.linkedin.com/in/ettore-di-giacinto-211a4166/">LinkedIn</a>
-      
-    </footer>
-  </body>
+<div class="status-line" id="status-line" aria-hidden="true">Manual page mudler(1) (press ? for help)</div>
+</body>
 </html>
-

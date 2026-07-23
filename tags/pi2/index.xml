@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pi2 on Mudler blog</title>
+    <title>Pi2 on mudler.pm</title>
     <link>https://mudler.pm/tags/pi2/</link>
-    <description>Recent content in Pi2 on Mudler blog</description>
+    <description>Recent content in Pi2 on mudler.pm</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
@@ -14,7 +14,7 @@
       <link>https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html</link>
       <pubDate>Mon, 11 Jan 2016 05:02:00 -0800</pubDate>
       <guid>https://mudler.pm/2016/01/tech-preview-sabayon-on-raspberrypi2.html</guid>
-      <description>&lt;h4 id=&#34;hi-this-is-a-really-good-new-are-there-chances-o&#34;&gt;hi, this is a really good new are there chances o&amp;hellip;&lt;/h4&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.blogger.com/profile/14210313797077979642&#34; title=&#34;noreply@blogger.com&#34;&gt;Unknown&lt;/a&gt; - &lt;time datetime=&#34;2016-02-20T00:58:52.881-08:00&#34;&gt;Feb 6, 2016&lt;/time&gt;&lt;/p&gt;&#xA;&lt;p&gt;hi, this is a really good new&lt;/p&gt;&#xA;&lt;p&gt;are there chances of having sabayon on Raspberry PI (not PI2)?&lt;/p&gt;&#xA;&lt;hr /&gt;</description>
+      <description>&lt;h4 id=&#34;hi-this-is-a-really-good-new-are-there-chances-o&#34;&gt;hi, this is a really good new are there chances o&amp;hellip; &lt;a class=&#34;hanchor&#34; href=&#34;#hi-this-is-a-really-good-new-are-there-chances-o&#34; aria-label=&#34;Link to this section&#34;&gt;§&lt;/a&gt;&lt;/h4&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.blogger.com/profile/14210313797077979642&#34; title=&#34;noreply@blogger.com&#34;&gt;Unknown&lt;/a&gt; - &lt;time datetime=&#34;2016-02-20T00:58:52.881-08:00&#34;&gt;Feb 6, 2016&lt;/time&gt;&lt;/p&gt;&#xA;&lt;p&gt;hi, this is a really good new&lt;/p&gt;&#xA;&lt;p&gt;are there chances of having sabayon on Raspberry PI (not PI2)?&lt;/p&gt;&#xA;&lt;hr /&gt;</description>
     </item>
     <item>
       <title>Tech Preview: Sabayon on RaspberryPi2 </title>

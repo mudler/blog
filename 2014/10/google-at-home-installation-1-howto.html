@@ -1,82 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google at Home installation [#1 Howto] — mudler.pm</title>
+<meta name="description" content="Ettore Di Giacinto (mudler) — creator of LocalAI. Local AI is the way.">
+<link rel="alternate" type="application/rss+xml" title="mudler.pm" href="https://mudler.pm/index.xml">
+<script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    <link rel="manifest" href="/images/site.webmanifest">
+<link rel="stylesheet" href="/css/main.min.09a407d4caedef9f4a35528755bc74339e7b69e87ca9a26b1c397f13f6baab58.css">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mudler blog - Place where I write about stuff">
-    <title>Google at Home installation [#1 Howto] | Mudler blog</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
-    <link rel="stylesheet" href="https://mudler.pm/css/theme-override.css">
-    
-  </head>
+<script type="module" src="/js/site.88ebe1b0e35e5f6a8b8e87e795a9e9aad1344345abe8b977ef0af4fee00545d0.js"></script>
 
-  <body>
-    <header>
-      <nav>
-        <ul>
-          
-          
-          <li class="pull-left ">
-            <a href="https://mudler.pm/">~/mudler blog</a>
-          </li>
-          
-          
-          <li class="pull-left ">
-            <a href="/posts/">~/blog</a>
-          </li>
-          
-          
-          <li class="pull-left ">
-            <a href="/about/">~/about</a>
-          </li>
-          
-          
-          <li class="pull-left ">
-            <a href="/search/">~/search</a>
-          </li>
-          
+</head>
+<body>
+<nav class="site-nav" aria-label="Site">
+  <a class="brand" href="/">mudler.pm</a>
+  <span class="nav-links"><a href="/posts/">blog</a><a href="/projects/">projects</a><a href="/about/">about</a><a href="/search/">search</a><button id="theme-toggle" class="theme-toggle" aria-label="Toggle color scheme" title="Toggle theme [t]">☾</button></span>
+</nav>
 
-          
-          
-          <li class="pull-right">
-            <a href="/index.xml">~/subscribe</a>
-          </li>
-          
+<main id="main">
 
-        </ul>
-      </nav>
-    </header>
-
-
-<div class="article-meta">
-<h1><span class="title">Google at Home installation [#1 Howto]</span></h1>
-
-<h2 class="date">2014/10/15</h2>
-<p class="terms">
+<article class="memo">
+  <hr class="memo-rule" aria-hidden="true"><hr class="memo-rule thin" aria-hidden="true">
   
   
-  
-  
-  
-</p>
-</div>
-
-
-
-<div class="content-wrapper">
-  <main>
+  <div class="memo-tag"><span>MUDLER.PM</span><span>TECHNICAL MEMORANDUM</span><span>N. 12</span></div>
+  <header class="memo-head">
+    <h1>Google at Home installation [#1 Howto]</h1>
+    <p class="memo-byline">Ettore Di Giacinto · 15 October 2014 · 4 min read</p>
+  </header>
+  <div class="memo-body">
     <p>The first post of a series that will guide you to install and configure your domotic environment with Google@Home (following updates)</p>
-<h2 id="introduction">Introduction</h2>
+<h2 id="introduction">Introduction <a class="hanchor" href="#introduction" aria-label="Link to this section">§</a></h2>
 <p>I&rsquo;m starting in the blog a new series of posts illustrating the features of <a href="https://github.com/IntelliHome/Google-at-Home">G@H</a> as they are being developed, and how you can start to play with it.</p>
 <p>This time we are going to see how to install it correctly, how to handle the basic configuration needed to start and we will install the Wikipedia plugin to allow to query wikipedia with our voice (you can lookup stuff on wikipedia just saying &ldquo;wikipedia house&rdquo;).</p>
-<h2 id="plugin-system">Plugin system</h2>
+<h2 id="plugin-system">Plugin system <a class="hanchor" href="#plugin-system" aria-label="Link to this section">§</a></h2>
 <p>There are other plugins available as well <a href="https://github.com/IntelliHome">here</a> and there is also an <a href="https://github.com/IntelliHome/Google-at-Home-Remote-Controller">Android application</a> but it is out of scope for this article to guide you through them.</p>
 <p>Plugins helps to scale the system even further and add new functionalities to your boards placed in different spots in your home (or whatever environment you plan to use it).</p>
 <p>In this tutorial we are installing the master node and the client in the same machine. Basically we distinguish here 2 kind of nodes:<br>
@@ -84,7 +43,7 @@ masters (that represent the most capable hardware machine)<br>
 agents or basics nodes. A basic node can either be an agent or a master.</p>
 <p>The master takes the requests of agent&rsquo;s nodes, process them in a unique interface and send a reply back, so you will talk to the same Entity but you can ask things in parallel in different places on the house/infrastructure.</p>
 <p>The Agents can be a PC or an embedded device and we plan to give also a display interface.</p>
-<h3 id="1-prerequisites">1) Prerequisites</h3>
+<h3 id="1-prerequisites">1) Prerequisites <a class="hanchor" href="#1-prerequisites" aria-label="Link to this section">§</a></h3>
 <ul>
 <li>Git - <a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">Installation how-to</a></li>
 <li>SQLite - <a href="http://www.tutorialspoint.com/sqlite/sqlite_installation.htm">Installation how-to</a></li>
@@ -92,48 +51,48 @@ agents or basics nodes. A basic node can either be an agent or a master.</p>
 </ul>
 <p>You can check if sqlite it&rsquo;s already installed issuing the following command: sqlite3</p>
 <p>Same applies to git and sox.</p>
-<h3 id="2-preparation">2) Preparation</h3>
+<h3 id="2-preparation">2) Preparation <a class="hanchor" href="#2-preparation" aria-label="Link to this section">§</a></h3>
 <p>Let&rsquo;s fire up our terminal, and prepare a directory that will contain all the configuration files:</p>
 <blockquote>
 <p>mkdir ~/google_at_home cd ~/google_at_home</p>
 </blockquote>
-<h3 id="3-installing-appcpanminus">3) Installing App::cpanminus</h3>
+<h3 id="3-installing-appcpanminus">3) Installing App::cpanminus <a class="hanchor" href="#3-installing-appcpanminus" aria-label="Link to this section">§</a></h3>
 <p>Let&rsquo;s be sure that we have installed also <a href="https://metacpan.org/pod/App::cpanminus">App::cpanminus</a></p>
-<h4 id="a-debian">a) debian</h4>
+<h4 id="a-debian">a) debian <a class="hanchor" href="#a-debian" aria-label="Link to this section">§</a></h4>
 <p>in debian we can just do:</p>
 <blockquote>
 <p>apt-get install cpanminus</p>
 </blockquote>
-<h4 id="b-general-install">b) general install</h4>
+<h4 id="b-general-install">b) general install <a class="hanchor" href="#b-general-install" aria-label="Link to this section">§</a></h4>
 <p>otherwise, if your vendor doesn&rsquo;t ship it and you have cpan (you have it, trust me):</p>
 <blockquote>
 <p>cpan App::cpanminus</p>
 </blockquote>
-<h4 id="c-script-install">c) script install</h4>
+<h4 id="c-script-install">c) script install <a class="hanchor" href="#c-script-install" aria-label="Link to this section">§</a></h4>
 <p>You can also install cpanminus by issuing that command in your terminal:</p>
 <blockquote>
 <p>curl -L <a href="http://cpanmin.us/">http://cpanmin.us/</a> | perl - &ndash;sudo App::cpanminus</p>
 </blockquote>
-<h3 id="4-installing-intellihome-libraries">4) Installing IntelliHome libraries</h3>
+<h3 id="4-installing-intellihome-libraries">4) Installing IntelliHome libraries <a class="hanchor" href="#4-installing-intellihome-libraries" aria-label="Link to this section">§</a></h3>
 <p>Now let&rsquo;s install the libraries in the system (you can install it on the same user, if you intend to run google-at-home from there)</p>
 <blockquote>
 <p>cpanm <a href="mailto:git@github.com">git@github.com</a>:IntelliHome/Google-at-Home.git</p>
 </blockquote>
-<h3 id="5-clone-the-repository">5) Clone the repository</h3>
+<h3 id="5-clone-the-repository">5) Clone the repository <a class="hanchor" href="#5-clone-the-repository" aria-label="Link to this section">§</a></h3>
 <p>Now we need to clone the repo as well locally to grab the configuration files</p>
 <blockquote>
 <p>git clone <a href="mailto:git@github.com">git@github.com</a>:IntelliHome/Google-at-Home.git cd Google-at-Home</p>
 </blockquote>
-<h3 id="6-basic-configuration-optional">6) Basic configuration (optional)</h3>
+<h3 id="6-basic-configuration-optional">6) Basic configuration (optional) <a class="hanchor" href="#6-basic-configuration-optional" aria-label="Link to this section">§</a></h3>
 <p>By default, the database would be installed on /var/tmp/intellihome.db, to change it you just need to edit the config/database.yml. Here you can also set your language (e.g. for english language: &rsquo;en&rsquo;).</p>
-<h3 id="7-plugin-installation">7) Plugin installation</h3>
+<h3 id="7-plugin-installation">7) Plugin installation <a class="hanchor" href="#7-plugin-installation" aria-label="Link to this section">§</a></h3>
 <p>Now let&rsquo;s procede to install the Wikipedia plugin (that allows querying with voice wikipedia) and the Relay plugin (that enables to commands remote relay attached to your RaspberryPis)</p>
 <blockquote>
 <p>cpanm <a href="mailto:git@github.com">git@github.com</a>:IntelliHome/IntelliHome-Plugin-Wikipedia.git<br>
 cpanm <a href="mailto:git@github.com">git@github.com</a>:IntelliHome/IntelliHome-Plugin-Relay.git</p>
 </blockquote>
 <p>In this article, we are just showing how to install them, since the relay plugin should be configured to work (such as registering the relays on the boards).</p>
-<h3 id="8-database-deploy">8) Database deploy</h3>
+<h3 id="8-database-deploy">8) Database deploy <a class="hanchor" href="#8-database-deploy" aria-label="Link to this section">§</a></h3>
 <p>The database will keep record of the nodes on your network and the plugin installed on your system.</p>
 <p>Now let&rsquo;s prepare the SQLite backend:</p>
 <blockquote>
@@ -143,21 +102,21 @@ cpanm <a href="mailto:git@github.com">git@github.com</a>:IntelliHome/IntelliHome
 <blockquote>
 <p>perl intellihome-deployer -b SQLite -c install</p>
 </blockquote>
-<h3 id="9-enable-your-plugins">9) Enable your plugins</h3>
+<h3 id="9-enable-your-plugins">9) Enable your plugins <a class="hanchor" href="#9-enable-your-plugins" aria-label="Link to this section">§</a></h3>
 <p>Now the master node is ready, we just need to register the plugins that we intend to use:</p>
 <blockquote>
 <p>perl intellihome-master -i Wikipedia<br>
 perl intellihome-master -i Relay</p>
 </blockquote>
 <p>(to remove them use -r)</p>
-<h3 id="10-start-the-software">10) Start the software</h3>
-<h4 id="a-start-the-server">a) Start the server</h4>
+<h3 id="10-start-the-software">10) Start the software <a class="hanchor" href="#10-start-the-software" aria-label="Link to this section">§</a></h3>
+<h4 id="a-start-the-server">a) Start the server <a class="hanchor" href="#a-start-the-server" aria-label="Link to this section">§</a></h4>
 <p>Let&rsquo;s start the master process now:</p>
 <blockquote>
 <p>perl intellihome-master</p>
 </blockquote>
 <p>This will spawn also the web interface, avaible now on <a href="http://localhost:8080/">http://localhost:8080</a>. It&rsquo;s under development, so you can just add/delete the nodes/gpio and tagging them for further use.</p>
-<h4 id="b-start-the-local-node">b) Start the local node</h4>
+<h4 id="b-start-the-local-node">b) Start the local node <a class="hanchor" href="#b-start-the-local-node" aria-label="Link to this section">§</a></h4>
 <p>Since this tutorial aim is just to work on the local machine, now you can spawn the node process</p>
 <blockquote>
 <p>perl intellihome-node</p>
@@ -166,42 +125,48 @@ perl intellihome-master -i Relay</p>
 <p>If you encounter issues or bugs, please fill a bug request <a href="https://github.com/IntelliHome/Google-at-Home/issues">here</a></p>
 <p>A big thank you to Vytas and dgikiller for the help and the contributions to the project.</p>
 
-    <a href="/"> >> Home</a>
-  </main>
+  </div>
+  
+  <nav class="memo-seealso">
+    <h2>SEE ALSO</h2>
+    <ul>
+      <li><a href="/2015/08/on-calamares-docker-and-sabayon.html">on Calamares, Docker and Sabayon</a> <i>(newer)</i></li>
+      <li><a href="/2014/08/gitinsight-predicting-your-github.html">GitInsight, predicting your github contribs calendar</a> <i>(older)</i></li>
+      <li><a href="/posts/">all posts</a></li>
+    </ul>
+  </nav>
+</article>
+
+</main>
+<footer class="site-footer">
+  <div class="man-footline"><span>Linux</span><span>July 2026</span><span>MUDLER(1)<span class="cursor" aria-hidden="true">▊</span></span></div>
+  <div class="footlinks">
+    <a href="https://github.com/mudler">github</a> ·
+    <a href="https://twitter.com/mudler_it">x</a> ·
+    <a href="https://huggingface.co/mudler">huggingface</a> ·
+    <a href="https://www.linkedin.com/in/ettore-di-giacinto-211a4166/">linkedin</a> ·
+    <a href="https://github.com/sponsors/mudler">sponsor</a> ·
+    <a href="/index.xml">rss</a> ·
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>
+  </div>
+</footer>
+
+<div id="kb-help" class="kb-help" hidden>
+  <div class="kb-box" role="dialog" aria-modal="true" aria-label="Key bindings" tabindex="-1">
+    <div class="manhead"><span>KEYS(1)</span><span></span><span>KEYS(1)</span></div>
+    <h2 class="sec">KEY BINDINGS</h2>
+    <div class="ind">
+      <div class="opt"><b>j / k</b><span>select next / previous entry</span></div>
+      <div class="opt"><b>Enter</b><span>open selection</span></div>
+      <div class="opt"><b>g / G</b><span>go to top / bottom</span></div>
+      <div class="opt"><b>/</b><span>search the manual</span></div>
+      <div class="opt"><b>t</b><span>toggle light / dark pager</span></div>
+      <div class="opt"><b>q</b><span>quit to mudler(1)</span></div>
+      <div class="opt"><b>?</b><span>toggle this help</span></div>
+    </div>
+  </div>
 </div>
-    <footer>
-      
-      
-      <script>
-      (function() {
-        function center_el(tagName) {
-          var tags = document.getElementsByTagName(tagName), i, tag;
-          for (i = 0; i < tags.length; i++) {
-            tag = tags[i];
-            var parent = tag.parentElement;
-            
-            if (parent.childNodes.length === 1) {
-              
-              if (parent.nodeName === 'A') {
-                parent = parent.parentElement;
-                if (parent.childNodes.length != 1) continue;
-              }
-              if (parent.nodeName === 'P') parent.style.textAlign = 'center';
-            }
-          }
-        }
-        var tagNames = ['img', 'embed', 'object'];
-        for (var i = 0; i < tagNames.length; i++) {
-          center_el(tagNames[i]);
-        }
-      })();
-      </script>
 
-      
-      <hr/>
-      <a href="https://github.com/mudler">GitHub</a> | <a href="https://twitter.com/mudler_it">X/Twitter</a> | <a href="https://www.linkedin.com/in/ettore-di-giacinto-211a4166/">LinkedIn</a>
-      
-    </footer>
-  </body>
+<div class="status-line" id="status-line" aria-hidden="true">Manual page mudler(1) (press ? for help)</div>
+</body>
 </html>
-

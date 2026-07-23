@@ -1,79 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Whut?! Sabayon Community Repositories is here! — mudler.pm</title>
+<meta name="description" content="Ettore Di Giacinto (mudler) — creator of LocalAI. Local AI is the way.">
+<link rel="alternate" type="application/rss+xml" title="mudler.pm" href="https://mudler.pm/index.xml">
+<script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    <link rel="manifest" href="/images/site.webmanifest">
+<link rel="stylesheet" href="/css/main.min.09a407d4caedef9f4a35528755bc74339e7b69e87ca9a26b1c397f13f6baab58.css">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mudler blog - Place where I write about stuff">
-    <title>Whut?! Sabayon Community Repositories is here! | Mudler blog</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
-    <link rel="stylesheet" href="https://mudler.pm/css/theme-override.css">
-    
-  </head>
+<script type="module" src="/js/site.88ebe1b0e35e5f6a8b8e87e795a9e9aad1344345abe8b977ef0af4fee00545d0.js"></script>
 
-  <body>
-    <header>
-      <nav>
-        <ul>
-          
-          
-          <li class="pull-left ">
-            <a href="https://mudler.pm/">~/mudler blog</a>
-          </li>
-          
-          
-          <li class="pull-left ">
-            <a href="/posts/">~/blog</a>
-          </li>
-          
-          
-          <li class="pull-left ">
-            <a href="/about/">~/about</a>
-          </li>
-          
-          
-          <li class="pull-left ">
-            <a href="/search/">~/search</a>
-          </li>
-          
+</head>
+<body>
+<nav class="site-nav" aria-label="Site">
+  <a class="brand" href="/">mudler.pm</a>
+  <span class="nav-links"><a href="/posts/">blog</a><a href="/projects/">projects</a><a href="/about/">about</a><a href="/search/">search</a><button id="theme-toggle" class="theme-toggle" aria-label="Toggle color scheme" title="Toggle theme [t]">☾</button></span>
+</nav>
 
-          
-          
-          <li class="pull-right">
-            <a href="/index.xml">~/subscribe</a>
-          </li>
-          
+<main id="main">
 
-        </ul>
-      </nav>
-    </header>
-
-
-<div class="article-meta">
-<h1><span class="title">Whut?! Sabayon Community Repositories is here!</span></h1>
-
-<h2 class="date">2016/04/18</h2>
-<p class="terms">
+<article class="memo">
+  <hr class="memo-rule" aria-hidden="true"><hr class="memo-rule thin" aria-hidden="true">
   
   
-  
-  
-  Tags: <a href="/tags/community-repositories">Community Repositories</a> <a href="/tags/sabayon">sabayon</a> <a href="/tags/updates">updates</a> <a href="/tags/linux">linux</a> <a href="/tags/gentoo">gentoo</a> <a href="/tags/entropy">entropy</a> <a href="/tags/scr">SCR</a> 
-  
-  
-</p>
-</div>
-
-
-
-<div class="content-wrapper">
-  <main>
+  <div class="memo-tag"><span>MUDLER.PM</span><span>TECHNICAL MEMORANDUM</span><span>N. 27</span></div>
+  <header class="memo-head">
+    <h1>Whut?! Sabayon Community Repositories is here!</h1>
+    <p class="memo-byline">Ettore Di Giacinto · 18 April 2016 · 4 min read</p>
+  </header>
+  <div class="memo-body">
     <p>Hello users,</p>
 <p>Time passed when i first wrote the article &ldquo;<a href="https://blog.mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html">[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</a>&rdquo; that was going to be divided into parts. But things changed amazingly fast and there is better news, I wrote up a suite of tools that makes the whole operation much easier, thanks also to <a href="https://plus.google.com/104283756158326784792">+Ben Roberts</a> (optiz0r) who contributed in the development and he is also kindly sponsoring the buildserver.</p>
 <p>Some of you probably already heard about Sabayon Community Repositories (SCR) that we announced  in the developers mailing list some weeks ago, if not, keep reading. The SCR Build System is an improvement of the methodology explicated <a href="https://blog.mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html">before</a>, but with a lot of extras and automated features. This is how SCR is born.</p>
@@ -83,11 +40,11 @@ Search available packages: <a href="https://sabayon.github.io/community-website
 Packages requests: <a href="https://bugs.sabayon.org/enter_bug.cgi?product=Community%20Repositories">Bugzilla section</a><br>
 Contributing/setup a local development environment: <a href="https://wiki.sabayon.org/index.php?title=HOWTO:_Contributing_to_SCR">How-to contribute</a><br>
 Guidelines and Bylaws (for SCR Devs): <a href="https://github.com/Sabayon/scr-docs">scr-docs Github repository</a></p>
-<h2 id="sabayon-community-repositories">Sabayon Community Repositories</h2>
+<h2 id="sabayon-community-repositories">Sabayon Community Repositories <a class="hanchor" href="#sabayon-community-repositories" aria-label="Link to this section">§</a></h2>
 <p>SCR is a collection of repositories available to Sabayon users, that could be enabled/removed from the system by using <strong>enman</strong> &ndash; our layman equivalent &ndash; this ensures not only that a user can easily revert his mistakes ( SCR content <strong>is not</strong> as stable as main repos, and we put a lot of warnings in the website for this reason) but also that it&rsquo;s easier and faster than ever now having bleeding edge packages that are not in the official channels.<br>
 Users can search packages in the <a href="https://sabayon.github.io/community-website/">SCR website</a>, that will display information on how to install them.</p>
 <p>More information on how to use SCR is available in the <a href="https://wiki.sabayon.org/index.php?title=En:Sabayon_Community_Repositories">wiki page</a> (under construction). Meanwhile we are currently working on the project documentation: <a href="https://github.com/Sabayon/scr-docs/blob/master/scr-guidelines.md">Guidelines</a> and <a href="https://github.com/Sabayon/scr-docs/blob/master/scr-bylaws.md">Bylaws</a> can be found on the <a href="https://github.com/Sabayon/scr-docs">scr-docs Github repository</a>.</p>
-<h2 id="usage">Usage</h2>
+<h2 id="usage">Usage <a class="hanchor" href="#usage" aria-label="Link to this section">§</a></h2>
 <p>Open a terminal and run the following as root!</p>
 <p><strong>1)</strong> Disable weekly repositories and enable current:</p>
 <pre tabindex="0"><code>sudo mv /etc/entropy/repositories.conf.d/entropy\_sabayonlinux.org{.example,}
@@ -172,42 +129,50 @@ We don&#39;t use funds to buy alcohol, also if we&#39;d love to (remember Window
 
 Cheers!
 </code></pre>
-    <a href="/"> >> Home</a>
-  </main>
+  </div>
+  
+  <div class="memo-tags"><a href="/tags/community-repositories/">Community Repositories</a><a href="/tags/sabayon/">sabayon</a><a href="/tags/updates/">updates</a><a href="/tags/linux/">linux</a><a href="/tags/gentoo/">gentoo</a><a href="/tags/entropy/">entropy</a><a href="/tags/scr/">SCR</a></div>
+  
+  <nav class="memo-seealso">
+    <h2>SEE ALSO</h2>
+    <ul>
+      <li><a href="/2016/04/whut-sabayon-community-repositories-is.html">Whut?! Sabayon Community Repositories is here!</a> <i>(newer)</i></li>
+      <li><a href="/2016/02/updates-rpi2-joins-to-testing-boards.html">Updates: Rpi2 joins to testing boards, Mate testing repository, Sabayon devkit</a> <i>(older)</i></li>
+      <li><a href="/posts/">all posts</a></li>
+    </ul>
+  </nav>
+</article>
+
+</main>
+<footer class="site-footer">
+  <div class="man-footline"><span>Linux</span><span>July 2026</span><span>MUDLER(1)<span class="cursor" aria-hidden="true">▊</span></span></div>
+  <div class="footlinks">
+    <a href="https://github.com/mudler">github</a> ·
+    <a href="https://twitter.com/mudler_it">x</a> ·
+    <a href="https://huggingface.co/mudler">huggingface</a> ·
+    <a href="https://www.linkedin.com/in/ettore-di-giacinto-211a4166/">linkedin</a> ·
+    <a href="https://github.com/sponsors/mudler">sponsor</a> ·
+    <a href="/index.xml">rss</a> ·
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>
+  </div>
+</footer>
+
+<div id="kb-help" class="kb-help" hidden>
+  <div class="kb-box" role="dialog" aria-modal="true" aria-label="Key bindings" tabindex="-1">
+    <div class="manhead"><span>KEYS(1)</span><span></span><span>KEYS(1)</span></div>
+    <h2 class="sec">KEY BINDINGS</h2>
+    <div class="ind">
+      <div class="opt"><b>j / k</b><span>select next / previous entry</span></div>
+      <div class="opt"><b>Enter</b><span>open selection</span></div>
+      <div class="opt"><b>g / G</b><span>go to top / bottom</span></div>
+      <div class="opt"><b>/</b><span>search the manual</span></div>
+      <div class="opt"><b>t</b><span>toggle light / dark pager</span></div>
+      <div class="opt"><b>q</b><span>quit to mudler(1)</span></div>
+      <div class="opt"><b>?</b><span>toggle this help</span></div>
+    </div>
+  </div>
 </div>
-    <footer>
-      
-      
-      <script>
-      (function() {
-        function center_el(tagName) {
-          var tags = document.getElementsByTagName(tagName), i, tag;
-          for (i = 0; i < tags.length; i++) {
-            tag = tags[i];
-            var parent = tag.parentElement;
-            
-            if (parent.childNodes.length === 1) {
-              
-              if (parent.nodeName === 'A') {
-                parent = parent.parentElement;
-                if (parent.childNodes.length != 1) continue;
-              }
-              if (parent.nodeName === 'P') parent.style.textAlign = 'center';
-            }
-          }
-        }
-        var tagNames = ['img', 'embed', 'object'];
-        for (var i = 0; i < tagNames.length; i++) {
-          center_el(tagNames[i]);
-        }
-      })();
-      </script>
 
-      
-      <hr/>
-      <a href="https://github.com/mudler">GitHub</a> | <a href="https://twitter.com/mudler_it">X/Twitter</a> | <a href="https://www.linkedin.com/in/ettore-di-giacinto-211a4166/">LinkedIn</a>
-      
-    </footer>
-  </body>
+<div class="status-line" id="status-line" aria-hidden="true">Manual page mudler(1) (press ? for help)</div>
+</body>
 </html>
-

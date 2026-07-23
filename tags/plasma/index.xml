@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Plasma on Mudler blog</title>
+    <title>Plasma on mudler.pm</title>
     <link>https://mudler.pm/tags/plasma/</link>
-    <description>Recent content in Plasma on Mudler blog</description>
+    <description>Recent content in Plasma on mudler.pm</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
@@ -14,7 +14,7 @@
       <link>https://mudler.pm/2015/09/sabayon-is-moving-to-kde-plasma-54.html</link>
       <pubDate>Sat, 12 Sep 2015 10:36:00 -0700</pubDate>
       <guid>https://mudler.pm/2015/09/sabayon-is-moving-to-kde-plasma-54.html</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://3.bp.blogspot.com/-jRJmCVvyYJ4/Vebu_7a86OI/AAAAAAAALnE/d8DCNFt13_w/s1600/plasma_sab.png&#34;&gt;&lt;img src=&#34;http://3.bp.blogspot.com/-jRJmCVvyYJ4/Vebu_7a86OI/AAAAAAAALnE/d8DCNFt13_w/s320/plasma_sab.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Sabayon is officially moving to Plasma 5, &lt;strong&gt;please read if you are a KDE Sabayon user.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;KDM is going to be removed! migrate to SDDM now!&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Yes, finally we are moving on.&lt;/p&gt;&#xA;&lt;p&gt;While KDE 4 was a pretty stable DM, Plasma 5 brings awesomeness and, if you didn&amp;rsquo;t noticed, it&amp;rsquo;s the future.&lt;/p&gt;&#xA;&lt;h2 id=&#34;from-kdm-to-sddm&#34;&gt;From KDM to SDDM&lt;/h2&gt;&#xA;&lt;p&gt;We tried to do our best to make the transition as smooth as possible and automatic, but if your system just got broken here is why: the KDE team announced SDDM as the default KDE display manager.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://3.bp.blogspot.com/-jRJmCVvyYJ4/Vebu_7a86OI/AAAAAAAALnE/d8DCNFt13_w/s1600/plasma_sab.png&#34;&gt;&lt;img src=&#34;http://3.bp.blogspot.com/-jRJmCVvyYJ4/Vebu_7a86OI/AAAAAAAALnE/d8DCNFt13_w/s320/plasma_sab.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Sabayon is officially moving to Plasma 5, &lt;strong&gt;please read if you are a KDE Sabayon user.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;KDM is going to be removed! migrate to SDDM now!&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Yes, finally we are moving on.&lt;/p&gt;&#xA;&lt;p&gt;While KDE 4 was a pretty stable DM, Plasma 5 brings awesomeness and, if you didn&amp;rsquo;t noticed, it&amp;rsquo;s the future.&lt;/p&gt;&#xA;&lt;h2 id=&#34;from-kdm-to-sddm&#34;&gt;From KDM to SDDM &lt;a class=&#34;hanchor&#34; href=&#34;#from-kdm-to-sddm&#34; aria-label=&#34;Link to this section&#34;&gt;§&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;We tried to do our best to make the transition as smooth as possible and automatic, but if your system just got broken here is why: the KDE team announced SDDM as the default KDE display manager.&lt;/p&gt;</description>
     </item>
     <item>
       <title>KDE Plasma 5.4, available on Plasma5 Sabayon community repository</title>

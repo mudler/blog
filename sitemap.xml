@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mudler.pm/</loc>
+    <loc>https://mudler.pm/posts/2026/02/28/a-call-to-open-source-maintainers-stop-babysitting-ai-how-i-built-a-100-local-autonomous-dev-team-to-maintain-localai-and-why-you-should-too/</loc>
     <lastmod>2026-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mudler.pm/posts/2026/02/28/a-call-to-open-source-maintainers-stop-babysitting-ai-how-i-built-a-100-local-autonomous-dev-team-to-maintain-localai-and-why-you-should-too/</loc>
+    <loc>https://mudler.pm/</loc>
     <lastmod>2026-02-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mudler.pm/posts/</loc>
@@ -210,6 +210,8 @@
     <lastmod>2014-03-02T01:40:00-08:00</lastmod>
   </url><url>
     <loc>https://mudler.pm/blog/</loc>
+  </url><url>
+    <loc>https://mudler.pm/projects/</loc>
   </url><url>
     <loc>https://mudler.pm/search/</loc>
     <priority>0.1</priority>
