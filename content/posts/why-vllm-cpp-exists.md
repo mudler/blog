@@ -233,21 +233,19 @@ Vibecoding is generating something that looks right when nothing in the room can
 tell you whether it is. A port is close to the opposite situation. There is a
 reference implementation on the other side and a gate that demands the same token
 ids from the same workload, so an agent cannot talk its way past a byte
-comparison, and upstream's own tests land in the same commit as the code. The oracle
-is the method here, not something bolted on at the end.
+comparison, and upstream's own tests land in the same commit as the code.
 
 That is why the repository looks the way it does. The rules are written down in
 `AGENTS.md` and a `.agents/` directory: how to port a model, how to add a
 backend, what counts as a benchmark and what disqualifies one. The engine is
-backend-agnostic on purpose, so adding a device is mostly new files, and the
-change to the core is one enum and one switch in `include/vt/device.h`. That is
-what lets somebody who was not there check the work.
+backend-agnostic on purpose, so adding a device is mostly new files and barely
+touches the core at all. That is what lets somebody who was not there check the
+work.
 
 So if you have hardware I do not have, you do not need my time. You need the op
 table and the gate, and both are written down already. Bring your agents. The
 Tenstorrent backend happened exactly like that, on silicon I have never touched.
-What this engine runs on depends on how many people turn up, not on my
-calendar.
+So what this ends up running on is mostly down to who turns up.
 
 Come say hi in the issues, I answer them.
 
