@@ -208,7 +208,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
    Technical memo — post pages
    ============================================================ */
 .memo {
-  max-width: 88ch; margin: 1.5rem auto 3rem; padding: 2.5rem clamp(1.25rem, 5vw, 3rem) 2.75rem;
+  max-width: min(94vw, 1000px); margin: 1.5rem auto 3rem; padding: 2.5rem clamp(1.25rem, 4vw, 3.5rem) 2.75rem;
   background: var(--bg2);
   font-family: var(--serif);
   font-size: 1.08rem; line-height: 1.72;
@@ -225,7 +225,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   line-height: 1.25; margin: 0 0 0.4rem; text-wrap: balance; text-transform: none;
 }
 .memo-byline { font-style: italic; color: var(--muted); margin: 0 0 2rem; }
-.memo-body { max-width: 76ch; }
+.memo-body { max-width: none; }
 .memo-body h2, .memo-body h3, .memo-body h4 {
   font-family: var(--serif); font-weight: 700; text-transform: none; letter-spacing: 0;
   margin: 1.8rem 0 0.6rem; line-height: 1.3;
