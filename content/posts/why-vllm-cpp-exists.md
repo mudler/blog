@@ -1,7 +1,7 @@
 ---
 title: 'Why vllm.cpp exists'
 date: 2026-08-13
-draft: true
+draft: false
 author: "Ettore Di Giacinto"
 tags: ["llm", "inference", "cpp", "vllm", "llama.cpp", "sglang", "localai", "local-ai", "open-source"]
 ---
