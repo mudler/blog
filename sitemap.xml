@@ -2,13 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mudler.pm/posts/2026/02/28/a-call-to-open-source-maintainers-stop-babysitting-ai-how-i-built-a-100-local-autonomous-dev-team-to-maintain-localai-and-why-you-should-too/</loc>
-    <lastmod>2026-02-28T00:00:00+00:00</lastmod>
+    <loc>https://mudler.pm/tags/cpp/</loc>
+    <lastmod>2026-08-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mudler.pm/tags/inference/</loc>
+    <lastmod>2026-08-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mudler.pm/tags/llama.cpp/</loc>
+    <lastmod>2026-08-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mudler.pm/tags/llm/</loc>
+    <lastmod>2026-08-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mudler.pm/tags/local-ai/</loc>
+    <lastmod>2026-08-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mudler.pm/tags/localai/</loc>
+    <lastmod>2026-08-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mudler.pm/</loc>
-    <lastmod>2026-02-28T00:00:00+00:00</lastmod>
+    <lastmod>2026-08-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mudler.pm/tags/open-source/</loc>
+    <lastmod>2026-08-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mudler.pm/posts/</loc>
+    <lastmod>2026-08-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mudler.pm/tags/sglang/</loc>
+    <lastmod>2026-08-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mudler.pm/tags/</loc>
+    <lastmod>2026-08-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mudler.pm/tags/vllm/</loc>
+    <lastmod>2026-08-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mudler.pm/posts/2026/08/13/why-vllm.cpp-exists/</loc>
+    <lastmod>2026-08-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mudler.pm/posts/2026/02/28/a-call-to-open-source-maintainers-stop-babysitting-ai-how-i-built-a-100-local-autonomous-dev-team-to-maintain-localai-and-why-you-should-too/</loc>
     <lastmod>2026-02-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mudler.pm/posts/2024/05/30/localai-and-llama.cpp-on-jetson-nano-devkit/</loc>
@@ -39,9 +72,6 @@
     <lastmod>2016-04-18T06:02:00-07:00</lastmod>
   </url><url>
     <loc>https://mudler.pm/tags/scr/</loc>
-    <lastmod>2016-04-18T06:02:00-07:00</lastmod>
-  </url><url>
-    <loc>https://mudler.pm/tags/</loc>
     <lastmod>2016-04-18T06:02:00-07:00</lastmod>
   </url><url>
     <loc>https://mudler.pm/tags/updates/</loc>

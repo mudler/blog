@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Localai on mudler.pm</title>
+    <link>https://mudler.pm/tags/localai/</link>
+    <description>Recent content in Localai on mudler.pm</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 13 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://mudler.pm/tags/localai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why vllm.cpp exists</title>
+      <link>https://mudler.pm/posts/2026/08/13/why-vllm.cpp-exists/</link>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://mudler.pm/posts/2026/08/13/why-vllm.cpp-exists/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mudler.pm/images/vllmcpp-manifesto.png&#34; alt=&#34;header&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I love vLLM, I really mean it. It made AI inferencing affordable and fast, but it has a cost.&#xA;A vLLM install here is also 9.1 GiB of virtualenv, a CUDA runtime, a&#xA;pinned torch, and a dependency tree somebody has to scan for CVEs every week, if you take care about security. I&#xA;did that for a while, but one of the things that broke me is trying to maintain vLLM in LocalAI. It is very painful, CI constantly breaks for either bandwidth, disk size or simply deps breaks, ABI shifts without runtime checks (but this is true for every scripting language) and I wanted to embed inference inside&#xA;other software anyway, on machines where an interpreter in the process is a&#xA;problem.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -7,8 +7,71 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 18 Apr 2016 06:02:00 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mudler.pm/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cpp</title>
+      <link>https://mudler.pm/tags/cpp/</link>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://mudler.pm/tags/cpp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Inference</title>
+      <link>https://mudler.pm/tags/inference/</link>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://mudler.pm/tags/inference/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Llama.cpp</title>
+      <link>https://mudler.pm/tags/llama.cpp/</link>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://mudler.pm/tags/llama.cpp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Llm</title>
+      <link>https://mudler.pm/tags/llm/</link>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://mudler.pm/tags/llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Local-Ai</title>
+      <link>https://mudler.pm/tags/local-ai/</link>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://mudler.pm/tags/local-ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Localai</title>
+      <link>https://mudler.pm/tags/localai/</link>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://mudler.pm/tags/localai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Open-Source</title>
+      <link>https://mudler.pm/tags/open-source/</link>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://mudler.pm/tags/open-source/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sglang</title>
+      <link>https://mudler.pm/tags/sglang/</link>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://mudler.pm/tags/sglang/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vllm</title>
+      <link>https://mudler.pm/tags/vllm/</link>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://mudler.pm/tags/vllm/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Community Repositories</title>
       <link>https://mudler.pm/tags/community-repositories/</link>

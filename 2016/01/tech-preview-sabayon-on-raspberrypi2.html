@@ -28,14 +28,46 @@
   <div class="memo-tag"><span>MUDLER.PM</span><span>TECHNICAL MEMORANDUM</span><span>N. 24</span></div>
   <header class="memo-head">
     <h1>Tech Preview: Sabayon on RaspberryPi2 </h1>
-    <p class="memo-byline">Ettore Di Giacinto · 11 January 2016 · 1 min read</p>
+    <p class="memo-byline">Ettore Di Giacinto · 11 January 2016 · 4 min read</p>
   </header>
   <div class="memo-body">
-    <h4 id="hi-this-is-a-really-good-new-are-there-chances-o">hi, this is a really good new are there chances o&hellip; <a class="hanchor" href="#hi-this-is-a-really-good-new-are-there-chances-o" aria-label="Link to this section">§</a></h4>
-<p><a href="https://www.blogger.com/profile/14210313797077979642" title="noreply@blogger.com">Unknown</a> - <time datetime="2016-02-20T00:58:52.881-08:00">Feb 6, 2016</time></p>
-<p>hi, this is a really good new</p>
-<p>are there chances of having sabayon on Raspberry PI (not PI2)?</p>
-<hr />
+    <p>As anticipated on Sabayon Linux site releases notes, that day was going to be close.<br>
+<strong>ARM</strong> meet <strong>Sabayon</strong>, <strong>Sabayon</strong> meet <strong>ARM</strong>.</p>
+<p><a href="https://www.raspberrypi.org/wp-content/uploads/2015/01/Pi2ModB1GB_-comp.jpeg"><img src="https://www.raspberrypi.org/wp-content/uploads/2015/01/Pi2ModB1GB_-comp.jpeg" alt=""></a></p>
+<p>The approach to the ARM(hfp) support will be different from the previous attempt, we are not going to support  kernels for each different board we intend to build images, instead we will release cutted images with vendor-kernel to avoid incompatibilities and unexpected features. This is what almost every distribution does for tons of reasons, among them i want just to underline that in those years we have seen a lot of new ARM boards out of there and we can&rsquo;t just support all of them, mantain a kernel branch for each one would results low QA (since our dev-team is small) and probably in hard decision to be made when support will be dropped from vendors (think also on how short is a board lifespan, and how projects dies quickly). In that way, we can still provide support also for legacy devices as well.</p>
+<p>If someone intends to support the various kernels it&rsquo;s free to do it by forking the project or just creating a separate overlay with kernel ebuilds, there is no limitations at all, the Sabayon kernel eclass is ready to handle most of the task if you intend to dig in that deep ocean. If you want to help us to support other boards, head over <a href="https://github.com/Sabayon/docker-armhfp">the GitHub repository</a> that contains the Docker bits to assemble the final images.</p>
+<p>To sum up: we will release board specific images, and generic images that will suit for most every board. The generic image won&rsquo;t always work out of the box, some of them need custom specific vendor bits (U-boot) to be in the right place, but we will document each board we can manage to put our hands on.</p>
+<p>Upgrading the kernel or playing with it will be entirely all up to you, we will provide of course a bunch of scripts to help that process.</p>
+<p>**Sabayon will support the ARM packages, built from Gentoo&rsquo;s portage, providing you a stable, rolling release rootfs with tons of tools you can install with Entropy. **<br>
+Enough chitchat for now, let&rsquo;s get to the business, let me present you our Tech Preview of RaspberryPi2. (I consider this a Tech Preview because it is really barebone, doesn&rsquo;t include any helpers and because it is still in a early stage of development)</p>
+<p>The images will be soon available in all Sabayon mirrors, for now you can download it from the official TOP-IX italian mirror:</p>
+<p><a href="http://mirror.it.sabayon.org/testing/Sabayon_Linux_16_armv7l_Raspberry_Pi2_Base_8GB.img.xz">http://mirror.it.sabayon.org/testing/Sabayon_Linux_16_armv7l_Raspberry_Pi2_Base_8GB.img.xz</a><br>
+<a href="http://mirror.it.sabayon.org/testing/Sabayon_Linux_16_armv7l_Raspberry_Pi2_Base_8GB.img.xz.md5">http://mirror.it.sabayon.org/testing/Sabayon_Linux_16_armv7l_Raspberry_Pi2_Base_8GB.img.xz.md5</a></p>
+<p>you can however browse <a href="https://www.sabayon.org/download">our mirror list</a>, the image is in the <em>testing/</em> folder.</p>
+<p>To write the image to the sdcard, you can do:</p>
+<blockquote>
+<p>xzcat <a href="http://mirror.it.sabayon.org/testing/Sabayon_Linux_16_armv7l_Raspberry_Pi2_Base_8GB.img.xz">Sabayon_Linux_16_armv7l_Raspberry_Pi2_Base_8GB.img.xz</a> &gt; /dev/mmcblk0</p>
+</blockquote>
+<p>Where mmcblk0 can differ.<br>
+The root password is: root. There is a default user &ldquo;sabayon&rdquo; with password &ldquo;sabayon&rdquo; that can use sudo out-of-the-box.<br>
+The OS is set to automatically boot and start eth0 and sshd (so you can connect to it via ssh).<br>
+I strongly reccomend also to do a <em>&ldquo;equo up &amp;&amp; equo u&rdquo;</em> after boot to get the latest packages.</p>
+<p>The System is already configured to allow serial login, and if you want put your hands on kodi (yeah, so you can do your HTPC for almost 30$ without pain) install it with equo:</p>
+<blockquote>
+<p>equo up</p>
+</blockquote>
+<blockquote>
+<p>equo i kodi-raspberrypi</p>
+</blockquote>
+<p>and then start it from the terminal(without X):</p>
+<blockquote>
+<p>startkodi</p>
+</blockquote>
+<p>We have already ~2000 packages in the ARMhfp repository, including Docker already cutted for ARM boards (yay!), XFCE, LXDE and bunch of packages you might find interesting. For package requests, head over <a href="https://bugs.sabayon.org/">our bugzilla</a>.</p>
+<p>There is also the handy <em>rpi-update</em> script that helps you thru the kernel upgrade process, downloading automatically the latest <em>raspberrypi</em> kernel from the Raspberrypi official repositories (the one that you can use in Raspbian as well).</p>
+<p>Please, report any issue you find.</p>
+<p>If you appreciate our efforts towards the ARM architecture, please consider to donate us either hardware or <a href="https://www.sabayon.org/donate">MONEY</a> to buy it!</p>
+<p>Have fun!</p>
 
   </div>
   
@@ -44,8 +76,8 @@
   <nav class="memo-seealso">
     <h2>SEE ALSO</h2>
     <ul>
-      <li><a href="/2016/02/updates-rpi2-joins-to-testing-boards.html">Updates: Rpi2 joins to testing boards, Mate testing repository, Sabayon devkit</a> <i>(newer)</i></li>
-      <li><a href="/2016/01/tech-preview-sabayon-on-raspberrypi2.html">Tech Preview: Sabayon on RaspberryPi2 </a> <i>(older)</i></li>
+      <li><a href="/2016/01/tech-preview-sabayon-on-raspberrypi2.html">Tech Preview: Sabayon on RaspberryPi2 </a> <i>(newer)</i></li>
+      <li><a href="/2015/11/part-1-building-gentoo-and-sabayon.html">[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</a> <i>(older)</i></li>
       <li><a href="/posts/">all posts</a></li>
     </ul>
   </nav>
@@ -53,7 +85,7 @@
 
 </main>
 <footer class="site-footer">
-  <div class="man-footline"><span>Linux</span><span>July 2026</span><span>MUDLER(1)<span class="cursor" aria-hidden="true">▊</span></span></div>
+  <div class="man-footline"><span>Linux</span><span>August 2026</span><span>MUDLER(1)<span class="cursor" aria-hidden="true">▊</span></span></div>
   <div class="footlinks">
     <a href="https://github.com/mudler">github</a> ·
     <a href="https://twitter.com/mudler_it">x</a> ·
