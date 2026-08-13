@@ -1,7 +1,7 @@
 ---
 title: 'Sabayon: testers, testers, testers'
 date: 2015-10-07T14:28:00.000-07:00
-draft: false
+draft: true
 url: /2015/10/sabayon-testers-testers-testers.html
 tags: 
 - sabayon

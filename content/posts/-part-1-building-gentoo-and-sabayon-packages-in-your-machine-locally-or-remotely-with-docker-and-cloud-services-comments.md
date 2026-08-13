@@ -1,7 +1,7 @@
 ---
 title: '[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services'
 date: 2015-11-15T07:09:00.004-08:00
-draft: false
+draft: true
 url: /2015/11/part-1-building-gentoo-and-sabayon.html
 tags: 
 - sabayon

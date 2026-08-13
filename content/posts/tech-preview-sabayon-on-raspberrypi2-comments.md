@@ -1,7 +1,7 @@
 ---
 title: 'Tech Preview: Sabayon on RaspberryPi2 '
 date: 2016-01-11T05:02:00.002-08:00
-draft: false
+draft: true
 url: /2016/01/tech-preview-sabayon-on-raspberrypi2.html
 tags: 
 - ARM

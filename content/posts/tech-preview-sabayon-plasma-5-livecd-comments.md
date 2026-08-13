@@ -1,7 +1,7 @@
 ---
 title: 'Tech Preview: Sabayon Plasma 5 LiveCD'
 date: 2015-09-02T05:46:00.001-07:00
-draft: false
+draft: true
 url: /2015/09/tech-preview-sabayon-plasma-5-livecd.html
 tags: 
 - sabayon
