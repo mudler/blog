@@ -14,21 +14,7 @@
       <link>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</link>
       <pubDate>Mon, 18 Apr 2016 06:02:00 -0700</pubDate>
       <guid>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</guid>
-      <description>&lt;h4 id=&#34;maaaaaaaaaaaaany-dependencies-for-enman-still-he&#34;&gt;Maaaaaaaaaaaaany dependencies for enman… Still, he&amp;hellip; &lt;a class=&#34;hanchor&#34; href=&#34;#maaaaaaaaaaaaany-dependencies-for-enman-still-he&#34; aria-label=&#34;Link to this section&#34;&gt;§&lt;/a&gt;&lt;/h4&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.blogger.com/profile/05988645683809592011&#34; title=&#34;noreply@blogger.com&#34;&gt;Tedel&lt;/a&gt; - &lt;time datetime=&#34;2016-04-18T14:39:43.293-07:00&#34;&gt;Apr 1, 2016&lt;/time&gt;&lt;/p&gt;&#xA;&lt;p&gt;Maaaaaaaaaaaaany dependencies for enman…&lt;br&gt;&#xA;Still, here we go! :D&lt;/p&gt;&#xA;&lt;hr /&gt;</description>
-    </item>
-    <item>
-      <title>Whut?! Sabayon Community Repositories is here!</title>
-      <link>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</link>
-      <pubDate>Mon, 18 Apr 2016 06:02:00 -0700</pubDate>
-      <guid>https://mudler.pm/2016/04/whut-sabayon-community-repositories-is.html</guid>
       <description>&lt;p&gt;Hello users,&lt;/p&gt;&#xA;&lt;p&gt;Time passed when i first wrote the article &amp;ldquo;&lt;a href=&#34;https://blog.mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html&#34;&gt;[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services&lt;/a&gt;&amp;rdquo; that was going to be divided into parts. But things changed amazingly fast and there is better news, I wrote up a suite of tools that makes the whole operation much easier, thanks also to &lt;a href=&#34;https://plus.google.com/104283756158326784792&#34;&gt;+Ben Roberts&lt;/a&gt; (optiz0r) who contributed in the development and he is also kindly sponsoring the buildserver.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</title>
-      <link>https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html</link>
-      <pubDate>Sun, 15 Nov 2015 07:09:00 -0800</pubDate>
-      <guid>https://mudler.pm/2015/11/part-1-building-gentoo-and-sabayon.html</guid>
-      <description>&lt;h4 id=&#34;with-spawning-a-compilation-the-second-line-with&#34;&gt;With spawning a compilation, the second line (with&amp;hellip; &lt;a class=&#34;hanchor&#34; href=&#34;#with-spawning-a-compilation-the-second-line-with&#34; aria-label=&#34;Link to this section&#34;&gt;§&lt;/a&gt;&lt;/h4&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.blogger.com/profile/14316408440182908236&#34; title=&#34;noreply@blogger.com&#34;&gt;fusion809&lt;/a&gt; - &lt;time datetime=&#34;2015-11-18T22:15:18.006-08:00&#34;&gt;Nov 4, 2015&lt;/time&gt;&lt;/p&gt;&#xA;&lt;p&gt;With spawning a compilation, the second line (with the package you wish to merge) is it possible to point to a specific version of a package. For example, atm I&amp;rsquo;d like to merge app-editors/atom-1.2.0 from the Sabayon overlay, do I have to enter it as `app-editors/atom-1.2.0 &amp;ndash;overlay sabayon` or `=app-editors/atom-1.2.0 &amp;ndash;overlay sabayon`?&lt;/p&gt;&#xA;&lt;hr /&gt;&#xA;#### In section 3 I think you gave incorrect syntax, al...&#xA;[fusion809](https://www.blogger.com/profile/14316408440182908236 &#34;noreply@blogger.com&#34;) - &lt;time datetime=&#34;2015-11-18T23:11:19.327-08:00&#34;&gt;Nov 4, 2015&lt;/time&gt;&#xA;&lt;p&gt;In section 3 I think you gave incorrect syntax, although it may be because of formatting limitations imposed by blogger. I think the two lines:&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Part 1] Building Gentoo and Sabayon packages in your machine locally or remotely with Docker and Cloud Services</title>
